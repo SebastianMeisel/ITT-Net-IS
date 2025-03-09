@@ -25,11 +25,11 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 *Aufgabe:* Welche Ansprechpartner und Verantwortlichkeiten gibt es im eigenen Unternehmen bzw. der eigenen Organisation für die IT-Sicherheit?
 
 *Anmerkungen:* 
-- Bedeutung des BSI
-- Schutzziele
-- Sicherheitskonzepte (Zutritts-, Zugangs- und Zugriffskontroll)
+ - Bedeutung des BSI
+ - Schutzziele
+ - Sicherheitskonzepte (Zutritts-, Zugangs- und Zugriffskontroll)
 
-[[file:Einführung.pdf][Einführung (PDF)]]
+ - [[file:Einführung.pdf][Einführung (PDF)]]
 
 
 *** Modul 25: Gesetze und Zuständigkeiten
@@ -43,10 +43,10 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 *Aufgabe:* Welche Ansprechpartner und Verantwortlichkeiten gibt es im eigenen Unternehmen bzw. der eigenen Organisation für die IT-Sicherheit?
 
 *Anmerkungen:* 
-- Verantwortliche Stellen und Zuständigkeiten
-- Gesetze und Standards zur Informationssicherheit
+  - Verantwortliche Stellen und Zuständigkeiten
+  - Gesetze und Standards zur Informationssicherheit
 
-
+  - [[file:AnsprechpartnerUndGesetze.pdf][Ansprechpartner und Gesetze (PDF)]]
 
 *** Modul 26: Elementare Gefährdungen
 :PROPERTIES:

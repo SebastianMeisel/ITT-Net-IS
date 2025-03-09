@@ -1,0 +1,242 @@
+:LaTeX_PROPERTIES:
+#+LANGUAGE: de
+#+OPTIONS: d:nil todo:nil pri:nil tags:nil
+#+OPTIONS: H:4
+#+LaTeX_CLASS: orgstandard
+#+LaTeX_CMD: xelatex
+#+LATEX_HEADER: \usepackage{listings}
+:END:
+
+:REVEAL_PROPERTIES:
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_THEME: league
+#+REVEAL_EXTRA_CSS: ./mystyle.css
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: timestamp:nil toc:nil num:nil
+:END:
+
+#+TITLE: Gesetze und Zuständigkeiten in der IT-Sicherheit
+#+SUBTITLE: IT-Sicherheit
+#+AUTHOR: ITT-Net-IS
+
+
+
+* Überblick
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+Dieses Modul behandelt die gesetzlichen Rahmenbedingungen und Zuständigkeiten im Bereich der IT-Sicherheit. Es werden relevante Gesetze, Standards und organisatorische Strukturen vorgestellt, die für die Implementierung und Aufrechterhaltung einer angemessenen qIT-Sicherheit in Unternehmen und Organisationen notwendig sind.
+
+* Verantwortliche Stellen und Zuständigkeiten
+
+In einem gut strukturierten Sicherheitsmanagement sind verschiedene Rollen und Verantwortlichkeiten klar definiert:
+
+
+
+#+ATTR_HTML: :width 50%
+#+ATTR_LATEX: :width .65\linewidth :placement [!htpb]
+#+ATTR_ORG: :width 700
+
+[[file:img/Verantwortliche.png]]
+
+
+
+** Geschäftsführung
+#+ATTR_REVEAL: :frag (appear)
+- Trägt die Gesamtverantwortung für die IT-Sicherheit
+- Stellt notwendige Ressourcen bereit
+- Verabschiedet die IT-Sicherheitsleitlinie
+- Haftet persönlich für Verstöße gegen gesetzliche Vorschriften
+
+** IT-Sicherheitsbeauftragter (CISO - Chief Information Security Officer)
+#+ATTR_REVEAL: :frag (appear)
+- Entwickelt und koordiniert das Sicherheitskonzept
+- Berichtet direkt an die Geschäftsführung
+- Überwacht die Umsetzung von Sicherheitsmaßnahmen
+- Berät in Sicherheitsfragen
+- Führt Risikoanalysen durch
+- Erarbeitet Notfallpläne
+
+** Datenschutzbeauftragter
+#+ATTR_REVEAL: :frag (appear)
+- Überwacht die Einhaltung des Datenschutzrechts
+- Berät bei datenschutzrechtlichen Fragen
+- Prüft Verfahren zur Verarbeitung personenbezogener Daten
+- Ist weisungsfrei und berichtet direkt an die Geschäftsleitung
+
+** IT-Abteilung
+#+ATTR_REVEAL: :frag (appear)
+- Setzt technische Sicherheitsmaßnahmen um
+- Betreibt die Systeme nach Sicherheitsvorgaben
+- Reagiert auf Sicherheitsvorfälle
+- Führt regelmäßige Updates und Backups durch
+
+** Fachabteilungen/Benutzer
+#+ATTR_REVEAL: :frag (appear)
+- Melden Sicherheitsvorfälle
+- Halten sich an Sicherheitsrichtlinien
+- Tragen durch ihr Verhalten wesentlich zur Gesamtsicherheit bei
+
+** Betriebsrat
+#+ATTR_REVEAL: :frag (appear)
+- Vertritt die Interessen der Mitarbeiter bei Sicherheitsrichtlinien
+- Muss bei überwachungsrelevanten Maßnahmen einbezogen werden
+
+** Security Operations Center (SOC)
+Ein SOC ist eine zentrale Einheit, die für die kontinuierliche Überwachung und Verbesserung der IT-Sicherheitslage zuständig ist:
+#+ATTR_REVEAL: :frag (appear)
+- 24/7-Überwachung der Systeme
+- Erkennung von Sicherheitsvorfällen
+- Analyse und Reaktion auf Vorfälle
+- Forensische Untersuchungen
+- Regelmäßige Sicherheitstests
+
+** Computer Emergency Response Team (CERT)
+Ein CERT oder CSIRT (Computer Security Incident Response Team) ist darauf spezialisiert, auf IT-Sicherheitsvorfälle zu reagieren:
+#+ATTR_REVEAL: :frag (appear)
+- Sofortmaßnahmen bei Sicherheitsvorfällen
+- Unterstützung bei der Wiederherstellung von Systemen
+- Analyse von Angriffsvektoren
+- Informationsaustausch mit anderen CERTs
+
+* Gesetze und Standards zur Informationssicherheit
+
+In der digitalen Welt gewinnen Gesetze und Standards zur IT-Sicherheit an Bedeutung. Angesichts wachsender Cyberbedrohungen sind die rechtlichen Anforderungen verschärft worden, da IT-Sicherheit nicht nur eine technische, sondern auch eine unternehmerische und gesellschaftliche Verantwortung ist.
+
+#+BEGIN_NOTES
+Unternehmen müssen nationale und internationale Vorschriften einhalten, die oft nur Mindeststandards definieren. Verstöße können hohe Strafen, Haftung für Führungskräfte und Reputationsverluste nach sich ziehen. Neben gesetzlichen Vorgaben spielen internationale Standards eine wichtige Rolle, da sie strukturierte Ansätze zur Informationssicherheit bieten und Vertrauen schaffen. Im Folgenden werden zentrale gesetzliche Regelungen und Standards vorgestellt.
+#+END_NOTES
+
+*** Datenschutz-Grundverordnung (DSGVO)
+#+ATTR_REVEAL: :frag (appear)
+- Europäische Verordnung zum Schutz personenbezogener Daten
+- Verpflichtet zur Implementierung technischer und organisatorischer Maßnahmen
+- Meldepflicht bei Datenschutzverletzungen (72 Stunden)
+- Hohe Bußgelder bei Verstößen (bis zu 4% des weltweiten Jahresumsatzes)
+
+*** NIS2-Richtlinie (Netzwerk- und Informationssicherheit)
+#+ATTR_REVEAL: :frag (appear)
+- Nachfolger der ersten NIS-Richtlinie aus 2016
+- In Kraft seit Januar 2023 mit Umsetzungsfrist bis Oktober 2024
+- Erweitert den Anwendungsbereich auf weitere Sektoren (Energieversorgung, Verkehr, Finanzdienstleistungen, Gesundheitswesen, öffentliche Verwaltung, Raumfahrt, IKT-Dienstleistungen, u.v.m.)
+- Unterscheidet zwischen "wesentlichen" und "wichtigen" Einrichtungen mit unterschiedlichen Anforderungen
+#+REVEAL: split
+#+ATTR_REVEAL: :frag (appear)
+- Stärkere Harmonisierung des Sicherheitsniveaus in der EU
+- Umfassende Meldepflichten für Cybersicherheitsvorfälle
+- Verpflichtung zur Einrichtung von Risikomanagementmaßnahmen
+- Deutlich höhere Bußgelder als bei NIS1 (bis zu 10 Millionen Euro oder 2% des weltweiten Jahresumsatzes)
+- Stärkere Management-Verantwortung: Die Leitungsorgane müssen Cybersicherheitsschulungen absolvieren und haften persönlich für Verstöße
+
+*** IT-Sicherheitsgesetz (IT-SiG 2.0)
+#+ATTR_REVEAL: :frag (appear)
+- Regelt insbesondere den Schutz kritischer Infrastrukturen
+- Meldepflicht für Sicherheitsvorfälle
+- Verpflichtung zur Implementierung angemessener Sicherheitsmaßnahmen
+- Erweiterte Befugnisse für das BSI (Bundesamt für Sicherheit in der Informationstechnik)
+- Wird durch die nationale Umsetzung der NIS2-Richtlinie weiterentwickelt
+
+*** Branchenspezifische Regelungen
+#+ATTR_REVEAL: :frag (appear)
+- Bankensektor: MaRisk (Mindestanforderungen an das Risikomanagement)
+- Gesundheitswesen: Patientendatenschutzgesetz
+- Telekommunikation: Telekommunikationsgesetz (TKG)
+- Energiesektor: Energiewirtschaftsgesetz (EnWG)
+
+** Internationale Standards und Frameworks
+
+Im Bereich der IT-Sicherheit haben sich verschiedene internationale Standards und Frameworks etabliert, die Organisationen bei der systematischen Umsetzung von Sicherheitsmaßnahmen unterstützen.
+
+#+BEGIN_NOTES
+Diese Standards bieten bewährte Vorgehensweisen, Methoden und Kontrollmechanismen, die über gesetzliche Mindestanforderungen hinausgehen und auf internationalen Best Practices basieren.
+#+END_NOTES
+
+Anders als Gesetze sind die meisten Standards *nicht verpflichtend*, werden aber oft von Kunden, Partnern oder Aufsichtsbehörden erwartet und können einen Wettbewerbsvorteil darstellen.
+
+#+BEGIN_NOTES
+Eine Zertifizierung nach anerkannten Standards signalisiert nach außen, dass ein Unternehmen Informationssicherheit ernst nimmt und systematisch angeht.
+#+END_NOTES
+
+*** ISO/IEC 27001
+#+ATTR_REVEAL: :frag (appear)
+- Internationaler Standard für Informationssicherheits-Managementsysteme (ISMS)
+- Systematischer Ansatz zur Verwaltung vertraulicher Informationen
+- Basis für Zertifizierungen
+- Umfasst Anforderungen an Planung, Umsetzung, Überwachung und Verbesserung
+
+
+*** NIST Cybersecurity Framework
+#+ATTR_REVEAL: :frag (appear)
+- Von der US-amerikanischen Behörde NIST entwickeltes Rahmenwerk
+- Besteht aus den Kernelementen: Identifizieren, Schützen, Erkennen, Reagieren, Wiederherstellen
+- Flexibel anpassbar an Unternehmensgrößen und -typen
+
+*** ITIL (Information Technology Infrastructure Library)
+#+ATTR_REVEAL: :frag (appear)
+- Framework für IT-Service-Management
+- Enthält Best Practices für IT-Sicherheit im Kontext des Servicemanagements
+- Umfasst Prozesse wie Incident Management und Problem Management
+
+
+
+* Übungsaufgabe: IT-Sicherheit in einem mittelständischen Unternehmen
+
+In dieser Übung beschäftigen Sie sich mit typischen IT-Sicherheitsverantwortlichkeiten in Unternehmen. 
+Dazu analysieren Sie das folgende Szenario und erarbeiten Lösungen in Kleingruppen.
+
+** Szenario
+
+Sie sind ein Team von IT-Beratern und wurden von einem mittelständischen Unternehmen beauftragt, 
+die IT-Sicherheit zu bewerten und Verbesserungsvorschläge zu machen. 
+
+Das Unternehmen:
+- 150 Mitarbeitende
+- Eigene IT-Abteilung mit drei Angestellten
+- Nutzung von Cloud-Diensten für E-Mails und Dokumente
+- Verarbeitung sensibler Kundendaten (z. B. Finanz- oder Gesundheitsdaten)
+- Kein dedizierter IT-Sicherheitsbeauftragter
+
+** Durchführung
+
+1. *Welche IT-Sicherheitsrollen fehlen?*
+   - Überlegen Sie, welche Rollen für IT-Sicherheit notwendig sind.
+   - Erstellen Sie eine Tabelle mit den wichtigsten Verantwortlichkeiten.
+
+2. *Typische Sicherheitsrisiken identifizieren*
+   - Welche Gefahren bestehen für das Unternehmen? 
+   - Listen Sie mögliche Bedrohungen auf (z. B. Phishing, Datenlecks, Ransomware).
+
+3. *Erste Maßnahmen empfehlen*
+   - Welche grundlegenden Sicherheitsmaßnahmen sollten eingeführt werden?
+   - Überlegen Sie, welche Standards (z. B. ISO 27001, BSI-Grundschutz) relevant sein könnten.
+
+** Muster-Dokumentationsvorlage
+
+| Rolle/Funktion              | Hauptverantwortlichkeiten                         |
+|-----------------------------+--------------------------------------------------|
+| IT-Sicherheitsbeauftragter  | Entwicklung und Umsetzung der IT-Sicherheitsstrategie |
+| Datenschutzbeauftragter      | Sicherstellung der DSGVO-Compliance               |
+| IT-Administrator            | Wartung und Absicherung der IT-Infrastruktur      |
+| Notfall-Ansprechpartner     | Reaktion auf Sicherheitsvorfälle                  |
+| Externer Security-Dienstleister | Unterstützung bei Sicherheitsmaßnahmen           |
+
+Diese Übung hilft Ihnen, ein grundlegendes Verständnis für IT-Sicherheitsorganisationen zu entwickeln.
+
+** Abschluss der Übung
+
+Präsentieren Sie Ihre Ergebnisse in einer kurzen Zusammenfassung (max. 5 Minuten) und fokussieren Sie sich dabei auf:
+1. Vorhandene Struktur der Sicherheitsorganisation
+2. Identifizierte Lücken oder Schwachstellen
+3. Konkrete Verbesserungsvorschläge
+4. Relevante rechtliche Anforderungen (insbesondere NIS2, DSGVO)
+
+* Weiterführende Ressourcen
+- [[https://www.bsi-fuer-buerger.de][BSI für Bürger]]
+- [[https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/it-grundschutz-kompendium_node.html][BSI-Grundschutz-Kompendium]] 
+- [[https://www.allianz-fuer-cybersicherheit.de][Allianz für Cybersicherheit]] 
+- [[https://dsgvo-gesetz.de][DSGVO-Volltext]] 
+- [[https://eur-lex.europa.eu/legal-content/DE/TXT/HTML/?uri=CELEX:32022L2555][NIS2-Richtlinie]] 
+- [[https://www.bsi.bund.de/DE/Themen/Regulierte-Wirtschaft/NIS-2-regulierte-Unternehmen/nis-2-regulierte-unternehmen_node.html][BSI zu NIS2]] 
