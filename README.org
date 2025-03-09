@@ -230,6 +230,6 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 Sämtliche Materialien in dieser Repository unterliegen der CC0 1.0 Universal (CC0 1.0) Public Domain Dedication Lizenz.
 Das bedeutet, dass die Inhalte ohne Einschränkungen kopiert, modifiziert, verbreitet und aufgeführt werden können, auch für kommerzielle Zwecke, ohne um weitere Erlaubnis zu bitten.
 
-Für weitere Informationen: [CC0 Lizenz](https://creativecommons.org/publicdomain/zero/1.0/deed.de)
+Für weitere Informationen:  [[https://creativecommons.org/publicdomain/zero/1.0/deed.de][CC0 Lizenz]]
 
 Die ursprünglichen Kursinhalte und Beschreibungen stammen von Viona - alle Rechte an den originalen Kursmaterialien und Beschreibungen liegen bei der entsprechenden Organisation.
