@@ -1,0 +1,235 @@
+#+TITLE: ITT-Net-IS Kursunterlagen
+#+AUTHOR: Sebastian Meisel
+
+* ITT-Net-IS 
+Diese Repository enthält meine Unterlagen, Notizen und Projekte für den ITT-Net-IS Kurs bei Viona (Die virtuelle Online-Akademie).
+
+Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
+** Nützliche Links
+- [BSI IT-Grundschutz-Kompendium](https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/it-grundschutz-kompendium_node.html)
+- [BSI 47 elementare Gefährdungen](https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/Kompendium/Elementare_Gefaehrdungen.pdf)
+- [Viona Online-Akademie](https://www.viona.de)
+
+
+
+** Kursübersicht
+
+*** Modul 24: Einführung 
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* Schutzbedarfsanalyse im eigenen Arbeitsbereich
+
+*Aufgabe:* Welche Ansprechpartner und Verantwortlichkeiten gibt es im eigenen Unternehmen bzw. der eigenen Organisation für die IT-Sicherheit?
+
+*Anmerkungen:* 
+- Bedeutung des BSI
+- Schutzziele
+- Sicherheitskonzepte (Zutritts-, Zugangs- und Zugriffskontroll)
+
+[[file:Einführung.pdf][Einführung (PDF)]]
+
+
+*** Modul 25: Gesetze und Zuständigkeiten
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* Gesetze und Zuständigkeiten
+
+*Aufgabe:* Welche Ansprechpartner und Verantwortlichkeiten gibt es im eigenen Unternehmen bzw. der eigenen Organisation für die IT-Sicherheit?
+
+*Anmerkungen:* 
+- Verantwortliche Stellen und Zuständigkeiten
+- Gesetze und Standards zur Informationssicherheit
+
+
+
+*** Modul 26: Elementare Gefährdungen
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* 47 elementare Gefährdungen nach BSI
+
+*Aufgabe:* Welche Gefährdungen können auf den eigenen Arbeitsplatz (oder HomeOffice) zutreffen?
+
+*Anmerkungen:* Inhalte, Beispiele, Überschneidungen, aktuelle Meldungen und Bedrohungen diskutieren
+
+
+
+*** Modul 27: IT-Grundschutzbausteine
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* IT-Grundschutzbausteine kennenlernen
+
+*Aufgabe:* Welche Bausteine finden auf den eigenen Arbeitsplatz (oder HomeOffice) Anwendung?
+
+*Anmerkungen:*
+- ISMS = Sicherheitsmanagement
+- ORP = organisatorisch/personelle
+- CON = Konzepte und Vorgehensweisen
+- OPS = operative, spezielle
+- APP = Anwendungen u. Dienste
+- SYS = IT-Systeme
+- IND = industrielle
+- NET = Netzwerk
+- INF = Infrastruktur
+- DER = Detektion/Reaktion
+
+
+
+*** Modul 28: Schadens- und Risikokategorien
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* Schadens- und Risikokategorien nach BSI, Notfallplan
+
+*Aufgabe:* Bereiten Sie sich auf die Präsentation zum IT-Grundschutz und den Schutzzielen vor.
+
+*Anmerkungen:*
+- Schadensszenarien
+- Risiko- und Schadensstufen
+- schützenswerte IT-Objekte, Bedrohungen, Risiko- und Schadensstufen und Schutzmaßnahmen richtig zuordnen, Begriffe
+
+
+
+*** Modul 29: Malware und Schutzmaßnahmen
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* Malware und grundlegende Schutzmaßnahmen
+
+*Aufgabe:* Bewerten Sie eine Antivirensoftware nach:
+- Primäre Erkennungsrate (Virusdefinitionen)
+- Sekundäre Erkennungsrate (Heuristik)
+- Reparaturleistung
+- Ausbremsen der Systemleistung
+- Schutzbereiche (=> Einfallstore)
+- Funktionalität
+- Bedienung
+- zentrale Administrierbarkeit
+- Selbstschutz der Antivirensoftware
+
+*Anmerkungen:* Gefahren durch Viren, Würmer und Trojaner, Schutzmaßnahmen gegen Schadsoftware
+
+
+
+*** Modul 30: Hackerangriffe und Schutzmaßnahmen
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* Hackerangriffe und grundlegende Schutzmaßnahmen
+
+*Aufgabe:* Recherche aktueller Angriffsszenarien
+
+*Anmerkungen:* Gefahren durch Social Engineering und Angriffsszenarien, Schutzmaßnahmen gegen Hackerangriffe
+
+
+
+*** Modul 31: Grundlagen Kryptografie
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* Grundlagen Kryptografie
+
+*Aufgabe:* Hashwertgenerator erstellen
+
+*Anmerkungen:* Anwendung kryptografischer Maßnahmen, Verschlüsselungsverfahren, Zertifikate, Signaturen, Handshake-Protokoll mit https://
+
+
+
+*** Modul 32: Sichere Passwörter und Authentifizierung
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* Sichere Passwörter, Authentifizierungsmethoden
+
+*Aufgabe:* Installation eines Passwortresores in der VM, Anlegen von Beispieldatensätzen, optional (FIAE): Anmeldealgorithmus für eine Webseite programmieren
+
+*Anmerkungen:* Passwörter, Passwortresor, Mehr-Faktor-Authentifizierung, Biometrie
+
+
+
+*** Modul 33: WLAN-Sicherheit
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* WLAN-Sicherheit
+
+*Aufgabe:* Router Konfiguration (Cisco...)
+
+*Anmerkungen:* Angriffsvektoren, Schutzmaßnahmen, Router-Sicherheit
+
+
+
+*** Modul 34: Schutzbedarfsfeststellung am Arbeitsplatz
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   4
+:END:
+
+*Inhalt:* Schutzbedarfsfeststellung am eigenen Arbeitsplatz
+
+*Aufgabe:* Schutzbedarfsanalyse in ILIAS bearbeiten
+
+*Anmerkungen:* Einführung, Elemente der Schutzbedarfsfeststellung (Objektliste, Gefährdungen, Schutzbedarf, Maßnahmen)
+
+
+
+*** Modul 35: Schutzbedarfsfeststellung eines Beispielunternehmens
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* Schutzbedarfsfeststellung anhand eines Beispielunternehmens (RECPLAST GmbH)
+
+*Aufgabe:* Herauslesen einer konkreten Anforderungen für einen Client-PC
+
+*Anmerkungen:*
+- Strukturanalyse
+- Kreuztabellen
+- Schutzbedarf Differenzierung nach Vertraulichkeit, Verfügbarkeit, Integrität
+
+
+
+*** Modul 36: Schutzbedarfsfeststellung an Software- und Hardwareobjekten
+:PROPERTIES:
+:Theorie:  2
+:Praxis:   1
+:END:
+
+*Inhalt:* Schutzbedarfsfeststellung an häufigen Software-Objekten, Plattform- und Hardwareobjekten
+
+*Aufgabe:* Absicherung Browser, Office und PDF-Reader praktisch umsetzen
+
+*Anmerkungen:* Gefahren und Maßnahmen: PC, Container, virtuelle Maschinen, mobile Datenträger, Standardsoftware, spezielle Anwendungen, Absicherung Browser, Office und PDF-Reader
+
+
+** Lizenz
+Sämtliche Materialien in dieser Repository unterliegen der CC0 1.0 Universal (CC0 1.0) Public Domain Dedication Lizenz.
+Das bedeutet, dass die Inhalte ohne Einschränkungen kopiert, modifiziert, verbreitet und aufgeführt werden können, auch für kommerzielle Zwecke, ohne um weitere Erlaubnis zu bitten.
+
+Für weitere Informationen: [CC0 Lizenz](https://creativecommons.org/publicdomain/zero/1.0/deed.de)
+
+Die ursprünglichen Kursinhalte und Beschreibungen stammen von Viona - alle Rechte an den originalen Kursmaterialien und Beschreibungen liegen bei der entsprechenden Organisation.
