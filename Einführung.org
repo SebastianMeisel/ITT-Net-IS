@@ -1,0 +1,279 @@
+:LaTeX_PROPERTIES:
+#+LANGUAGE: de
+#+OPTIONS: d:nil todo:nil pri:nil tags:nil
+#+OPTIONS: H:4
+#+LaTeX_CLASS: orgstandard
+#+LaTeX_CMD: xelatex
+#+LATEX_HEADER: \usepackage{listings}
+:END:
+
+:REVEAL_PROPERTIES:
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_THEME: league
+#+REVEAL_EXTRA_CSS: ./mystyle.css
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: timestamp:nil toc:nil num:nil
+:END:
+
+#+TITLE: Einführung in den IT-Grundschutz des BSI
+#+SUBTITLE: IT-Sicherheit
+#+AUTHOR: ITT-Net-IS
+
+ 
+
+* Das Bundesamt für Sicherheit in der Informationstechnik (BSI)
+
+#+ATTR_HTML: :width 50%
+#+ATTR_LATEX: :width 1.5cm :placement [!htpb]
+#+ATTR_ORG: :width 700
+[[file:img/BSI_logo.png]]
+
+Das BSI ist die zentrale deutsche Cyber-Sicherheitsbehörde und fungiert als Gestalter der Informationssicherheit in Deutschland. Das BSI wurde 1991 gegründet und hat seinen Hauptsitz in Bonn.
+#+REVEAL: split
+Zu den Hauptaufgaben gehören:
+#+ATTR_REVEAL: :frag (appear)
+  - Entwicklung von Sicherheitsstandards und -richtlinien
+  - Beratung von Behörden und Unternehmen in Sicherheitsfragen
+  - Zertifizierung von IT-Produkten und Systemen
+  - Aufklärung der Öffentlichkeit über IT-Sicherheitsrisiken
+  - Abwehr von Cyberangriffen auf kritische Infrastrukturen
+
+* Der IT-Grundschutz des BSI
+
+Der IT-Grundschutz bietet eine systematische Methodik zur Identifizierung und Umsetzung angemessener Sicherheitsmaßnahmen für IT-Systeme. Das [[https://www.bsi.bund.de/DE/Themen/Unternehmen-und-Organisationen/Standards-und-Zertifizierung/IT-Grundschutz/IT-Grundschutz-Kompendium/it-grundschutz-kompendium_node.html][IT-Grundschutz-Kompendium]] beschreibt praxisnahe Anforderungen und Maßnahmen für verschiedene IT-Komponenten und -Systeme.
+
+** Die wesentlichen Schutzziele (CIA-Triade)
+
+#+ATTR_HTML: :width 15% :class logo
+#+ATTR_LATEX: :width .4\linewidth :placement [!htpb]
+#+ATTR_ORG: :width 700
+[[file:img/CIA.png]]
+
+Die drei grundlegenden Schutzziele der Informationssicherheit sind:
+#+BEGIN_tolearn
+#+ATTR_REVEAL: :frag (appear)
+  1) *Vertraulichkeit (Confidentiality)*: Informationen dürfen nur von autorisierten Personen eingesehen und bearbeitet werden.
+  2) *Integrität (Integrity)*: Die Korrektheit, Vollständigkeit und Unverfälschtheit von Informationen muss gewährleistet sein.
+  3) *Verfügbarkeit (Availability)*: Informationen und IT-Systeme müssen bei Bedarf funktionsfähig und zugänglich sein.
+#+END_tolearn
+#+REVEAL: split
+Ergänzende Schutzziele sind:
+#+BEGIN_tolearn
+#+ATTR_REVEAL: :frag (appear)
+  - *Authentizität*: Die Echtheit und Glaubwürdigkeit von Informationen und Identitäten.
+  - *Nichtabstreitbarkeit*: Die Nachweisbarkeit von Handlungen und Transaktionen.
+  - *Zurechenbarkeit*: Die eindeutige Zuordnung von Aktionen zu Personen oder Systemen.
+#+END_tolearn
+
+* Der IT-Grundschutz-Prozess
+
+Der IT-Grundschutz-Prozess besteht aus folgenden Hauptphasen:
+#+ATTR_REVEAL: :frag (appear)
+  1) *Initiierung*: Einrichtung eines Informationssicherheitsmanagements
+  2) *Organisation*: Festlegung von Rollen, Verantwortlichkeiten und Ressourcen
+  3) *Strukturanalyse*: Erfassung aller relevanten Informationen, IT-Systeme und Geschäftsprozesse
+  4) *Schutzbedarfsfeststellung*: Bestimmung des Schutzbedarfs für jedes Objekt
+#+REVEAL: split
+#+ATTR_REVEAL: :frag (appear)
+  5) [@5] *Modellierung*: Abbildung der IT-Infrastruktur nach IT-Grundschutz
+  6) *IT-Grundschutz-Check*: Überprüfung der Umsetzung der Sicherheitsanforderungen
+  7) *Risikoanalyse*: Identifikation und Bewertung von Risiken
+  8) *Realisierung*: Umsetzung der Sicherheitsmaßnahmen
+  9) *Aufrechterhaltung*: Kontinuierliche Verbesserung
+
+* Beispielszenario: Mittelständisches Ingenieurbüro "TechPlan GmbH"
+
+
+Die TechPlan GmbH ist ein Ingenieurbüro mit 50 Mitarbeitern, das Planungsleistungen für Industrieanlagen anbietet. Die IT-Infrastruktur umfasst:
+#+ATTR_REVEAL: :frag (appear)
+  - Einen Serverraum mit 5 physischen Servern
+  - 50 Arbeitsplatzrechner
+  - Ein internes WLAN und kabelgebundenes Netzwerk
+  - Eine Internetverbindung mit Firewall
+  - Spezielle CAD-Software für Konstruktionszeichnungen
+  - Ein Dokumentenmanagementsystem für Projektdaten
+
+Das Unternehmen arbeitet mit vertraulichen Kundendaten und wertvollen Konstruktionsplänen, die vor unbefugtem Zugriff geschützt werden müssen.
+
+** Schritt 1: Initiierung des IT-Grundschutz-Prozesses
+Der Geschäftsführer hat die Bedeutung der Informationssicherheit erkannt und einen *IT-Sicherheitsbeauftragten* ernannt. Es wurde ein *Budget* für Sicherheitsmaßnahmen bereitgestellt.
+
+** Schritt 2: Definition des Informationsverbunds
+Der Informationsverbund wurde definiert als alle IT-Systeme, Anwendungen und Räumlichkeiten, die für die Geschäftsprozesse der TechPlan GmbH relevant sind.
+
+** Schritt 3: Strukturanalyse
+In der Strukturanalyse wurden folgende *Komponenten* identifiziert:
+#+ATTR_REVEAL: :frag (appear)
+  - Geschäftsprozesse (Kundenakquise, Projektplanung, Konstruktion)
+  - Anwendungen (CAD-Software, Dokumentenmanagementsystem, E-Mail)
+  - IT-Systeme (Server, Arbeitsplatzrechner, Netzwerkkomponenten)
+  - Räumlichkeiten (Serverraum, Büros)
+
+#+BEGIN_NOTES
+CAD-Software (Computer-Aided Design) ist eine Software zur computergestützten Konstruktion, Modellierung und Detaillierung technischer Zeichnungen und 3D-Modelle in Bereichen wie Ingenieurwesen, Architektur und Produktdesign.
+#+END_NOTES
+
+** Schritt 4: Schutzbedarfsfeststellung
+
+Für jede Komponente wurde der Schutzbedarf nach den drei Grundwerten festgelegt:
+
+*Beispiel: CAD-Daten und Konstruktionspläne*
+#+ATTR_REVEAL: :frag (appear)
+  - Vertraulichkeit: *HOCH* (Enthält wertvolles geistiges Eigentum)
+  - Integrität: *HOCH* (Fehler können zu Planungs- und Produktionsfehlern führen)
+  - Verfügbarkeit: *MITTEL* (Kurzzeitige Ausfälle sind verkraftbar)
+
+** Schritt 5: Modellierung
+Die IT-Komponenten wurden den Bausteinen des IT-Grundschutz-Kompendiums zugeordnet:
+#+CAPTION: Bausteine IT-Grundschutz | Quelle: BSI-Kompendium
+#+ATTR_HTML: :width 60%
+#+ATTR_LATEX: :width .65\linewidth :placement [!htpb]
+#+ATTR_ORG: :width 700
+[[file:img/IT-Komponenen.png]]
+#+BEGIN_NOTES
+  - *ISMS*: Sicherheitsmanagement
+  - Prozessbausteine
+    - *ORP*: Organisation und Personal
+    - *CON*: Konzepte und Vorgehensweisen
+    - *OPS*: Betrieb
+  - Systembausteine:
+    - *APP*: Anwendungen
+    - *SYS*: IT-Systeme
+    - *IND*: Industrielle IT
+    - *NET*: Netze und Kommunikation
+    - *INF*: Infrastruktur
+  - *DER*: Detektion und Reaktion
+#+END_NOTES
+
+* Sicherheitskonzepte im Detail
+
+IT-Sicherheit erfordert ein mehrschichtiges Konzept aus *technischen*, *organisatorischen* (TOM) sowie personellen *Maßnahmen*, das auf den IT-Grundschutz des BSI basiert und an die spezifischen Anforderungen einer Organisation angepasst werden muss.
+#+BEGIN_NOTES
+Ein zentraler Aspekt ist die Verhältnismäßigkeit der Sicherheitsmaßnahmen im Verhältnis zum Schutzbedarf. Durch das Zusammenspiel dieser Maßnahmen entsteht eine mehrstufige Verteidigung nach dem Prinzip der *Defense-in-Depth*.
+#+END_NOTES
+
+** Zugangskontrolle (physischer Zugang)
+#+ATTR_REVEAL: :frag (appear)
+  - *Definition*: Maßnahmen, die den physischen Zugang zu IT-Systemen regeln.
+  - *Beispiel bei TechPlan*:
+  - Zutrittskontrollsystem mit Chipkarten für den Serverraum
+  - Protokollierung aller Zutritte
+  - Videoüberwachung an kritischen Zugangspunkten
+
+** Zugriffskontrolle (logischer Zugriff)
+#+ATTR_REVEAL: :frag (appear)
+  - *Definition*: Maßnahmen, die den logischen Zugriff auf IT-Systeme und Daten regeln.
+  - *Beispiel bei TechPlan*:
+  - Rollenbasierte Zugriffsrechte im Dokumentenmanagementsystem
+  - Zwei-Faktor-Authentifizierung für administrative Zugriffe
+  - Berechtigungskonzept nach dem Need-to-Know-Prinzip
+
+** Netzwerksicherheit
+
+Bei TechPlan wurden folgende Maßnahmen implementiert:
+#+ATTR_REVEAL: :frag (appear)
+  - Segmentierung des Netzwerks durch VLANs
+  - Firewall mit restriktiven Regelsets
+  - VPN für externen Zugriff
+  - Intrusion Detection System zur Erkennung von Angriffsversuchen
+
+** Datensicherung
+
+Die Datensicherungsstrategie umfasst:
+#+ATTR_REVEAL: :frag (appear)
+  - Tägliche inkrementelle Backups
+  - Wöchentliche Vollsicherungen
+  - Monatliche Auslagerung von Backup-Medien an einen externen Standort
+  - Regelmäßige Tests der Wiederherstellbarkeit
+
+** Notfallmanagement
+
+TechPlan hat ein Notfallkonzept erstellt, das folgende Aspekte umfasst:
+#+ATTR_REVEAL: :frag (appear)
+  - Notfallrollen und -verantwortlichkeiten
+  - Eskalationswege
+  - Wiederanlaufpläne für kritische Systeme
+  - Jährliche Notfallübungen
+
+* Praktische Umsetzung ausgewählter Maßnahmen
+
+Die theoretischen Sicherheitskonzepte müssen in der Praxis durch konkrete Maßnahmen umgesetzt werden. Diese Maßnahmen sind in drei Kategorien unterteilt:
+#+ATTR_REVEAL: :frag (appear)
+  1) Personelle Maßnahmen.
+  2) Technische Maßnahmen.
+  3) Organisatorische Maßnahmen.
+
+#+BEGIN_NOTES
+Diese Dreiteilung verdeutlicht den ganzheitlichen Ansatz des IT-Grundschutzes, der nicht nur auf technische Lösungen setzt, sondern auch die menschlichen und prozessualen Aspekte der Informationssicherheit berücksichtigt. 
+#+END_NOTES
+
+** Maßnahmen für Mitarbeiter
+#+ATTR_REVEAL: :frag (appear)
+  - Regelmäßige Sensibilisierungsschulungen
+  - Klare Regelungen für den Umgang mit Passwörtern
+  - Verpflichtung zur Einhaltung der Sicherheitsrichtlinien
+  - Clean-Desk-Policy
+
+** Technische Maßnahmen
+#+ATTR_REVEAL: :frag (appear)
+  - Einsatz von Verschlüsselung für sensible Daten
+  - Automatisierte Sicherheitsupdates
+  - Zentrale Protokollierung und Auswertung von Sicherheitsereignissen
+  - Malware-Schutz auf allen Systemen
+
+** Organisatorische Maßnahmen
+#+ATTR_REVEAL: :frag (appear)
+  - Dokumentation der IT-Landschaft
+  - Regelmäßige Sicherheitsaudits
+  - Einbindung der Informationssicherheit in Veränderungsprozesse
+  - Incident-Response-Prozesse
+
+
+
+* Übung: Schutzbedarfsanalyse für den eigenen Computerarbeitsplatz :noexport:
+
+** Aufgabenstellung
+
+Führen Sie eine Schutzbedarfsanalyse für Ihren Computerarbeitsplatz durch. Gehen Sie dabei wie folgt vor:
+
+  1) *Inventarisierung*:
+   - Listen Sie alle wichtigen Komponenten auf (Hardware, Software, Daten)
+   - Beschreiben Sie kurz ihre Funktion und Bedeutung
+
+  2) *Schutzbedarfsfeststellung*:
+   - Bewerten Sie für jede Komponente den Schutzbedarf bezüglich Vertraulichkeit, Integrität und Verfügbarkeit
+   - Verwenden Sie die Kategorien NIEDRIG, MITTEL, HOCH
+   - Begründen Sie Ihre Einschätzung
+
+  3) *Bedrohungsanalyse*:
+   - Identifizieren Sie mindestens 5 relevante Bedrohungen
+   - Beschreiben Sie potenzielle Auswirkungen
+
+  4) *Maßnahmenplanung*:
+   - Leiten Sie konkrete Schutzmaßnahmen ab
+   - Priorisieren Sie diese nach Wichtigkeit und Aufwand
+
+  5) *Dokumentation*:
+   - Erstellen Sie ein kurzes Dokument (2-3 Seiten), das Ihre Ergebnisse zusammenfasst
+   - Fügen Sie einen Maßnahmenplan mit Zeitschiene bei
+
+** Hilfsmittel
+
+Nutzen Sie zur Orientierung folgende Bausteine aus dem IT-Grundschutz-Kompendium:
+  - SYS.2.1: Allgemeiner Client
+  - APP.1.1: Office-Produkte
+  - NET.2.2: WLAN-Nutzung
+  - ORP.1: Organisation
+  - CON.2: Datenschutz
+
+** Bewertungsgrundlage
+
+Die Schutzbedarfsanalyse wird anhand folgender Kriterien bewertet:
+  - Vollständigkeit der Inventarisierung
+  - Nachvollziehbarkeit der Schutzbedarfsbewertungen
+  - Relevanz der identifizierten Bedrohungen
+  - Angemessenheit der vorgeschlagenen Maßnahmen
+  - Qualität der Dokumentation
+
+
