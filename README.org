@@ -22,7 +22,7 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 
 *Inhalt:* Schutzbedarfsanalyse im eigenen Arbeitsbereich
 
-*Aufgabe:* Welche Ansprechpartner und Verantwortlichkeiten gibt es im eigenen Unternehmen bzw. der eigenen Organisation für die IT-Sicherheit?
+*Aufgabe:* Download von Arbeitsmaterialien (IT-Grundschutz-Kompendium, Beispielunternehmen)
 
 *Anmerkungen:* 
  - Bedeutung des BSI
