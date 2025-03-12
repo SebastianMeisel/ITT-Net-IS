@@ -1,1 +1,5 @@
 *~
+*.tex
+*.bkp
+*.aux
+*.log
