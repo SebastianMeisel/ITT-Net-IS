@@ -61,7 +61,7 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 *Anmerkungen:* Inhalte, Beispiele, Überschneidungen, aktuelle Meldungen und Bedrohungen diskutieren
 
   - [[file:ElementareGefährdungen.pdf][Elementare Gefährdungen (PDF)]]
-  - [[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=45][IT Grundschutzkomendium (2023) - Seiten 45 bis 94 (PDF)]]
+  - [[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=45][IT Grundschutzkomendium (2023) - Seiten 45 bis 90 (PDF)]]
 
 *** Modul 27: IT-Grundschutzbausteine
 :PROPERTIES:
@@ -74,18 +74,18 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 *Aufgabe:* Welche Bausteine finden auf den eigenen Arbeitsplatz (oder HomeOffice) Anwendung?
 
 *Anmerkungen:*
-  - ISMS = Sicherheitsmanagement
-  - ORP = organisatorisch/personelle
-  - CON = Konzepte und Vorgehensweisen
-  - OPS = operative, spezielle
-  - APP = Anwendungen u. Dienste
-  - SYS = IT-Systeme
-  - IND = industrielle
-  - NET = Netzwerk
-  - INF = Infrastruktur
-  - DER = Detektion/Reaktion
-  
-  - [[file:Bausteine.pdf][IT-Grundbausteine (PDF)]]
+- ISMS = Sicherheitsmanagement
+- ORP = organisatorisch/personelle
+- CON = Konzepte und Vorgehensweisen
+- OPS = operative, spezielle
+- APP = Anwendungen u. Dienste
+- SYS = IT-Systeme
+- IND = industrielle
+- NET = Netzwerk
+- INF = Infrastruktur
+- DER = Detektion/Reaktion
+
+
 
 *** Modul 28: Schadens- und Risikokategorien
 :PROPERTIES:
