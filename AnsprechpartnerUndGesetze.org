@@ -118,6 +118,11 @@ Unternehmen müssen nationale und internationale Vorschriften einhalten, die oft
 - Hohe Bußgelder bei Verstößen (bis zu 4% des weltweiten Jahresumsatzes)
 
 *** NIS2-Richtlinie (Netzwerk- und Informationssicherheit)
+#+ATTR_HTML: :width 70%
+#+ATTR_LATEX: :width .65\linewidth :placement [!htpb]
+#+ATTR_ORG: :width 700
+[[file:img/NIS2.png]]
+#+REVEAL: split
 #+ATTR_REVEAL: :frag (appear)
 - Nachfolger der ersten NIS-Richtlinie aus 2016
 - In Kraft seit Januar 2023 mit Umsetzungsfrist bis Oktober 2024
@@ -181,8 +186,7 @@ Eine Zertifizierung nach anerkannten Standards signalisiert nach außen, dass ei
 - Umfasst Prozesse wie Incident Management und Problem Management
 
 
-
-* Übungsaufgabe: IT-Sicherheit in einem mittelständischen Unternehmen
+* Übungsaufgabe: IT-Sicherheit in einem mittelständischen Unternehmen :noexport:
 
 In dieser Übung beschäftigen Sie sich mit typischen IT-Sicherheitsverantwortlichkeiten in Unternehmen. 
 Dazu analysieren Sie das folgende Szenario und erarbeiten Lösungen in Kleingruppen.
