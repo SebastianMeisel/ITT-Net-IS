@@ -1,0 +1,263 @@
+:LaTeX_PROPERTIES:
+#+LANGUAGE: de
+#+OPTIONS: d:nil todo:nil pri:nil tags:nil
+#+OPTIONS: H:4
+#+LaTeX_CLASS: orgstandard
+#+LaTeX_CMD: xelatex
+#+LATEX_HEADER: \usepackage{listings}
+:END:
+
+:REVEAL_PROPERTIES:
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_THEME: league
+#+REVEAL_EXTRA_CSS: ./mystyle.css
+#+REVEAL_HLEVEL: 2
+#+OPTIONS: timestamp:nil toc:nil num:nil
+:END:
+
+#+TITLE: IT-Grundschutzbausteine
+#+SUBTITLE: IT-Sicherheit
+#+AUTHOR: ITT-Net-IS
+
+* 1. Einleitung
+
+Die IT-Grundschutzbausteine des Bundesamts für Sicherheit in der Informationstechnik (BSI) bilden einen umfassenden Katalog von Sicherheitsmaßnahmen für verschiedene IT-Umgebungen. In diesem Dokument werden die relevanten Bausteine für einen typischen Arbeitsplatz oder eine HomeOffice-Umgebung identifiziert und analysiert.
+
+#+ATTR_HTML: :width 50%
+#+ATTR_LATEX: :width .65\linewidth :placement [!htpb]
+#+ATTR_ORG: :width 700
+[[file:img/IT-Grundbausteine.png]]
+
+
+** 2.1 ISMS - Sicherheitsmanagement
+
+*Informationssicherheitsmanagement* (ISMS) umfasst *Planung*, *Lenkung* und *Kontrolle* eines Prozesses zur Herstellung von Informationssicherheit. Es muss in bestehende Managementstrukturen integriert werden und erfordert organisationsspezifische Anpassungen. Ziel ist ein funktionierendes ISMS, wofür der Baustein systematische Schritte und Anleitungen zur Konzepterstellung bietet.
+
+#+BEGIN_NOTES
+  - [[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=95][IT_Grundschutzkompendium S. 95 ff]]
+#+END_NOTES
+
+** ISMS.1 Sicherheitsmanagement
+- *Relevanz*: Fundamentale Basis für die Sicherheit am Arbeitsplatz
+- *Anwendung*: Definition von Sicherheitszielen und -strategien
+- *Konkrete Maßnahmen*: 
+  - Festlegung von Sicherheitsrichtlinien für den Arbeitsplatz
+  - Regelmäßige Überprüfung der Sicherheitsmaßnahmen
+  - Dokumentation von Sicherheitsvorfällen
+
+** 2.2 ORP - Organisatorische und personelle Maßnahmen
+
+Der *ORP-Baustein* legt organisatorische Maßnahmen zur Informationssicherheit fest. *ORP.1* regelt Strukturen und Prozesse, *ORP.2* den sicheren Umgang mit Informationen durch Personal. *ORP.3* fördert Sicherheitsbewusstsein durch Schulungen, *ORP.4* steuert Identitäts- und Berechtigungsmanagement. *ORP.5* sichert die Einhaltung gesetzlicher und vertraglicher Vorgaben. Zusammen bilden sie die Basis für ein strukturiertes Informationssicherheitsmanagement.
+
+#+BEGIN_NOTES
+[[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=105][IT_Grundschutzkompendium S. 105 ff]]
+#+END_NOTES
+
+** ORP.1 Organisation
+- *Relevanz*: Strukturierung der Sicherheitsorganisation
+- *Anwendung*: Klare Zuständigkeiten und Verantwortlichkeiten
+- *Konkrete Maßnahmen*:
+  - Benennung eines Sicherheitsbeauftragten
+  - Festlegung von Meldewegen bei Sicherheitsvorfällen
+
+** ORP.2 Personal
+- *Relevanz*: Sicherheitsbewusstsein der Mitarbeiter
+- *Anwendung*: Schulung und Sensibilisierung
+- *Konkrete Maßnahmen*:
+  - Regelmäßige Sicherheitsschulungen
+  - Unterweisung in sicheres Verhalten im HomeOffice
+
+** ORP.3 Sensibilisierung und Schulung
+- *Relevanz*: Kontinuierliche Weiterbildung
+- *Anwendung*: Aufbau von Sicherheitskompetenz
+- *Konkrete Maßnahmen*:
+  - E-Learning-Module zu IT-Sicherheit
+  - Regelmäßige Sicherheitstipps per E-Mail
+
+** ORP.4 Identitäts- und Berechtigungsmanagement
+- *Relevanz*: Zugriffsschutz für Informationen
+- *Anwendung*: Kontrolle der Zugriffsrechte
+- *Konkrete Maßnahmen*:
+  - Implementierung des Minimalprinzips
+  - Regelmäßige Überprüfung der Zugriffsrechte
+
+** 2.3 CON - Konzepte und Vorgehensweisen
+
+Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssicherheit in verschiedenen Bereichen. *CON.1 Kryptokonzept* beschreibt die Notwendigkeit eines umfassenden Kryptokonzepts zum Schutz von Vertraulichkeit, Integrität und Authentizität. *CON.2 Datenschutz* legt den Fokus auf den Schutz personenbezogener Daten gemäß DSGVO und nationalen Datenschutzgesetzen. *CON.3 Datensicherung* und *CON.6 Löschen und Vernichten* regeln den sicheren Umgang mit Daten – von der Sicherung bis zur endgültigen Löschung. Weitere Bausteine, wie *CON.7 Informationssicherheit auf Auslandsreisen*, *CON.8 Software-Entwicklung* und *CON.10 Entwicklung von Webanwendungen*, adressieren spezifische Sicherheitsanforderungen in diesen Bereichen, während *CON.11.1 Geheimschutz* Vorgaben für den Umgang mit Verschlusssachen enthält.
+#+BEGIN_NOTES
+[[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=133][IT_Grundschutzkompendium S. 133 ff]]
+#+END_NOTES
+
+** CON.1 Kryptokonzept
+- *Relevanz*: Schutz vertraulicher Daten
+- *Anwendung*: Verschlüsselung sensibler Informationen
+- *Konkrete Maßnahmen*:
+  - Einsatz von Festplattenverschlüsselung
+  - Verschlüsselte E-Mail-Kommunikation
+
+** CON.2 Datenschutz
+- *Relevanz*: Einhaltung datenschutzrechtlicher Vorgaben
+- *Anwendung*: Schutz personenbezogener Daten
+- *Konkrete Maßnahmen*:
+  - Datenschutzkonforme Gestaltung des Arbeitsplatzes
+  - Regelmäßige Datenschutz-Folgenabschätzungen
+
+** CON.3 Datensicherungskonzept
+- *Relevanz*: Schutz vor Datenverlust
+- *Anwendung*: Regelmäßige Sicherung wichtiger Daten
+- *Konkrete Maßnahmen*:
+  - Automatisierte Backups auf externe Medien oder Cloud
+  - Regelmäßige Tests der Wiederherstellungsfähigkeit
+
+** 2.4 OPS - Betrieb
+
+** OPS.1.1.2 Ordnungsgemäße IT-Administration
+- *Relevanz*: Sicherer Betrieb der IT-Systeme
+- *Anwendung*: Standardisierte Administrationsprozesse
+- *Konkrete Maßnahmen*:
+  - Dokumentation aller administrativen Tätigkeiten
+  - Einsatz von Fernwartungstools mit starker Authentifizierung
+
+** OPS.1.2.4 Telearbeit
+- *Relevanz*: Besonders wichtig für HomeOffice
+- *Anwendung*: Sichere Gestaltung des Heimarbeitsplatzes
+- *Konkrete Maßnahmen*:
+  - Einrichtung eines separaten Arbeitsbereichs
+  - Verwendung dienstlicher Hardware wenn möglich
+
+** OPS.2.1 Outsourcing für Kunden
+- *Relevanz*: Bei Nutzung externer IT-Dienstleistungen
+- *Anwendung*: Sicherheitsanforderungen an Dienstleister
+- *Konkrete Maßnahmen*:
+  - Vertragliche Vereinbarungen zu Sicherheitsmaßnahmen
+  - Regelmäßige Überprüfung der Dienstleisterqualität
+
+** 2.5 APP - Anwendungen und Dienste
+
+** APP.1.1 Office-Produkte
+- *Relevanz*: Standard-Software am Arbeitsplatz
+- *Anwendung*: Sichere Konfiguration der Office-Programme
+- *Konkrete Maßnahmen*:
+  - Deaktivierung unsicherer Makro-Funktionen
+  - Regelmäßige Updates der Office-Programme
+
+** APP.1.2 Webbrowser
+- *Relevanz*: Hauptzugriffspunkt auf Internet-Ressourcen
+- *Anwendung*: Absicherung des Browsers
+- *Konkrete Maßnahmen*:
+  - Installation von Sicherheits-Erweiterungen
+  - Deaktivierung unsicherer Browser-Funktionen
+
+** APP.5.2 E-Mail/Groupware
+- *Relevanz*: Kommunikations- und Kollaborationsplattform
+- *Anwendung*: Schutz der E-Mail-Kommunikation
+- *Konkrete Maßnahmen*:
+  - Spam- und Malware-Filter
+  - Verschlüsselung vertraulicher E-Mails
+
+** 2.6 SYS - IT-Systeme
+
+** SYS.2.1 Allgemeiner Client
+- *Relevanz*: Grundlegender Baustein für Arbeitsplatzrechner
+- *Anwendung*: Absicherung des Clients
+- *Konkrete Maßnahmen*:
+  - Starke Benutzerauthentifizierung
+  - Restriktive Berechtigungsvergabe
+
+** SYS.3.1 Laptop
+- *Relevanz*: Mobiles Arbeiten im HomeOffice
+- *Anwendung*: Besondere Schutzmaßnahmen für mobile Geräte
+- *Konkrete Maßnahmen*:
+  - Festplattenverschlüsselung
+  - Diebstahlsicherung
+
+** SYS.3.2.1 Smartphone/Tablet
+- *Relevanz*: Mobile Kommunikation und Datenverarbeitung
+- *Anwendung*: Absicherung mobiler Endgeräte
+- *Konkrete Maßnahmen*:
+  - Mobile Device Management (MDM)
+  - Container-Lösungen zur Trennung von dienstlichen und privaten Daten
+
+** 2.7 NET - Netzwerke und Kommunikation
+
+** NET.2.2 WLAN-Nutzung
+- *Relevanz*: Drahtlose Vernetzung am Arbeitsplatz
+- *Anwendung*: Absicherung des WLAN-Zugangs
+- *Konkrete Maßnahmen*:
+  - Einsatz von WPA3-Verschlüsselung
+  - Separates Gäste-WLAN
+
+** NET.3.3 VPN
+- *Relevanz*: Sichere Verbindung zum Unternehmensnetzwerk
+- *Anwendung*: Verschlüsselte Kommunikation
+- *Konkrete Maßnahmen*:
+  - Nutzung eines sicheren VPN-Clients
+  - Starke Authentifizierung beim VPN-Zugang
+
+** 2.8 INF - Infrastruktur
+
+** INF.8 Häuslicher Arbeitsplatz
+- *Relevanz*: Gestaltung des HomeOffice
+- *Anwendung*: Physische Sicherheit im Heimumfeld
+- *Konkrete Maßnahmen*:
+  - Sicherer Aufbewahrungsort für sensible Unterlagen
+  - Bildschirmsperre bei Abwesenheit
+
+** INF.9 Mobiler Arbeitsplatz
+- *Relevanz*: Arbeit von unterwegs
+- *Anwendung*: Schutz mobiler Arbeitsmittel
+- *Konkrete Maßnahmen*:
+  - Sichtschutzfilter für Bildschirme
+  - Physischer Schutz der Geräte
+
+** 2.9 DER - Detektion und Reaktion
+
+** DER.1 Detektion von sicherheitsrelevanten Ereignissen
+- *Relevanz*: Erkennung von Sicherheitsvorfällen
+- *Anwendung*: Monitoring-Mechanismen
+- *Konkrete Maßnahmen*:
+  - Einsatz von Endpoint Detection and Response (EDR)
+  - Protokollierung sicherheitsrelevanter Ereignisse
+
+** DER.2.1 Behandlung von Sicherheitsvorfällen
+- *Relevanz*: Strukturierte Reaktion auf Vorfälle
+- *Anwendung*: Incident-Response-Prozesse
+- *Konkrete Maßnahmen*:
+  - Dokumentierte Vorgehensweise bei Vorfällen
+  - Klare Meldewege und Eskalationspfade
+
+* 3. Praktische Übung: Anwendung der IT-Grundschutzbausteine auf den eigenen Arbeitsplatz
+
+** Arbeitsauftrag:
+
+1. *Analyse des Ist-Zustands*:
+   - Erstellen Sie eine Inventarliste aller IT-Komponenten an Ihrem Arbeitsplatz (Hardware, Software, Netzwerkkomponenten)
+   - Dokumentieren Sie die aktuell implementierten Sicherheitsmaßnahmen
+
+2. *Identifikation relevanter Bausteine*:
+   - Identifizieren Sie auf Basis der Inventarliste die für Ihren Arbeitsplatz relevanten IT-Grundschutzbausteine
+   - Begründen Sie Ihre Auswahl für jeden ausgewählten Baustein
+
+3. *Gap-Analyse*:
+   - Vergleichen Sie die Anforderungen der identifizierten Bausteine mit den aktuell implementierten Maßnahmen
+   - Dokumentieren Sie Abweichungen und Lücken
+
+4. *Maßnahmenplan*:
+   - Entwickeln Sie einen priorisierten Maßnahmenplan zur Schließung der identifizierten Lücken
+   - Berücksichtigen Sie dabei praktische Einschränkungen (Budget, Machbarkeit, Aufwand)
+
+5. *Dokumentation und Präsentation*:
+   - Erstellen Sie eine strukturierte Dokumentation Ihrer Analyse und des Maßnahmenplans
+   - Bereiten Sie eine kurze Präsentation (5-10 Minuten) Ihrer Ergebnisse vor
+
+** Hinweise zur Bearbeitung:
+- Konzentrieren Sie sich auf die für Ihren Arbeitsplatz relevantesten Bausteine
+- Berücksichtigen Sie bei HomeOffice-Arbeitsplätzen besonders die Bausteine OPS.1.2.4 (Telearbeit) und INF.8 (Häuslicher Arbeitsplatz)
+- Nutzen Sie die BSI-Website (www.bsi.bund.de) für detaillierte Informationen zu den einzelnen Bausteinen
+- Die Übung kann sowohl individuell als auch in Kleingruppen bearbeitet werden
+
+** Abgabeformat:
+- Dokumentation als PDF (max. 10 Seiten)
+- Präsentationsfolien als PDF oder PowerPoint
+- Abgabefrist: 2 Wochen

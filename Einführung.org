@@ -130,7 +130,7 @@ Die IT-Komponenten wurden den Bausteinen des IT-Grundschutz-Kompendiums zugeordn
 #+ATTR_HTML: :width 60%
 #+ATTR_LATEX: :width .65\linewidth :placement [!htpb]
 #+ATTR_ORG: :width 700
-[[file:img/IT-Komponenen.png]]
+[[file:img/IT-Grundbausteine.png]]
 #+BEGIN_NOTES
   - *ISMS*: Sicherheitsmanagement
   - Prozessbausteine
