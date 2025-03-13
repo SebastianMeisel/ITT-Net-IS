@@ -12,7 +12,7 @@
 #+REVEAL_REVEAL_JS_VERSION: 4
 #+REVEAL_THEME: league
 #+REVEAL_EXTRA_CSS: ./mystyle.css
-#+REVEAL_HLEVEL: 2
+#+REVEAL_HLEVEL: 1
 #+OPTIONS: timestamp:nil toc:nil num:nil
 :END:
 
@@ -30,7 +30,7 @@ Die IT-Grundschutzbausteine des Bundesamts für Sicherheit in der Informationste
 [[file:img/IT-Grundbausteine.png]]
 
 
-** 2.1 ISMS - Sicherheitsmanagement
+* ISMS - Sicherheitsmanagement
 
 *Informationssicherheitsmanagement* (ISMS) umfasst *Planung*, *Lenkung* und *Kontrolle* eines Prozesses zur Herstellung von Informationssicherheit. Es muss in bestehende Managementstrukturen integriert werden und erfordert organisationsspezifische Anpassungen. Ziel ist ein funktionierendes ISMS, wofür der Baustein systematische Schritte und Anleitungen zur Konzepterstellung bietet.
 
@@ -39,101 +39,341 @@ Die IT-Grundschutzbausteine des Bundesamts für Sicherheit in der Informationste
 #+END_NOTES
 
 ** ISMS.1 Sicherheitsmanagement
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Fundamentale Basis für die Sicherheit am Arbeitsplatz
 - *Anwendung*: Definition von Sicherheitszielen und -strategien
-- *Konkrete Maßnahmen*: 
+- *Konkrete Maßnahmen*:
+   #+ATTR_REVEAL: :frag (appear)
   - Festlegung von Sicherheitsrichtlinien für den Arbeitsplatz
   - Regelmäßige Überprüfung der Sicherheitsmaßnahmen
   - Dokumentation von Sicherheitsvorfällen
 
-** 2.2 ORP - Organisatorische und personelle Maßnahmen
+* ORP - Organisatorische und personelle Maßnahmen
 
-Der *ORP-Baustein* legt organisatorische Maßnahmen zur Informationssicherheit fest. *ORP.1* regelt Strukturen und Prozesse, *ORP.2* den sicheren Umgang mit Informationen durch Personal. *ORP.3* fördert Sicherheitsbewusstsein durch Schulungen, *ORP.4* steuert Identitäts- und Berechtigungsmanagement. *ORP.5* sichert die Einhaltung gesetzlicher und vertraglicher Vorgaben. Zusammen bilden sie die Basis für ein strukturiertes Informationssicherheitsmanagement.
+Der *ORP-Baustein* legt organisatorische Maßnahmen zur Informationssicherheit fest.
 
 #+BEGIN_NOTES
 [[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=105][IT_Grundschutzkompendium S. 105 ff]]
 #+END_NOTES
 
 ** ORP.1 Organisation
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Strukturierung der Sicherheitsorganisation
 - *Anwendung*: Klare Zuständigkeiten und Verantwortlichkeiten
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Benennung eines Sicherheitsbeauftragten
   - Festlegung von Meldewegen bei Sicherheitsvorfällen
 
 ** ORP.2 Personal
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherheitsbewusstsein der Mitarbeiter
 - *Anwendung*: Schulung und Sensibilisierung
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Regelmäßige Sicherheitsschulungen
   - Unterweisung in sicheres Verhalten im HomeOffice
 
 ** ORP.3 Sensibilisierung und Schulung
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Kontinuierliche Weiterbildung
 - *Anwendung*: Aufbau von Sicherheitskompetenz
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - E-Learning-Module zu IT-Sicherheit
   - Regelmäßige Sicherheitstipps per E-Mail
 
 ** ORP.4 Identitäts- und Berechtigungsmanagement
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Zugriffsschutz für Informationen
 - *Anwendung*: Kontrolle der Zugriffsrechte
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Implementierung des Minimalprinzips
   - Regelmäßige Überprüfung der Zugriffsrechte
 
-** 2.3 CON - Konzepte und Vorgehensweisen
+* CON - Konzepte und Vorgehensweisen
 
-Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssicherheit in verschiedenen Bereichen. *CON.1 Kryptokonzept* beschreibt die Notwendigkeit eines umfassenden Kryptokonzepts zum Schutz von Vertraulichkeit, Integrität und Authentizität. *CON.2 Datenschutz* legt den Fokus auf den Schutz personenbezogener Daten gemäß DSGVO und nationalen Datenschutzgesetzen. *CON.3 Datensicherung* und *CON.6 Löschen und Vernichten* regeln den sicheren Umgang mit Daten – von der Sicherung bis zur endgültigen Löschung. Weitere Bausteine, wie *CON.7 Informationssicherheit auf Auslandsreisen*, *CON.8 Software-Entwicklung* und *CON.10 Entwicklung von Webanwendungen*, adressieren spezifische Sicherheitsanforderungen in diesen Bereichen, während *CON.11.1 Geheimschutz* Vorgaben für den Umgang mit Verschlusssachen enthält.
+Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssicherheit in verschiedenen Bereichen. 
 #+BEGIN_NOTES
 [[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=133][IT_Grundschutzkompendium S. 133 ff]]
 #+END_NOTES
 
 ** CON.1 Kryptokonzept
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Schutz vertraulicher Daten
 - *Anwendung*: Verschlüsselung sensibler Informationen
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Einsatz von Festplattenverschlüsselung
   - Verschlüsselte E-Mail-Kommunikation
+  - Sicheres Schlüsselmanagement
+  - Einsatz sicherer kryptografischer Algorithmen
+  - Regelmäßige Überprüfung der Kryptoverfahren
 
 ** CON.2 Datenschutz
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Einhaltung datenschutzrechtlicher Vorgaben
 - *Anwendung*: Schutz personenbezogener Daten
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Datenschutzkonforme Gestaltung des Arbeitsplatzes
   - Regelmäßige Datenschutz-Folgenabschätzungen
+  - Umsetzung des Standard-Datenschutzmodells (SDM)
+  - Dokumentation und Nachweise für Datenverarbeitungen
+
+#+BEGIN_NOTES
+- *Standard-Datenschutzmodell (SDM)*
+  Das *Standard-Datenschutzmodell (SDM)* ist eine Methodik der deutschen Datenschutzaufsichtsbehörden, um die Anforderungen der *DSGVO* in *technische und organisatorische Maßnahmen (TOMs)* zu überführen. Es dient zur systematischen Bewertung und Umsetzung des Datenschutzes in IT-Systemen.
+
+- *Grundprinzipien (Gewährleistungsziele):*
+  Das SDM übersetzt Datenschutzanforderungen in sieben Schutzziele:
+  1) Datenminimierung – Nur notwendige Daten speichern/verarbeiten.
+  2) Zweckbindung – Daten nur für festgelegte Zwecke nutzen.
+  3) Vertraulichkeit – Schutz vor unbefugtem Zugriff.
+  4) Integrität – Schutz vor Manipulation.
+  5) Verfügbarkeit – Datenzugriff sicherstellen.
+  6) Transparenz – Klare Information über Datenverarbeitung.
+  7) Intervenierbarkeit – Rechte der Betroffenen (z. B. Löschung, Widerspruch) ermöglichen.
+
+- *Nutzen des SDM:*
+  - Erleichtert die DSGVO-konforme Gestaltung von IT-Systemen.
+  - Bietet ein einheitliches Prüfschema für Behörden.
+  - Unterstützt Risikoanalysen und Datenschutz-Folgenabschätzungen (DSFA).
+#+END_NOTES
 
 ** CON.3 Datensicherungskonzept
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Schutz vor Datenverlust
 - *Anwendung*: Regelmäßige Sicherung wichtiger Daten
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Automatisierte Backups auf externe Medien oder Cloud
   - Regelmäßige Tests der Wiederherstellungsfähigkeit
+  - Sichere Aufbewahrung der Backup-Medien
+  - Verschlüsselung von Backups zum Schutz der Vertraulichkeit
 
-** 2.4 OPS - Betrieb
-
-** OPS.1.1.2 Ordnungsgemäße IT-Administration
-- *Relevanz*: Sicherer Betrieb der IT-Systeme
-- *Anwendung*: Standardisierte Administrationsprozesse
+** CON.6 Löschen und Vernichten
+#+ATTR_REVEAL: :frag (appear)
+- *Relevanz*: Sicherstellung der vollständigen und irreversiblen Datenlöschung
+- *Anwendung*: DSGVO-konforme Löschung von personenbezogenen Daten und anderen sensiblen Informationen
 - *Konkrete Maßnahmen*:
-  - Dokumentation aller administrativen Tätigkeiten
-  - Einsatz von Fernwartungstools mit starker Authentifizierung
+  #+ATTR_REVEAL: :frag (appear)
+  - Einsatz sicherer Löschverfahren (z. B. mehrfaches Überschreiben, physische Zerstörung)
+  - Sicheres Löschen vor der Weitergabe oder Entsorgung von IT-Geräten
+  - Dokumentation der Lösch- und Vernichtungsvorgänge
+  - Regelmäßige Kontrolle der Löschprozesse zur Vermeidung von Datenlecks
 
-** OPS.1.2.4 Telearbeit
-- *Relevanz*: Besonders wichtig für HomeOffice
-- *Anwendung*: Sichere Gestaltung des Heimarbeitsplatzes
+** CON.7 Informationssicherheit auf Auslandsreisen
+#+ATTR_REVEAL: :frag (appear)
+- *Relevanz*: Schutz von Unternehmens- und persönlichen Daten bei Reisen
+- *Anwendung*: Maßnahmen zur Minimierung von Sicherheitsrisiken außerhalb der sicheren IT-Umgebung
 - *Konkrete Maßnahmen*:
-  - Einrichtung eines separaten Arbeitsbereichs
-  - Verwendung dienstlicher Hardware wenn möglich
+  #+ATTR_REVEAL: :frag (appear)
+  - Nutzung von VPNs für sichere Verbindungen
+  - Verschlüsselung mobiler Datenträger
+  - Reduzierung mitgeführter sensibler Daten
+  - Sicherstellung von sicheren Kommunikationskanälen
 
-** OPS.2.1 Outsourcing für Kunden
-- *Relevanz*: Bei Nutzung externer IT-Dienstleistungen
-- *Anwendung*: Sicherheitsanforderungen an Dienstleister
+** CON.8 Software-Entwicklung
+#+ATTR_REVEAL: :frag (appear)
+- *Relevanz*: Gewährleistung von Sicherheit bereits in der Entwicklungsphase
+- *Anwendung*: Integration sicherer Programmierpraktiken
 - *Konkrete Maßnahmen*:
-  - Vertragliche Vereinbarungen zu Sicherheitsmaßnahmen
-  - Regelmäßige Überprüfung der Dienstleisterqualität
+  #+ATTR_REVEAL: :frag (appear)
+  - Einsatz sicherer Coding-Praktiken (z. B. OWASP Top 10 beachten)
+  - Durchführung regelmäßiger Sicherheitsreviews und Penetrationstests
+  - Nutzung von statischen und dynamischen Code-Analysen
+  - Sichere Speicherung und Verarbeitung von Benutzerdaten
 
-** 2.5 APP - Anwendungen und Dienste
+#+BEGIN_NOTES
+- *OWASP (Open Web Application Security Project)*
+
+OWASP ist eine gemeinnützige Organisation, die sich der Sicherheit von Webanwendungen widmet. Sie bietet freie, offene Ressourcen, Tools und Best Practices, um Entwickler, Sicherheitsexperten und Unternehmen dabei zu unterstützen, Sicherheitslücken in Anwendungen zu identifizieren und zu beheben.
+
+*OWASP Top 10*
+
+Die OWASP Top 10 ist eine regelmäßig aktualisierte Liste der kritischsten Sicherheitsrisiken für Webanwendungen. Diese Liste basiert auf einer umfassenden Analyse realer Sicherheitslücken, die in Webanwendungen weltweit gefunden wurden. Sie dient als grundlegender Leitfaden für Entwickler und Sicherheitsexperten, um Sicherheitsprobleme in ihren Anwendungen zu priorisieren und zu beheben.
+- *Die aktuelle OWASP Top 10 (Stand 2021 - Aktualisierung für 2025 geplant)*:
+  1) Broken Access Control – Unzureichende Zugriffskontrollen ermöglichen Angreifern unbefugten Zugriff auf Daten oder Funktionen.
+  2) Cryptographic Failures – Fehler in der Verschlüsselung oder unsichere Speicherung von Daten führen zu Datenschutzverletzungen.
+  3) Injection – Angriffe wie SQL-Injection oder Command-Injection, die durch unsichere Eingabeverarbeitung entstehen.
+  4) Insecure Design – Sicherheitsprobleme aufgrund schlechter Architektur und Design-Entscheidungen.
+  5) Security Misconfiguration – Unsichere Standardkonfigurationen oder falsch gesetzte Sicherheitsoptionen.
+  6) Vulnerable and Outdated Components – Verwendung veralteter oder unsicherer Softwarekomponenten (z. B. Libraries oder Frameworks).
+  7) Identification and Authentication Failures – Schwächen in der Authentifizierung, z. B. unsichere Passwörter oder Session-Handling-Probleme.
+  8) Software and Data Integrity Failures – Unsichere Software-Updates oder ungeschützte Datenintegrität, z. B. durch fehlende Signaturen.
+  9) Security Logging and Monitoring Failures – Unzureichende Protokollierung und Überwachung, die Angriffe schwer erkennbar machen.
+  10) Server-Side Request Forgery (SSRF) – Angriffe, bei denen ein Server dazu gebracht wird, ungewollte externe oder interne Anfragen zu senden.
+#+END_NOTES
+
+** CON.10 Entwicklung von Webanwendungen
+#+ATTR_REVEAL: :frag (appear)
+- *Relevanz*: Schutz vor Angriffen auf Webanwendungen
+- *Anwendung*: Entwicklung robuster Webanwendungen mit hohen Sicherheitsstandards
+- *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
+  - Schutz gegen Cross-Site-Scripting (XSS) und SQL-Injection
+  - Nutzung sicherer Authentifizierungsmechanismen
+  - Einsatz von Content Security Policies (CSP)
+  - Regelmäßige Updates und Patches für eingesetzte Frameworks
+
+#+BEGIN_NOTES
+- *XSS (Cross-Site Scripting)*
+  *Cross-Site Scripting (XSS)* ist eine *Sicherheitslücke* in Webanwendungen, bei der Angreifer schädlichen *JavaScript-Code* in Webseiten einschleusen. Dieser Code wird dann im Browser anderer Nutzer ausgeführt, um Daten zu stehlen, Sitzungen zu kapern oder Schadcode zu verbreiten.
+
+  - *Arten von XSS*
+    - *Stored XSS* – Schadcode wird dauerhaft in der Datenbank gespeichert und bei jedem Aufruf der Seite ausgeführt.
+    - *Reflected XSS* – Schadcode wird über eine manipulierte URL oder Formularfelder eingeschleust und sofort zurückgesendet.
+    - *DOM-based XSS* – Manipulation des DOMs durch unsichere JavaScript-Verarbeitung.
+
+  - *Schutzmaßnahmen gegen XSS*
+    - *Input-Validierung:* Eingaben filtern und bereinigen.
+    - *Output-Encoding:* HTML, JavaScript und URL-Inhalte korrekt maskieren.
+    - *Content Security Policy (CSP):* Skript-Ausführung einschränken.
+    - *Escape-Techniken:* Zeichen wie ~< > & " '~ maskieren.
+- *SQL-Injection (SQLi)*
+  SQL-Injection (SQLi) ist eine kritische Sicherheitslücke, bei der ein Angreifer schädliche SQL-Befehle in eine Datenbank-Abfrage einschleust. Dadurch kann er Daten lesen, manipulieren oder sogar löschen.
+  - *Arten von SQL-Injection*
+    - *Classic SQLi* – Direkte Manipulation von SQL-Abfragen über Eingabefelder.
+    - *Blind SQLi* – Angreifer erhält keine direkte Rückmeldung, kann aber durch Ja/Nein-Antworten Daten exfiltrieren.
+    - *Time-based SQLi* – Verzögerungen in der Antwortzeit zeigen an, ob eine Abfrage erfolgreich war.
+
+  - Beispiel für eine unsichere SQL-Abfrage
+#+BEGIN_SRC sql
+SELECT * FROM users WHERE username = '" + user_input + "' AND password = '" + pass_input + "'";
+#+END_SRC
+   Angriff: admin' -- könnte die Passwortprüfung umgehen.
+
+  - *Schutzmaßnahmen gegen SQL-Injection:*
+     - *Prepared Statements & Parameterized Queries* – Ersetzen Benutzereingaben durch sichere Platzhalter.
+     - *Eingabevalidierung* – Nur erwartete Werte zulassen.
+     - *Least Privilege Prinzip* – Datenbankbenutzer mit minimalen Rechten.
+     - *Web Application Firewall (WAF)* – Erkennung und Blockierung von SQLi-Versuchen.
+
+- *Content Security Policy (CSP)*
+  *Content Security Policy (CSP)* ist eine *Sicherheitsrichtlinie für Webanwendungen*, die den Ladevorgang und die Ausführung von Inhalten im Browser steuert. Sie schützt vor verschiedenen Angriffen, indem sie einschränkt, welche Ressourcen (z. B. Skripte, Styles, Frames) von einer Webseite geladen werden dürfen.
+  - *Schutz durch CSP*
+    - Verhindert Cross-Site Scripting (XSS) – Blockiert unerlaubte Skripte.
+    - Schützt vor Code-Injection – Begrenzung externer Skriptquellen.
+    - Reduziert das Risiko von Clickjacking – Kontrolle über eingebettete Inhalte.
+    - Erschwert Datendiebstahl durch unsichere Verbindungen – Erzwingt HTTPS.
+
+  - *Wichtige CSP-Regeln:*
+    - ~default-src 'self'~ – Erlaubt Inhalte nur von der eigenen Domain.
+    - ~script-src 'self' https://trusted.cdn.com~ – Kontrolle über erlaubte Skriptquellen.
+    - ~style-src 'self' 'unsafe-inline'~ – Einschränkung von CSS-Quellen.
+    - ~frame-ancestors 'none'~ – Schutz vor Clickjacking durch iFrames. 
+#+END_NOTES
+
+** CON.11.1 Geheimschutz
+#+ATTR_REVEAL: :frag (appear)
+- *Relevanz*: Schutz von Verschlusssachen und sensiblen Informationen
+- *Anwendung*: Einhaltung spezieller Geheimhaltungsanforderungen
+- *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
+  - Einsatz von Verschlusssachentresoren
+  - Regelmäßige Sicherheitsüberprüfungen des Personals
+  - Strenge Zugangskontrollen zu geheimhaltungsbedürftigen Informationen
+  - Einsatz von sicheren Kommunikationswegen für vertrauliche Daten
+
+* OPS - Betrieb und Organisation
+
+Die *OPS-Bausteine* definieren Anforderungen an einen sicheren IT-Betrieb und die organisatorischen Prozesse in Institutionen. Dabei werden drei Bereiche unterschieden:
+#+ATTR_REVEAL: :frag (appear)
+ - OPT 1 :: Eigener Betrieb
+ - OPT 2 :: Betrieb von Dritten (Outsourcing)
+ - OPS 3 :: Betrieb für Dritte
+#+BEGIN_NOTES
+[[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=200][IT_Grundschutzkompendium S. 200 ff]]
+#+END_NOTES
+** OPS 1 Eigener Betrieb
+
+Dieser Abschnitt behandelt die Identifikation potenzieller Gefährdungen sowie die erforderlichen Maßnahmen zur Absicherung des eigenen IT-Betriebs innerhalb des Unternehmens.
+
+*** OPS.1.1 Allgemeiner IT-Betrieb
+- *Relevanz*: Sicherstellung eines reibungslosen und sicheren IT-Betriebs
+- *Anwendung*: Standardisierte Prozesse für IT-Administration, Betrieb und Monitoring
+- *Konkrete Maßnahmen*:
+  - Dokumentation und Inventarisierung der IT-Ressourcen
+  - IT-Monitoring zur frühzeitigen Erkennung von Problemen
+  - Festlegung von Zuständigkeiten und Rollen
+  - Patch- und Änderungsmanagement zur Absicherung der IT-Infrastruktur
+  - Sicherstellung von Personalkapazitäten und Schulungen für Betriebspersonal
+
+#+BEGIN_NOTES
+- *Patch*
+  Ein *Patch* ist eine Aktualisierung oder Korrektur für eine Software, ein Betriebssystem oder eine Anwendung. Patches werden veröffentlicht, um:
+  - Sicherheitslücken zu schließen,
+  - Fehler (Bugs) zu beheben,
+  - die Leistung oder Kompatibilität zu verbessern,
+  - neue Funktionen hinzuzufügen.
+#+END_NOTES
+
+*** OPS 1.2 Weiterführende Aufgaben
+
+- *Relevanz*: Ergänzung des allgemeinen IT-Betriebs um spezifische organisatorische und technische Aufgaben zur Sicherstellung der IT-Sicherheit und Effizienz.
+- *Anwendung*: Festlegung und Umsetzung erweiterter Maßnahmen für Archivierung, Telearbeit, Fernwartung und Zeitsynchronisation.
+- *Konkrete Maßnahmen*:
+  - IT-Dokumentation: Systematische Erfassung und Pflege von IT-Dokumentationen
+  - Archivierung: Sichere und langfristige Speicherung elektronischer Dokumente
+  - IT-Notfallmanagement: Minimierung von Betriebsunterbrechungen und schnellen Wiederherstellung nach Ausfällen.
+  - Telearbeit: Gewährleistung des Schutzes sensibler Daten.
+  - Fernwartung: verschlüsselte Verbindungen und kontrollierte Authentifizierung
+  - NTP-Zeitsynchronisation: Präzise Zeitsteuerung innerhalb des Netzwerks
+
+** OPS 2 Betrieb von Dritten
+
+Hier geht es um die Sicherstellung und Überwachung von IT-Dienstleistungen, die von externen Dienstleistern erbracht werden (Outsourcing).
+
+*** OPS.2.2 Cloud-Nutzung
+- *Relevanz*: Sicherstellung der Informationssicherheit bei der Nutzung von Cloud-Diensten
+- *Anwendung*: Identifikation und Umsetzung von Sicherheitsmaßnahmen bei Cloud-Diensten
+- *Konkrete Maßnahmen*:
+  - Erstellung einer Cloud-Strategie mit Sicherheitsanforderungen
+  - Definition klarer Verantwortlichkeiten und Schnittstellen
+  - Einführung von Richtlinien zur sicheren Cloud-Nutzung
+  - Integration von Sicherheitsmaßnahmen in Cloud-Verträge
+  - Regelmäßige Überprüfung der Cloud-Sicherheitsmaßnahmen
+
+*** OPS.2.3 Nutzung von Outsourcing
+- *Relevanz*: Sicherstellung der Informationssicherheit bei der Auslagerung von IT-Prozessen
+- *Anwendung*: Identifikation und Umsetzung von Sicherheitsmaßnahmen im Outsourcing
+- *Konkrete Maßnahmen*:
+  - Erstellung einer Outsourcing-Strategie mit Sicherheitsanforderungen
+  - Vermeidung von Abhängigkeiten durch Multi-Sourcing-Ansätze
+  - Einführung von Sicherheitsrichtlinien für Outsourcing-Dienstleister
+  - Regelmäßige Überprüfung und Auditierung der Outsourcing-Partner
+  - Definition von Notfall- und Exit-Strategien für ausgelagerte IT-Dienste
+
+#+BEGIN_NOTES
+- *Was ist ein Audit / eine Auditierung*
+  Ein *Audit* oder eine *Auditierung* ist eine systematische Überprüfung und Bewertung von IT-Systemen, Prozessen oder Sicherheitsmaßnahmen. Ziel eines Audits ist es, die Einhaltung von Richtlinien, Standards oder gesetzlichen Vorgaben zu überprüfen.
+  Arten von Audits:
+  - *Interne Audits*: Durch das eigene Unternehmen zur Selbstkontrolle durchgeführt.
+  - *Externe Audits*: Von unabhängigen Prüfstellen oder Behörden durchgeführt.
+  - *Sicherheitsaudits*: Fokus auf IT-Sicherheit und Datenschutz.
+  - *Compliance-Audits*: Überprüfung der Einhaltung von Normen (z. B. ISO 27001, DSGVO).
+#+END_NOTES
+
+** OPS 3 Betrieb für Dritte
+
+Dieser Abschnitt beschreibt, welche Aspekte zu beachten sind, wenn das eigene Unternehmen IT-Dienstleistungen für externe Kunden erbringt.
+*** OPS.3.2 Anbieten von Outsourcing
+- *Relevanz*: Sicherstellung der Informationssicherheit durch Anbieter von Outsourcing-Dienstleistungen
+- *Anwendung*: Implementierung und Einhaltung von Sicherheitsmaßnahmen im Outsourcing-Prozess
+- *Konkrete Maßnahmen*:
+  - Implementierung eines Informationssicherheitsmanagements zur Einhaltung der Schutzziele
+  - Definition einheitlicher Vertragsanforderungen mit Sicherheitsklauseln
+  - Weitergabe vertraglicher Sicherheitsanforderungen an Sub-Dienstleister
+  - Umsetzung eines Mandantentrennungskonzepts zur Datensicherheit
+  - Erstellung eines Sicherheitskonzepts für jede Outsourcing-Dienstleistung
+  - Regelung zur Beendigung eines Outsourcing-Verhältnisses mit sicherer Datenrückgabe und -löschung
+  - Durchführung regelmäßiger Audits und Überprüfungen der Outsourcing-Partner
+  - Einführung einer Notfall- und Exit-Strategie für ausgelagerte IT-Dienste
+
+
+* APP - Anwendungen und Dienste
 
 ** APP.1.1 Office-Produkte
 - *Relevanz*: Standard-Software am Arbeitsplatz
@@ -156,7 +396,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
   - Spam- und Malware-Filter
   - Verschlüsselung vertraulicher E-Mails
 
-** 2.6 SYS - IT-Systeme
+* SYS - IT-Systeme
 
 ** SYS.2.1 Allgemeiner Client
 - *Relevanz*: Grundlegender Baustein für Arbeitsplatzrechner
@@ -179,7 +419,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
   - Mobile Device Management (MDM)
   - Container-Lösungen zur Trennung von dienstlichen und privaten Daten
 
-** 2.7 NET - Netzwerke und Kommunikation
+* NET - Netzwerke und Kommunikation
 
 ** NET.2.2 WLAN-Nutzung
 - *Relevanz*: Drahtlose Vernetzung am Arbeitsplatz
@@ -195,7 +435,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
   - Nutzung eines sicheren VPN-Clients
   - Starke Authentifizierung beim VPN-Zugang
 
-** 2.8 INF - Infrastruktur
+* INF - Infrastruktur
 
 ** INF.8 Häuslicher Arbeitsplatz
 - *Relevanz*: Gestaltung des HomeOffice
@@ -211,7 +451,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
   - Sichtschutzfilter für Bildschirme
   - Physischer Schutz der Geräte
 
-** 2.9 DER - Detektion und Reaktion
+* DER - Detektion und Reaktion
 
 ** DER.1 Detektion von sicherheitsrelevanten Ereignissen
 - *Relevanz*: Erkennung von Sicherheitsvorfällen
@@ -227,7 +467,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
   - Dokumentierte Vorgehensweise bei Vorfällen
   - Klare Meldewege und Eskalationspfade
 
-* 3. Praktische Übung: Anwendung der IT-Grundschutzbausteine auf den eigenen Arbeitsplatz
+* Praktische Übung: Anwendung der IT-Grundschutzbausteine auf den eigenen Arbeitsplatz
 
 ** Arbeitsauftrag:
 
