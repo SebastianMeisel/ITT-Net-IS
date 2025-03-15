@@ -29,6 +29,24 @@ Die IT-Grundschutzbausteine des Bundesamts für Sicherheit in der Informationste
 #+ATTR_ORG: :width 700
 [[file:img/IT-Grundbausteine.png]]
 
+#+REVEAL: split
+#+BEGIN_tolearn
+#+ATTR_REVEAL: :frag (appear)
+- *ITSMS:* Sicherheitsmanagementsystem
+- Prozessbausteine
+  #+ATTR_REVEAL: :frag (appear)
+  - *ORP:* Organisatorische und Personal
+  - *CON:* Konzepte und Vorgehensweisen
+  - *OPS:* Betrieb
+- Systembausteine
+  #+ATTR_REVEAL: :frag (appear)
+  - *APP:* Anwendungen und Dienste
+  - *SYS:* IT-Systeme
+  - *IND:*  Industrielle IT
+  - *NET:* Netzwerke und Kommunikation
+  - *INF:* Infrastruktur
+- *DER:* Detektion und Reaktion
+#+END_tolearn
 
 * ISMS - Sicherheitsmanagement
 
@@ -385,7 +403,6 @@ Dieser Abschnitt beschreibt, welche Aspekte zu beachten sind, wenn das eigene Un
   - Einführung einer Notfall- und Exit-Strategie für ausgelagerte IT-Dienste
 
 * APP - Anwendungen und Dienste
-** Einleitung
    IT-Anwendungen sind ein zentraler Bestandteil moderner IT-Infrastrukturen. Sie umfassen Office-Produkte, Webbrowser, mobile Anwendungen und viele weitere Softwarelösungen, die zur Verarbeitung und Verwaltung von Informationen verwendet werden. Aufgrund ihrer Verbreitung und Funktionalität stellen sie ein potenzielles Sicherheitsrisiko dar. Der IT-Grundschutz stellt Anforderungen an die sichere Nutzung und Konfiguration dieser Anwendungen, um Bedrohungen zu minimieren und Datenschutz sowie Informationssicherheit zu gewährleisten.
 ** APP 1 Anwendungen
 *** APP.1.1 Office-Produkte
@@ -479,6 +496,14 @@ Erklärungen unklarer Begriffe:
   - Sichere Konfiguration und Betrieb des Verzeichnisdienstes
   - Einschränkung und Kontrolle der Zugriffsrechte
 
+#+BEGIN_NOTES
+- *Verzeichnisdienst*: Eine zentrale Datenbank oder Infrastruktur, die Benutzer, Gruppen, Computer, Geräte und andere Ressourcen verwaltet. Sie ermöglicht eine einheitliche Authentifizierung und Autorisierung innerhalb eines Netzwerks.
+
+- *Sicherheitsrichtlinie*: Dokumentierte Vorgaben und Regeln zur sicheren Nutzung und Verwaltung des Verzeichnisdienstes. Dazu gehören Zugriffskontrollen, Passwortanforderungen und Sicherheitsmaßnahmen zur Verhinderung unbefugter Zugriffe.
+
+- *Einschränkung und Kontrolle der Zugriffsrechte*: Umsetzung des Prinzips der geringsten Berechtigungen (Least Privilege), sodass Benutzer:innen nur die für ihre Aufgaben notwendigen Rechte erhalten. Dies verhindert unautorisierte Zugriffe und reduziert potenzielle Sicherheitslücken.
+#+END_NOTES
+
 *** APP.2.2 Active Directory Domain Services (AD DS)
 - *Relevanz*: Verwaltung von Windows-basierten IT-Infrastrukturen
 - *Anwendung*: Absicherung der Authentifizierungs- und Berechtigungsverwaltung
@@ -488,6 +513,14 @@ Erklärungen unklarer Begriffe:
   - Begrenzung der Berechtigungen und Anmeldeprivilegien
   - Nutzung sicherer Authentisierungsmechanismen (Kerberos)
 
+#+BEGIN_NOTES
+- *Active Directory Domain Services (AD DS)*: Ein Verzeichnisdienst von Microsoft zur Verwaltung von Benutzern, Computern und Ressourcen in einem Windows-Netzwerk. AD DS ermöglicht zentrale Authentifizierung, Autorisierung und Verwaltung von Sicherheitsrichtlinien.
+
+- *Domänencontroller (DC)*: Server, die AD DS bereitstellen und alle Authentifizierungsanfragen im Netzwerk verwalten. Eine Härtung der Domänencontroller beinhaltet Maßnahmen wie das Deaktivieren unnötiger Dienste, die Einschränkung administrativer Zugriffe und regelmäßige Sicherheitsupdates.
+
+- *Kerberos*: Ein sicheres Authentifizierungsprotokoll, das verschlüsselte Tickets verwendet, um Benutzer:innen innerhalb eines Netzwerks zu identifizieren. Die Nutzung von Kerberos erhöht die Sicherheit, da Passwörter nicht im Klartext übertragen werden.
+#+END_NOTES
+
 *** APP.2.3 OpenLDAP
 - *Relevanz*: Open-Source-Alternative für Verzeichnisdienste
 - *Anwendung*: Sicherer Betrieb und Nutzung von OpenLDAP
@@ -496,6 +529,14 @@ Erklärungen unklarer Begriffe:
   - Sichere Konfiguration von OpenLDAP und seiner Laufzeitumgebung
   - Kontrolle der Zugriffsrechte und sichere Authentisierung
   - Einschränkung von Attributen und Partitionierung des Verzeichnisses
+
+#+BEGIN_NOTES
+- *OpenLDAP*: Eine Open-Source-Implementierung des Lightweight Directory Access Protocol (LDAP), die für die zentrale Verwaltung von Benutzern, Gruppen und Ressourcen in einem Netzwerk verwendet wird. OpenLDAP ermöglicht eine flexible Authentifizierung und Autorisierung von Nutzern.
+- *Backends* sind die Speichermodule in OpenLDAP, die definieren, wie und wo Daten gespeichert werden (z. B. `mdb`, `hdb`).  
+- *Overlays* sind Erweiterungen, die zusätzliche Funktionen für LDAP-Datenbanken bieten, wie Passwort-Richtlinien, Replikation oder Zugriffskontrolle.
+
+- *Partitionierung des Verzeichnisses* ermöglicht eine Aufteilung der LDAP-Datenbank in mehrere logische Einheiten, um Lastverteilung und Sicherheit zu verbessern.
+#+END_NOTES
 
 ** APP.3 Netzbasierte Dienste
 *** APP.3.1 Webanwendungen und Webservices
@@ -516,6 +557,10 @@ Erklärungen unklarer Begriffe:
   - Verschlüsselung über TLS und sichere Authentisierung
   - Schutz vor Denial-of-Service-Angriffen
   - Regelmäßige Integritätsprüfungen und Penetrationstests
+
+#+BEGIN_NOTES
+- *Denial-of-Service-Angriffe*: versuchen, Webserver durch übermäßige Anfragen lahmzulegen.
+#+END_NOTES
 
 *** APP.3.3 Fileserver
 - *Relevanz*: Zentrale Bereitstellung von Dateien im Netzwerk
@@ -544,6 +589,23 @@ Erklärungen unklarer Begriffe:
   - Sichere Konfiguration von Zonentransfers und Anfragen
   - Regelmäßige Überprüfung der DNS-Server-Protokolle auf Anomalien
 
+
+#+BEGIN_NOTES
+- *Redundanter DNS-Server*:  
+  - Redundante DNS-Server sorgen für Ausfallsicherheit und Lastverteilung.  
+  - Primäre und sekundäre DNS-Server sollten geografisch verteilt sein, um gegen Netzwerkausfälle resilient zu sein.
+
+- *DNS-Cache-Poisoning und Manipulationsschutz*:  
+  - Beim *DNS-Cache-Poisoning* wird ein DNS-Cache durch gefälschte Einträge manipuliert, sodass Benutzer:innen auf betrügerische Seiten umgeleitet werden.  
+  - Schutzmaßnahmen beinhalten den Einsatz von DNSSEC (Domain Name System Security Extensions), Query Name Minimization und regelmäßige Cache-Invalidierung.
+
+- *Zonentransfers*:  
+  - Zonentransfers (AXFR/IXFR) erlauben die Replikation von DNS-Daten zwischen Servern. Unautorisierte Transfers können sensible DNS-Daten preisgeben.  
+  - Zonentransfers sollten nur zwischen autorisierten Servern über verschlüsselte Verbindungen (z. B. TSIG) erlaubt sein.
+
+- *Verschlüsselung:*
+  - DNS-Anfragen sollten über DNS-over-TLS (DoT) oder DNS-over-HTTPS (DoH) verschlüsselt werden, um Abhörversuche zu verhindern.
+#+END_NOTES
 ** APP.4 Business-Anwendungen
 *** APP.4.2 SAP-ERP-System
 - *Relevanz*: Automatisierung und Unterstützung interner sowie externer Geschäftsprozesse
@@ -554,6 +616,13 @@ Erklärungen unklarer Begriffe:
   - Planung und Umsetzung eines SAP-Berechtigungskonzeptes
   - Dokumentation und Notfallkonzepte für SAP-Systeme
 
+#+BEGIN_NOTES
+- *SAP-ERP-System (Enterprise Resource Planning)*:  
+  - Eine integrierte Unternehmenssoftware von SAP, die Geschäftsprozesse wie Finanzen, Logistik, Personalwesen und Produktion verwaltet.  
+  - ERP-Systeme ermöglichen eine zentrale und effiziente Steuerung von Unternehmensressourcen.
+#+END_NOTES
+
+
 *** APP.4.3 Relationale Datenbanken
 - *Relevanz*: Verwaltung großer Datensammlungen mit hohen Sicherheitsanforderungen
 - *Anwendung*: Schutz der Datenbanken vor Manipulation und unbefugtem Zugriff
@@ -563,6 +632,15 @@ Erklärungen unklarer Begriffe:
   - Verschlüsselung der Datenbankanbindung
   - Schutz vor SQL-Injection und unsicheren Datenbank-Skripten
 
+#+BEGIN_NOTES
+  - *SQL-Injection* ist eine Angriffsart, bei der manipulierte SQL-Befehle über Eingabefelder eingeschleust werden, um unautorisierten Zugriff auf Daten zu erhalten.  
+    - Schutzmaßnahmen umfassen:  
+      - Nutzung von vorbereiteten Anweisungen (*Prepared Statements*)  
+      - Validierung und Bereinigung von Benutzereingaben  
+      - Einschränkung der Datenbankrechte für Web-Anwendungen  
+  - Unsichere Skripte, die SQL-Abfragen dynamisch generieren, sollten vermieden oder stark abgesichert werden.
+#+END_NOTES
+
 *** APP.4.4 Kubernetes
 - *Relevanz*: Orchestrierung von Containern in modernen IT-Infrastrukturen
 - *Anwendung*: Schutz und Absicherung von Kubernetes-Clustern
@@ -571,6 +649,25 @@ Erklärungen unklarer Begriffe:
   - Planung der Separierung von Anwendungen in Kubernetes-Namespaces
   - Umsetzung von Netzwerk-Segmentierung für Kubernetes-Pods
   - Nutzung sicherer Service-Accounts und Automatisierungsprozesse
+#+BEGIN_NOTES
+- *Kubernetes*:  
+  - Ein Open-Source-System zur Automatisierung der Bereitstellung, Skalierung und Verwaltung von containerisierten Anwendungen.  
+  - Ermöglicht effiziente Ressourcenverwaltung und hohe Verfügbarkeit von Anwendungen.
+
+- *Control Plane*:  
+  - Die zentrale Steuerungsebene von Kubernetes, die für die Verwaltung des gesamten Clusters zuständig ist.  
+  - Besteht aus Komponenten wie API-Server, Scheduler und Controller-Manager.  
+  - Eine fehlerhafte oder ungesicherte Control Plane kann Angreifern ermöglichen, den Cluster zu kompromittieren.
+
+- *Kubernetes-Namespaces*:  
+  - Kubernetes-Namespaces ermöglichen eine logische Trennung innerhalb eines Clusters.  
+  - Anwendungen oder Teams können in getrennten Namespaces arbeiten, um Zugriffsrechte zu isolieren und Sicherheitsrisiken zu minimieren.
+
+- *Netzwerk-Segmentierung für Kubernetes-Pods*:  
+  - Kubernetes-Pods (die kleinste ausführbare Einheit in Kubernetes) sollten durch Netzwerk-Richtlinien voneinander isoliert werden.  
+  - Dies verhindert, dass kompromittierte Pods unkontrolliert auf andere Dienste zugreifen können.  
+  - Tools wie *Calico* oder *Cilium* helfen, granulare Netzwerkregeln umzusetzen.
+#+END_NOTES
 
 *** APP.4.6 SAP ABAP-Programmierung
 - *Relevanz*: Eigenentwicklungen in SAP-Systemen erfordern besondere Sicherheitsmaßnahmen
@@ -666,32 +763,262 @@ Erklärungen unklarer Begriffe:
   - Durchsetzung strengerer Sicherheitskontrollen für Zugriffsrechte und Berechtigungen
   - Sicherstellung einer kontinuierlichen Sicherheitsüberwachung der Individualsoftware
 
-
 * SYS - IT-Systeme
-
-** SYS.2.1 Allgemeiner Client
-- *Relevanz*: Grundlegender Baustein für Arbeitsplatzrechner
-- *Anwendung*: Absicherung des Clients
+** SYS.1 Server
+*** SYS.1.1 Allgemeiner Server
+- *Relevanz*: Zentrale IT-Komponente zur Bereitstellung von Diensten
+- *Anwendung*: Schutz der auf Servern verarbeiteten Informationen und Dienste
 - *Konkrete Maßnahmen*:
-  - Starke Benutzerauthentifizierung
-  - Restriktive Berechtigungsvergabe
+  - Physische Zugriffsbeschränkung auf Serverräume
+  - Strikte Rollen- und Rechtevergabe (Least Privilege-Prinzip)
+  - Regelmäßige Sicherheitsupdates und Patch-Management
+  - Einsatz von Virenschutz-Programmen und Intrusion Detection Systemen
+  - Protokollierung und Überwachung sicherheitsrelevanter Ereignisse
+  - Deaktivierung nicht benötigter Dienste und Schnittstellen
+  - Einbindung in Notfallmanagement und Sicherheitsrichtlinien
 
-** SYS.3.1 Laptop
-- *Relevanz*: Mobiles Arbeiten im HomeOffice
-- *Anwendung*: Besondere Schutzmaßnahmen für mobile Geräte
+*** SYS.1.2 Windows Server
+- *Relevanz*: Häufig genutztes Betriebssystem für Serverumgebungen
+- *Anwendung*: Sicherstellung einer robusten Konfiguration und Administration von Windows-Servern
 - *Konkrete Maßnahmen*:
-  - Festplattenverschlüsselung
-  - Diebstahlsicherung
+  - Nutzung von Active Directory für zentrale Authentifizierung
+  - Härtung des Betriebssystems durch Gruppenrichtlinien (GPOs)
+  - Schutz vor Schadsoftware durch signierte Software und AppLocker
+  - Einschränkung von Fernzugriffen (z. B. RDP-Gateway)
+  - Minimierung von Telemetrie- und Diagnosedatenübertragungen
+  - Regelmäßige Sicherheitsprüfungen und forensische Analysen
 
-** SYS.3.2.1 Smartphone/Tablet
-- *Relevanz*: Mobile Kommunikation und Datenverarbeitung
-- *Anwendung*: Absicherung mobiler Endgeräte
+*** SYS.1.3 Linux- und Unix-Server
+- *Relevanz*: Weit verbreitete Serverplattform für kritische IT-Dienste
+- *Anwendung*: Absicherung und Härtung von Unix- und Linux-Servern
 - *Konkrete Maßnahmen*:
-  - Mobile Device Management (MDM)
-  - Container-Lösungen zur Trennung von dienstlichen und privaten Daten
+  - Einsatz sicherer SSH-Konfigurationen und Schlüsselmanagement
+  - Keine unnötigen Root-Rechte für Anwendungen (Least Privilege)
+  - Nutzung von Mandatory Access Control (z. B. SELinux, AppArmor)
+  - Härtung des Kernels durch ASLR, DEP/NX und Stackschutz
+  - Deaktivierung unnötiger Dienste und Ports
+  - Einsatz von Paketmanagement aus vertrauenswürdigen Quellen
+  - Regelmäßige Überprüfung der Systemintegrität (z. B. AIDE, Tripwire)
 
+*** SYS.1.4 Hochverfügbarkeitslösungen
+- *Relevanz*: Sicherstellung der kontinuierlichen Verfügbarkeit kritischer IT-Dienste
+- *Anwendung*: Absicherung und Redundanzkonzepte für hochverfügbare Systeme
+- *Konkrete Maßnahmen*:
+  - Einsatz von Cluster-Technologien und Failover-Mechanismen
+  - Nutzung redundanter Netzwerkanbindungen und Stromversorgungen
+  - Regelmäßige Tests von Ausfallszenarien und Notfallwiederherstellung
+  - Implementierung von Datenreplikationstechniken für Konsistenz und Verfügbarkeit
+
+*** SYS.1.5 Virtualisierung
+- *Relevanz*: Effiziente Ressourcennutzung und flexible Bereitstellung von IT-Diensten
+- *Anwendung*: Sicherstellung der Isolation und Sicherheit virtueller Umgebungen
+- *Konkrete Maßnahmen*:
+  - Einschränkung von Administratorrechten in Virtualisierungsumgebungen
+  - Strikte Trennung von Netzwerken für Management- und Betriebsfunktionen
+  - Nutzung von sicheren Images aus vertrauenswürdigen Quellen
+  - Verschlüsselung und sichere Speicherung von Zugangsdaten für virtuelle Maschinen
+  - Einführung von Monitoring- und Audit-Mechanismen für Virtualisierungsplattformen
+
+*** SYS.1.6 Containerisierung
+- *Relevanz*: Standardisierte Bereitstellung und Portabilität von Anwendungen
+- *Anwendung*: Absicherung und Härtung von Container-Umgebungen
+- *Konkrete Maßnahmen*:
+  - Nutzung minimaler, gehärteter Basis-Images
+  - Einschränkung von Root-Rechten innerhalb von Containern
+  - Überwachung von Container-Logs und Speicherung außerhalb des Containers
+  - Trennung von Container-Netzwerken zur Minimierung von Angriffsflächen
+  - Implementierung von Signaturen und Verifikationen für Container-Images
+
+*** SYS.1.7 IBM Z (z/OS)
+- *Relevanz*: Hochskalierbare Unternehmens-IT-Infrastruktur mit speziellen Sicherheitsanforderungen
+- *Anwendung*: Schutz und Härtung von z/OS-Systemen
+- *Konkrete Maßnahmen*:
+  - Restriktive Vergabe von Hochprivilegierten Benutzerrechten (RACF)
+  - Trennung von Test- und Produktionsumgebungen zur Vermeidung von Sicherheitsrisiken
+  - Implementierung von Workload-Management und Batch-Job-Scheduling
+  - Nutzung interner Kanäle für Betriebssystemkommunikation (HiperSockets)
+  - Sicherstellung der Systemintegrität durch regelmäßige Audits und Notfallvorsorge
+
+*** SYS.1.8 Speicherlösungen
+- *Relevanz*: Sichere und effiziente Verwaltung von Unternehmensdaten
+- *Anwendung*: Schutz sensibler Daten in Speicherumgebungen
+- *Konkrete Maßnahmen*:
+  - Verwendung von Verschlüsselung für gespeicherte Daten und Übertragungen
+  - Regelmäßige Überprüfung und Aktualisierung der Speicherinfrastruktur
+  - Umsetzung eines Sicherheitsrichtlinienkonzepts für Speicherlösungen
+  - Implementierung von Zugriffskontrollen und Mandantentrennung (LUN Masking, VSANs)
+  - Zentrale Überwachung und Verwaltung von Speicherlösungen zur Erkennung von Anomalien
+
+*** SYS.1.9 Backup und Wiederherstellung
+- *Relevanz*: Gewährleistung der Datenverfügbarkeit bei Systemausfällen
+- *Anwendung*: Entwicklung von Backup-Strategien und Notfallwiederherstellungsplänen
+- *Konkrete Maßnahmen*:
+  - Nutzung redundanter Speichermedien zur Absicherung kritischer Daten
+  - Implementierung von Offsite- und Air-Gapped-Backups zum Schutz vor Ransomware
+  - Regelmäßige Überprüfung der Backup-Integrität und Testen der Wiederherstel
+
+** SYS.2 Desktop-Systeme
+*** SYS.2.1 Allgemeiner Client
+- *Relevanz*: Grundlegendes IT-System für den Endnutzer
+- *Anwendung*: Absicherung von Arbeitsplatzrechnern unabhängig vom Betriebssystem
+- *Konkrete Maßnahmen*:
+  - Trennung von Administrations- und Benutzerumgebungen
+  - Starke Benutzerauthentifizierung und Nutzung von Bildschirmsperren
+  - Aktivierung von Autoupdate-Mechanismen für Sicherheitsaktualisierungen
+  - Verwendung von Schutzprogrammen gegen Schadsoftware
+  - Absicherung des Bootvorgangs gegen Manipulation
+  - Minimierung von Cloud- und Online-Funktionen
+
+*** SYS.2.2 Windows-Clients
+- *Relevanz*: Weit verbreitetes Client-Betriebssystem in Unternehmen
+- *Anwendung*: Schutzmaßnahmen für Windows-Systeme, insbesondere Windows 10 und 11
+- *Konkrete Maßnahmen*:
+  - Planung der Nutzung von Cloud-Diensten unter Windows
+  - Auswahl geeigneter Windows-Versionen mit langfristigem Support
+  - Einschränkung von Telemetrie- und Datenschutzeinstellungen
+  - Nutzung sicherer Authentifizierungsmethoden (z. B. Kerberos, NTLMv2)
+  - Absicherung von Datei- und Freigabeberechtigungen
+  - Einschränkung von Microsoft-Store- und Online-Konto-Funktionen
+  - Sichere Konfiguration von Remote-Zugriffen (z. B. RDP, Remote-Unterstützung)
+
+*** SYS.2.3 Linux- und Unix-Clients
+- *Relevanz*: Alternative zu Windows mit hoher Sicherheit und Anpassbarkeit
+- *Anwendung*: Härtung von Linux- und Unix-Clients
+- *Konkrete Maßnahmen*:
+  - Auswahl geeigneter Distributionen mit langfristigem Support
+  - Regelmäßige Kernel-Aktualisierungen und Live-Patching
+  - Strikte Rechtevergabe und Nutzung von SELinux oder AppArmor
+  - Einschränkung der automatischen Einbindung von Wechseldatenträgern
+  - Schutz von Systemdateien durch restriktive Mount-Optionen
+  - Sicherer Umgang mit Skriptsprachen und gemeinsam genutzten Bibliotheken
+
+*** SYS.2.4 macOS-Clients
+- *Relevanz*: Betriebssystem für Apple-Geräte mit speziellen Sicherheitsanforderungen
+- *Anwendung*: Absicherung von macOS-Systemen in Unternehmen
+- *Konkrete Maßnahmen*:
+  - Nutzung von FileVault für die Verschlüsselung von Festplatten
+  - Absicherung der Systemintegrität mit Gatekeeper und SIP (System Integrity Protection)
+  - Einschränkung von Apple-ID-gebundenen Funktionen
+  - Verwaltung und Härtung von macOS-Geräten durch MDM-Lösungen
+  - Deaktivierung unnötiger Cloud- und Synchronisationsdienste
+  - Strenge Kontrolle von Drittanbieter-Anwendungen und Berechtigungen
+*** SYS.2.5 Client-Virtualisierung
+- *Relevanz*: Effiziente Nutzung von Hardware-Ressourcen durch zentrale Verwaltung virtueller Clients
+- *Anwendung*: Absicherung und Performance-Optimierung virtualisierter Clients
+- *Konkrete Maßnahmen*:
+  - Planung des Einsatzes virtueller Clients, basierend auf Leistungs- und Sicherheitsanforderungen
+  - Nutzung von sicheren Templates zur Provisionierung neuer virtueller Clients
+  - Absicherung der Kommunikation zwischen Virtualisierungsserver und Client
+  - Minimierung von lokalen Datenablagen, um Datenverlust zu verhindern
+  - Automatische Sperrung von Sitzungen und Härtung der Clients gegen unautorisierte Änderungen
+  - Einbindung in zentrale Patch- und Änderungsmanagement-Systeme
+  - Erweiterte Protokollierung und Monitoring virtueller Clients zur Bedrohungserkennung
+  - Hochverfügbare Bereitstellung und Redundanzstrategien für Virtualisierungsinfrastrukturen
+
+*** SYS.2.6 Virtual Desktop Infrastructure (VDI)
+- *Relevanz*: Zentralisierte Bereitstellung und Verwaltung standardisierter virtueller Desktops
+- *Anwendung*: Sichere und leistungsfähige Implementierung einer VDI-Lösung
+- *Konkrete Maßnahmen*:
+  - Planung der benötigten VDI-Kapazitäten anhand der Nutzeranforderungen
+  - Sichere Installation und Konfiguration der VDI-Komponenten gemäß Herstellerempfehlungen
+  - Regelmäßige Aktualisierung der VDI-Templates, um Software-Schwachstellen zu vermeiden
+  - Netzsegmentierung der VDI-Komponenten zur Isolation sicherheitskritischer Systeme
+  - Redundanzkonzepte und Hochverfügbarkeit für kritische VDI-Dienste
+  - Integration der VDI in ein Security Information and Event Management (SIEM)
+  - Nutzung nicht-persistenter Clients zur Reduzierung von Sicherheitsrisiken
+  - Strikte Zugriffskontrollen und Absicherung der VDI-Managementsysteme gegen Missbrauch
+** SYS.3 Mobile Devices
+*** SYS.3.1 Laptops
+- *Relevanz*: Weit verbreitete mobile Arbeitsgeräte mit erhöhtem Schutzbedarf
+- *Anwendung*: Schutzmaßnahmen für die Nutzung von Laptops in Institutionen
+- *Konkrete Maßnahmen*:
+  - Absicherung des Bootvorgangs und der Firmware (Secure Boot, BIOS/UEFI-Passwort)
+  - Einsatz von Festplattenverschlüsselung (z. B. BitLocker, LUKS)
+  - Regelmäßige Aktualisierung des Betriebssystems und der installierten Software
+  - Schutz vor physischem Zugriff (Kensington-Schlösser, sichere Aufbewahrung)
+  - Nutzung von VPN für sichere Verbindungen zu Unternehmensnetzen
+  - Deaktivierung nicht benötigter Schnittstellen (USB, Bluetooth, WLAN)
+  - Integration in zentrale IT-Sicherheitsrichtlinien und Verwaltungssysteme
+  - Regelmäßige Sicherung der gespeicherten Daten
+
+*** SYS.3.2 Tablets und Smartphones
+- *Relevanz*: Zunehmend genutzte Alternative zu Laptops für mobile Arbeitsumgebungen
+- *Anwendung*: Sicherstellung eines sicheren Einsatzes von Tablets im Unternehmenskontext
+- *Konkrete Maßnahmen*:
+  - Nutzung von Geräteverschlüsselung zum Schutz sensibler Daten
+  - Einschränkung von App-Installationen auf vertrauenswürdige Quellen
+  - Einsatz von Mobile Device Management (MDM) zur zentralen Verwaltung
+  - Kontrolle der Cloud-Synchronisation und Datenfreigaben
+  - Deaktivierung von nicht benötigten drahtlosen Schnittstellen (Bluetooth, NFC)
+  - Verwendung von Multi-Faktor-Authentifizierung für kritische Anwendungen
+  - Regelmäßige Sicherheitsupdates und Überprüfung auf Schwachstellen
+    
+*** SYS.3.3 Mobiltelefone
+- *Relevanz*: Weit verbreitete mobile Kommunikationsgeräte mit sicherheitskritischen Aspekten
+- *Anwendung*: Absicherung von dienstlich genutzten Mobiltelefonen
+- *Konkrete Maßnahmen*:
+  - Definition und Durchsetzung einer Sicherheitsrichtlinie für Mobiltelefone
+  - Aktivierung und Nutzung verfügbarer Sicherheitsmechanismen (z. B. PIN-Schutz, SIM-Lock)
+  - Regelmäßige Sicherheitsupdates und Firmware-Aktualisierungen
+  - Sensibilisierung der Benutzer für sicheres Telefonieverhalten und Phishing-Angriffe
+  - Nutzung von Mechanismen zur Fernlöschung und Sperrung bei Verlust oder Diebstahl
+  - Kontrolle und Einschränkung von installierbaren Apps auf dienstlichen Geräten
+  - Begrenzung der Nutzung drahtloser Schnittstellen (Bluetooth, NFC, WLAN) auf das Notwendige
+  - Absicherung der Datenübertragung durch VPN und verschlüsselte Kommunikation
+  - Einrichtung eines Mobiltelefon-Pools für häufig wechselnde Benutzer
+  - Maßnahmen zur Minimierung der Erstellung von Bewegungsprofilen durch Dritte
+  - Sicherstellung der ordnungsgemäßen Entsorgung und Löschung von Geräten und Speicherkarten
+
+** SYS.4 Sonstige Systeme
+*** SYS.4.1 Drucker, Kopierer und Multifunktionsgeräte
+- *Relevanz*: Verarbeitung vertraulicher Informationen und Anbindung an IT-Netzwerke erfordern besondere Sicherheitsmaßnahmen
+- *Anwendung*: Schutz von gedruckten, gescannten und gespeicherten Dokumenten sowie Netzwerksicherheit
+- *Konkrete Maßnahmen*:
+  - Zugriffskontrolle und Authentifizierung am Gerät (Secure Print, PIN-Freigabe)
+  - Regelmäßige Firmware-Updates zur Schließung von Schwachstellen
+  - Verschlüsselung gespeicherter und übertragener Daten
+  - Einschränkung von Schnittstellen (USB, SD-Karten, WLAN) auf notwendige Funktionen
+  - Sichere Entsorgung von Geräten und Speichermedien
+  - Netzsegmentierung zur Trennung von Druck- und Unternehmensnetzwerken
+  - Logging und Monitoring von Druck- und Scanjobs zur Nachvollziehbarkeit
+
+*** SYS.4.3 Eingebettete Systeme
+- *Relevanz*: Weit verbreitete spezialisierte IT-Systeme mit sicherheitskritischen Anwendungen
+- *Anwendung*: Schutz und Härtung von eingebetteten Systemen in Unternehmens- und Industrieumgebungen
+- *Konkrete Maßnahmen*:
+  - Einschränkung von Debugging- und Entwicklerschnittstellen
+  - Verwendung eines sicheren Boot-Prozesses und verifizierter Firmware
+  - Regelmäßige Sicherheitsprüfungen und Patching-Mechanismen implementieren
+  - Schutz vor physischem Zugriff durch robuste Gehäuse und Manipulationsschutz
+  - Minimierung von Netzwerkschnittstellen und Absicherung gegen unbefugten Fernzugriff
+  - Nutzung von Hardware-Trust-Mechanismen wie TPM oder Secure Boot
+
+*** SYS.4.4 Allgemeines IoT-Gerät
+- *Relevanz*: Zunehmende Verbreitung vernetzter Geräte erfordert spezielle Sicherheitsmaßnahmen
+- *Anwendung*: Absicherung von IoT-Geräten gegen Manipulation und unbefugten Datenzugriff
+- *Konkrete Maßnahmen*:
+  - Regelmäßige Firmware-Updates und Schwachstellenanalysen
+  - Deaktivierung von nicht benötigten Netzwerkprotokollen (z. B. UPnP)
+  - Nutzung von separaten Netzwerksegmenten für IoT-Geräte
+  - Einschränkung von Cloud-Zugriffen und externen Steuerungsmöglichkeiten
+  - Logging und Überwachung von Netzwerkaktivitäten
+  - Nutzung von sicheren Authentifizierungsmechanismen für die Geräteverwaltung
+*** SYS.4.5 Wechseldatenträger
+- *Relevanz*: Häufig verwendete Datenträger für Transport, Speicherung und mobilen Zugriff
+- *Anwendung*: Absicherung und sichere Nutzung von Wechseldatenträgern
+- *Konkrete Maßnahmen*:
+  - Sensibilisierung der Benutzer für den sicheren Umgang mit Wechseldatenträgern
+  - Festlegung klarer Richtlinien zur Nutzung und Mitnahme von Wechseldatenträgern
+  - Pflicht zur Meldung von Verlust oder Verdacht auf Manipulation
+  - Einsatz sicherer Verschlüsselungsmethoden für schutzbedürftige Daten
+  - Schutz vor Schadsoftware durch regelmäßige Überprüfung der Daten
+  - Nutzung zertifizierter Wechseldatenträger zur Sicherstellung der Datenerhaltung
+  - Einschränkung der Nutzung auf definierte IT-Systeme mit autorisierten Schnittstellen
+  - Sichere Lagerung und Zugriffskontrolle für Wechseldatenträger
+  - Sicheres Löschen von Daten auf Wechseldatenträgern vor Weitergabe oder Entsorgung
+  - Nutzung dedizierter IT-Systeme zur Schadsoftwareprüfung vor Datenübertragung
+  - Vorgaben für die sichere Versandverpackung und Kennzeichnung von Wechseldatenträgern
 * NET - Netzwerke und Kommunikation
-
 ** NET.2.2 WLAN-Nutzung
 - *Relevanz*: Drahtlose Vernetzung am Arbeitsplatz
 - *Anwendung*: Absicherung des WLAN-Zugangs
@@ -707,14 +1034,12 @@ Erklärungen unklarer Begriffe:
   - Starke Authentifizierung beim VPN-Zugang
 
 * INF - Infrastruktur
-
 ** INF.8 Häuslicher Arbeitsplatz
 - *Relevanz*: Gestaltung des HomeOffice
 - *Anwendung*: Physische Sicherheit im Heimumfeld
 - *Konkrete Maßnahmen*:
   - Sicherer Aufbewahrungsort für sensible Unterlagen
   - Bildschirmsperre bei Abwesenheit
-
 ** INF.9 Mobiler Arbeitsplatz
 - *Relevanz*: Arbeit von unterwegs
 - *Anwendung*: Schutz mobiler Arbeitsmittel
@@ -723,7 +1048,6 @@ Erklärungen unklarer Begriffe:
   - Physischer Schutz der Geräte
 
 * DER - Detektion und Reaktion
-
 ** DER.1 Detektion von sicherheitsrelevanten Ereignissen
 - *Relevanz*: Erkennung von Sicherheitsvorfällen
 - *Anwendung*: Monitoring-Mechanismen
@@ -742,25 +1066,25 @@ Erklärungen unklarer Begriffe:
 
 ** Arbeitsauftrag:
 
-1. *Analyse des Ist-Zustands*:
-   - Erstellen Sie eine Inventarliste aller IT-Komponenten an Ihrem Arbeitsplatz (Hardware, Software, Netzwerkkomponenten)
-   - Dokumentieren Sie die aktuell implementierten Sicherheitsmaßnahmen
+  1. *Analyse des Ist-Zustands*:
+     - Erstellen Sie eine Inventarliste aller IT-Komponenten an Ihrem Arbeitsplatz (Hardware, Software, Netzwerkkomponenten)
+     - Dokumentieren Sie die aktuell implementierten Sicherheitsmaßnahmen
 
-2. *Identifikation relevanter Bausteine*:
-   - Identifizieren Sie auf Basis der Inventarliste die für Ihren Arbeitsplatz relevanten IT-Grundschutzbausteine
-   - Begründen Sie Ihre Auswahl für jeden ausgewählten Baustein
+  2. *Identifikation relevanter Bausteine*:
+     - Identifizieren Sie auf Basis der Inventarliste die für Ihren Arbeitsplatz relevanten IT-Grundschutzbausteine
+     - Begründen Sie Ihre Auswahl für jeden ausgewählten Baustein
 
-3. *Gap-Analyse*:
-   - Vergleichen Sie die Anforderungen der identifizierten Bausteine mit den aktuell implementierten Maßnahmen
-   - Dokumentieren Sie Abweichungen und Lücken
+  3. *Gap-Analyse*:
+     - Vergleichen Sie die Anforderungen der identifizierten Bausteine mit den aktuell implementierten Maßnahmen
+     - Dokumentieren Sie Abweichungen und Lücken
 
-4. *Maßnahmenplan*:
-   - Entwickeln Sie einen priorisierten Maßnahmenplan zur Schließung der identifizierten Lücken
-   - Berücksichtigen Sie dabei praktische Einschränkungen (Budget, Machbarkeit, Aufwand)
+  4. *Maßnahmenplan*:
+     - Entwickeln Sie einen priorisierten Maßnahmenplan zur Schließung der identifizierten Lücken
+     - Berücksichtigen Sie dabei praktische Einschränkungen (Budget, Machbarkeit, Aufwand)
 
-5. *Dokumentation und Präsentation*:
-   - Erstellen Sie eine strukturierte Dokumentation Ihrer Analyse und des Maßnahmenplans
-   - Bereiten Sie eine kurze Präsentation (5-10 Minuten) Ihrer Ergebnisse vor
+  5. *Dokumentation und Präsentation*:
+     - Erstellen Sie eine strukturierte Dokumentation Ihrer Analyse und des Maßnahmenplans
+     - Bereiten Sie eine kurze Präsentation (5-10 Minuten) Ihrer Ergebnisse vor
 
 ** Hinweise zur Bearbeitung:
 - Konzentrieren Sie sich auf die für Ihren Arbeitsplatz relevantesten Bausteine
