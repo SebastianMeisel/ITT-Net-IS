@@ -35,7 +35,7 @@ Die IT-Grundschutzbausteine des Bundesamts für Sicherheit in der Informationste
 *Informationssicherheitsmanagement* (ISMS) umfasst *Planung*, *Lenkung* und *Kontrolle* eines Prozesses zur Herstellung von Informationssicherheit. Es muss in bestehende Managementstrukturen integriert werden und erfordert organisationsspezifische Anpassungen. Ziel ist ein funktionierendes ISMS, wofür der Baustein systematische Schritte und Anleitungen zur Konzepterstellung bietet.
 
 #+BEGIN_NOTES
-  - [[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=95][IT_Grundschutzkompendium S. 95 ff]]
+  - [[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=95][~IT_Grundschutzkompendium S. 95 ff~]]
 #+END_NOTES
 
 ** ISMS.1 Sicherheitsmanagement
@@ -53,7 +53,7 @@ Die IT-Grundschutzbausteine des Bundesamts für Sicherheit in der Informationste
 Der *ORP-Baustein* legt organisatorische Maßnahmen zur Informationssicherheit fest.
 
 #+BEGIN_NOTES
-[[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=105][IT_Grundschutzkompendium S. 105 ff]]
+[[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=105][~IT_Grundschutzkompendium S. 105 ff~]]
 #+END_NOTES
 
 ** ORP.1 Organisation
@@ -96,7 +96,7 @@ Der *ORP-Baustein* legt organisatorische Maßnahmen zur Informationssicherheit f
 
 Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssicherheit in verschiedenen Bereichen. 
 #+BEGIN_NOTES
-[[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=133][IT_Grundschutzkompendium S. 133 ff]]
+[[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=133][~IT_Grundschutzkompendium S. 133 ff~]]
 #+END_NOTES
 
 ** CON.1 Kryptokonzept
@@ -244,7 +244,8 @@ Die OWASP Top 10 ist eine regelmäßig aktualisierte Liste der kritischsten Sich
 SELECT * FROM users WHERE username = '" + user_input + "' AND password = '" + pass_input + "'";
 #+END_SRC
    Angriff: admin' -- könnte die Passwortprüfung umgehen.
-
+#+END_NOTES
+#+BEGIN_NOTES
   - *Schutzmaßnahmen gegen SQL-Injection:*
      - *Prepared Statements & Parameterized Queries* – Ersetzen Benutzereingaben durch sichere Platzhalter.
      - *Eingabevalidierung* – Nur erwartete Werte zulassen.
@@ -285,16 +286,18 @@ Die *OPS-Bausteine* definieren Anforderungen an einen sicheren IT-Betrieb und di
  - OPT 2 :: Betrieb von Dritten (Outsourcing)
  - OPS 3 :: Betrieb für Dritte
 #+BEGIN_NOTES
-[[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=200][IT_Grundschutzkompendium S. 200 ff]]
+[[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=200][~IT_Grundschutzkompendium S. 200 ff~]]
 #+END_NOTES
 ** OPS 1 Eigener Betrieb
 
 Dieser Abschnitt behandelt die Identifikation potenzieller Gefährdungen sowie die erforderlichen Maßnahmen zur Absicherung des eigenen IT-Betriebs innerhalb des Unternehmens.
 
 *** OPS.1.1 Allgemeiner IT-Betrieb
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherstellung eines reibungslosen und sicheren IT-Betriebs
 - *Anwendung*: Standardisierte Prozesse für IT-Administration, Betrieb und Monitoring
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Dokumentation und Inventarisierung der IT-Ressourcen
   - IT-Monitoring zur frühzeitigen Erkennung von Problemen
   - Festlegung von Zuständigkeiten und Rollen
@@ -311,10 +314,11 @@ Dieser Abschnitt behandelt die Identifikation potenzieller Gefährdungen sowie d
 #+END_NOTES
 
 *** OPS 1.2 Weiterführende Aufgaben
-
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Ergänzung des allgemeinen IT-Betriebs um spezifische organisatorische und technische Aufgaben zur Sicherstellung der IT-Sicherheit und Effizienz.
 - *Anwendung*: Festlegung und Umsetzung erweiterter Maßnahmen für Archivierung, Telearbeit, Fernwartung und Zeitsynchronisation.
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - IT-Dokumentation: Systematische Erfassung und Pflege von IT-Dokumentationen
   - Archivierung: Sichere und langfristige Speicherung elektronischer Dokumente
   - IT-Notfallmanagement: Minimierung von Betriebsunterbrechungen und schnellen Wiederherstellung nach Ausfällen.
@@ -327,9 +331,11 @@ Dieser Abschnitt behandelt die Identifikation potenzieller Gefährdungen sowie d
 Hier geht es um die Sicherstellung und Überwachung von IT-Dienstleistungen, die von externen Dienstleistern erbracht werden (Outsourcing).
 
 *** OPS.2.2 Cloud-Nutzung
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherstellung der Informationssicherheit bei der Nutzung von Cloud-Diensten
 - *Anwendung*: Identifikation und Umsetzung von Sicherheitsmaßnahmen bei Cloud-Diensten
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Erstellung einer Cloud-Strategie mit Sicherheitsanforderungen
   - Definition klarer Verantwortlichkeiten und Schnittstellen
   - Einführung von Richtlinien zur sicheren Cloud-Nutzung
@@ -337,9 +343,11 @@ Hier geht es um die Sicherstellung und Überwachung von IT-Dienstleistungen, die
   - Regelmäßige Überprüfung der Cloud-Sicherheitsmaßnahmen
 
 *** OPS.2.3 Nutzung von Outsourcing
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherstellung der Informationssicherheit bei der Auslagerung von IT-Prozessen
 - *Anwendung*: Identifikation und Umsetzung von Sicherheitsmaßnahmen im Outsourcing
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Erstellung einer Outsourcing-Strategie mit Sicherheitsanforderungen
   - Vermeidung von Abhängigkeiten durch Multi-Sourcing-Ansätze
   - Einführung von Sicherheitsrichtlinien für Outsourcing-Dienstleister
@@ -360,41 +368,304 @@ Hier geht es um die Sicherstellung und Überwachung von IT-Dienstleistungen, die
 
 Dieser Abschnitt beschreibt, welche Aspekte zu beachten sind, wenn das eigene Unternehmen IT-Dienstleistungen für externe Kunden erbringt.
 *** OPS.3.2 Anbieten von Outsourcing
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherstellung der Informationssicherheit durch Anbieter von Outsourcing-Dienstleistungen
 - *Anwendung*: Implementierung und Einhaltung von Sicherheitsmaßnahmen im Outsourcing-Prozess
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Implementierung eines Informationssicherheitsmanagements zur Einhaltung der Schutzziele
   - Definition einheitlicher Vertragsanforderungen mit Sicherheitsklauseln
   - Weitergabe vertraglicher Sicherheitsanforderungen an Sub-Dienstleister
+#+REVEAL: split
+#+ATTR_REVEAL: :frag (appear)
   - Umsetzung eines Mandantentrennungskonzepts zur Datensicherheit
   - Erstellung eines Sicherheitskonzepts für jede Outsourcing-Dienstleistung
   - Regelung zur Beendigung eines Outsourcing-Verhältnisses mit sicherer Datenrückgabe und -löschung
   - Durchführung regelmäßiger Audits und Überprüfungen der Outsourcing-Partner
   - Einführung einer Notfall- und Exit-Strategie für ausgelagerte IT-Dienste
 
-
 * APP - Anwendungen und Dienste
-
-** APP.1.1 Office-Produkte
+** Einleitung
+   IT-Anwendungen sind ein zentraler Bestandteil moderner IT-Infrastrukturen. Sie umfassen Office-Produkte, Webbrowser, mobile Anwendungen und viele weitere Softwarelösungen, die zur Verarbeitung und Verwaltung von Informationen verwendet werden. Aufgrund ihrer Verbreitung und Funktionalität stellen sie ein potenzielles Sicherheitsrisiko dar. Der IT-Grundschutz stellt Anforderungen an die sichere Nutzung und Konfiguration dieser Anwendungen, um Bedrohungen zu minimieren und Datenschutz sowie Informationssicherheit zu gewährleisten.
+** APP 1 Anwendungen
+*** APP.1.1 Office-Produkte
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Standard-Software am Arbeitsplatz
 - *Anwendung*: Sichere Konfiguration der Office-Programme
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Deaktivierung unsicherer Makro-Funktionen
   - Regelmäßige Updates der Office-Programme
+  - Nutzung sicherer Dokumentenformate
+  - Schulung der Benutzer:innen zu sicheren Office-Einstellungen
+#+BEGIN_NOTES
+- Makros
+  Makros sind kleine Programme oder Skripte, die innerhalb von Office-Anwendungen wie Microsoft Word oder Excel ausgeführt werden können. Sie werden oft in der Programmiersprache VBA (Visual Basic for Applications) geschrieben und ermöglichen die Automatisierung wiederkehrender Aufgaben, wie das Formatieren von Dokumenten, das Erstellen von Tabellen oder das Ausführen komplexer Berechnungen.
+  Während Makros die Produktivität steigern können, stellen sie jedoch auch ein erhebliches Sicherheitsrisiko dar. Angreifer können schädliche Makros in Office-Dokumenten verstecken, die beim Öffnen automatisch ausgeführt werden und beispielsweise Schadsoftware nachladen oder Daten stehlen. Daher ist es eine bewährte Sicherheitsmaßnahme, Makros standardmäßig zu deaktivieren und nur signierte oder vertrauenswürdige Makros zuzulassen.
+#+END_NOTES
 
-** APP.1.2 Webbrowser
+*** APP.1.2 Webbrowser
+#+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Hauptzugriffspunkt auf Internet-Ressourcen
 - *Anwendung*: Absicherung des Browsers
 - *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
   - Installation von Sicherheits-Erweiterungen
   - Deaktivierung unsicherer Browser-Funktionen
+  - Nutzung eines sicheren Passwortmanagers
+  - Aktivierung von HTTPS-Only-Modus und DNS-over-HTTPS
+#+BEGIN_NOTES
+- *Sicherheits-Erweiterungen*: Browser-Add-ons oder Plugins, die zusätzliche Sicherheitsfunktionen bereitstellen, etwa zur Blockierung von Werbung, zum Schutz vor Phishing oder zur Verhinderung der Ausführung schädlicher Skripte.
 
-** APP.5.2 E-Mail/Groupware
-- *Relevanz*: Kommunikations- und Kollaborationsplattform
-- *Anwendung*: Schutz der E-Mail-Kommunikation
+- *Unsichere Browser-Funktionen*: Funktionen oder Einstellungen im Browser, die potenziell Sicherheitslücken öffnen können, beispielsweise automatische Ausführung von Skripten, veraltete Protokolle oder nicht benötigte Features, die als Einfallstor für Angriffe dienen könnten.
+
+- *Sicherer Passwortmanager*: Eine Softwarelösung, die Passwörter sicher speichert, verwaltet und bei Bedarf generiert. Dabei werden die gespeicherten Daten verschlüsselt, sodass sie nur von autorisierten Benutzern eingesehen werden können.
+
+- *HTTPS-Only-Modus*: Eine Einstellung im Browser, die sicherstellt, dass ausschließlich HTTPS-Verbindungen (also verschlüsselte Verbindungen) aufgebaut werden, um die Vertraulichkeit und Integrität der übertragenen Daten zu gewährleisten.
+
+- *DNS-over-HTTPS (DoH)*: Eine Technik, bei der DNS-Anfragen über das HTTPS-Protokoll verschlüsselt übertragen werden, um zu verhindern, dass diese Anfragen von Dritten abgefangen oder manipuliert werden können.
+#+END_NOTES
+*** APP.1.3 E-Mail-Clients
+#+ATTR_REVEAL: :frag (appear)
+- *Relevanz*: Zentrales Kommunikationsmittel in Unternehmen
+- *Anwendung*: Schutz vor Phishing und Malware in E-Mails
 - *Konkrete Maßnahmen*:
-  - Spam- und Malware-Filter
-  - Verschlüsselung vertraulicher E-Mails
+  #+ATTR_REVEAL: :frag (appear)
+  - Aktivierung von Spam- und Phishing-Filtern
+  - Deaktivierung aktiver Inhalte (Makros, JavaScript) in Anhängen
+  - Nutzung sicherer Authentifizierungsverfahren (z. B. 2FA)
+  - Regelmäßige Schulungen zur Erkennung von Phishing-Mails
+
+#+BEGIN_NOTES
+Erklärungen unklarer Begriffe:
+
+- *Spam- und Phishing-Filter*: Softwaremechanismen, die unerwünschte oder betrügerische E-Mails erkennen und automatisch in den Spam-Ordner verschieben. Phishing-Filter identifizieren speziell E-Mails, die versuchen, Benutzer:innen zur Herausgabe vertraulicher Informationen zu verleiten.
+
+- *Aktive Inhalte (Makros, JavaScript) in Anhängen*: Programme oder Skripte, die in E-Mail-Anhängen eingebettet sein können und beim Öffnen automatisch ausgeführt werden. Diese werden häufig für Angriffe genutzt, um Schadsoftware zu verbreiten oder Daten zu stehlen.
+
+- *Sichere Authentifizierungsverfahren (z. B. 2FA)*: Methoden zur sicheren Anmeldung, die über ein einfaches Passwort hinausgehen. Bei der Zwei-Faktor-Authentifizierung (2FA) wird zusätzlich ein zweiter Faktor wie ein Einmalpasswort (OTP) oder eine Bestätigung über eine App benötigt.
+
+- *Phishing-Mails*: Betrügerische E-Mails, die darauf abzielen, Nutzer:innen zur Preisgabe sensibler Daten (z. B. Passwörter, Kreditkarteninformationen) zu bewegen. Sie erscheinen oft als legitime Nachrichten von bekannten Unternehmen oder Personen.
+
+- *Schulungen zur Erkennung von Phishing-Mails*: Maßnahmen zur Sensibilisierung von Mitarbeitenden, um verdächtige E-Mails anhand typischer Merkmale wie gefälschten Absenderadressen, ungewöhnlichen Anhängen oder dringlichen Handlungsaufforderungen zu erkennen.
+#+END_NOTES
+
+*** APP.1.4 Mobile Anwendungen (Apps)
+#+ATTR_REVEAL: :frag (appear)
+- *Relevanz*: Nutzung von Smartphones und Tablets im Arbeitsumfeld
+- *Anwendung*: Sichere Verwaltung und Nutzung von Apps
+- *Konkrete Maßnahmen*:
+  #+ATTR_REVEAL: :frag (appear)
+  - Einschränkung der App-Berechtigungen
+  - Nutzung von Mobile Device Management (MDM) zur zentralen Steuerung
+  - Vermeidung unsicherer Cloud-Speicherlösungen
+  - Absicherung der Datenkommunikation über VPN
+#+BEGIN_NOTES
+- *App-Berechtigungen*: Zugriffsrechte, die eine App auf Funktionen oder Daten eines Mobilgeräts erhält, z. B. Kamera, Mikrofon, Kontakte oder Standort. Zu viele oder unnötige Berechtigungen können ein Sicherheitsrisiko darstellen.
+
+- *Mobile Device Management (MDM)*: Eine zentrale Verwaltungsplattform, mit der IT-Abteilungen mobile Geräte im Unternehmensumfeld konfigurieren, steuern und absichern können. Dazu gehören u. a. das Erzwingen von Sicherheitsrichtlinien, die Fernlöschung von Daten und die Verwaltung installierter Apps.
+
+- *Unsichere Cloud-Speicherlösungen*: Cloud-Dienste, die keine ausreichenden Sicherheitsmechanismen wie Verschlüsselung, Zugriffskontrollen oder Datenschutzrichtlinien bieten. Unsichere Cloud-Nutzung kann zu Datenlecks oder unbefugtem Zugriff führen.
+
+- *VPN (Virtual Private Network)*: Eine Technologie zur sicheren, verschlüsselten Verbindung zwischen einem Gerät und einem privaten Netzwerk über das Internet. VPNs schützen vor Datenabgriff in unsicheren Netzwerken, indem sie den Datenverkehr verschlüsseln und die Identität des Nutzers verschleiern.
+#+END_NOTES
+** APP.2 Verzeichnisdienste
+*** APP.2.1 Allgemeiner Verzeichnisdienst
+- *Relevanz*: Zentrale Verwaltung von Benutzer- und Ressourcendaten
+- *Anwendung*: Schutz der Verzeichnisdienstdaten und Absicherung der Authentifizierung
+- *Konkrete Maßnahmen*:
+  - Erstellung einer Sicherheitsrichtlinie für Verzeichnisdienste
+  - Planung des Einsatzes von Verzeichnisdiensten
+  - Sichere Konfiguration und Betrieb des Verzeichnisdienstes
+  - Einschränkung und Kontrolle der Zugriffsrechte
+
+*** APP.2.2 Active Directory Domain Services (AD DS)
+- *Relevanz*: Verwaltung von Windows-basierten IT-Infrastrukturen
+- *Anwendung*: Absicherung der Authentifizierungs- und Berechtigungsverwaltung
+- *Konkrete Maßnahmen*:
+  - Härtung von Domänencontrollern und AD-DS-Konten
+  - Sichere Konfiguration von Vertrauensbeziehungen
+  - Begrenzung der Berechtigungen und Anmeldeprivilegien
+  - Nutzung sicherer Authentisierungsmechanismen (Kerberos)
+
+*** APP.2.3 OpenLDAP
+- *Relevanz*: Open-Source-Alternative für Verzeichnisdienste
+- *Anwendung*: Sicherer Betrieb und Nutzung von OpenLDAP
+- *Konkrete Maßnahmen*:
+  - Planung und Auswahl von Backends und Overlays für OpenLDAP
+  - Sichere Konfiguration von OpenLDAP und seiner Laufzeitumgebung
+  - Kontrolle der Zugriffsrechte und sichere Authentisierung
+  - Einschränkung von Attributen und Partitionierung des Verzeichnisses
+
+** APP.3 Netzbasierte Dienste
+*** APP.3.1 Webanwendungen und Webservices
+- *Relevanz*: Nutzung von Webanwendungen und Webservices im internen und externen Netzwerk
+- *Anwendung*: Schutz der Daten und Sicherstellung der Verfügbarkeit
+- *Konkrete Maßnahmen*:
+  - Sichere Authentisierung und Protokollierung von Zugriffen
+  - Kontrolle der Einbindung externer Inhalte
+  - Schutz vor unberechtigter automatisierter Nutzung
+  - Sicherstellung der sicheren Speicherung von Zugangsdaten
+  - Regelmäßige Sicherheitsüberprüfungen und Penetrationstests
+
+*** APP.3.2 Webserver
+- *Relevanz*: Basis für den Betrieb von Webanwendungen
+- *Anwendung*: Absicherung des Webservers gegen Angriffe und Missbrauch
+- *Konkrete Maßnahmen*:
+  - Sichere Konfiguration und Minimierung der Angriffsfläche
+  - Verschlüsselung über TLS und sichere Authentisierung
+  - Schutz vor Denial-of-Service-Angriffen
+  - Regelmäßige Integritätsprüfungen und Penetrationstests
+
+*** APP.3.3 Fileserver
+- *Relevanz*: Zentrale Bereitstellung von Dateien im Netzwerk
+- *Anwendung*: Schutz von gespeicherten Daten vor Verlust und Manipulation
+- *Konkrete Maßnahmen*:
+  - Planung und Strukturierung der Datenhaltung
+  - Einsatz von Speicherbeschränkungen und Schutzmechanismen gegen Schadsoftware
+  - Regelmäßige Überprüfung der Speicherintegrität
+  - Sicherstellung einer zuverlässigen Datensicherung
+
+*** APP.3.4 Samba
+- *Relevanz*: Bereitstellung von Datei- und Druckdiensten zwischen Windows- und Linux-Systemen
+- *Anwendung*: Absicherung von Samba-Diensten gegen unberechtigten Zugriff
+- *Konkrete Maßnahmen*:
+  - Sichere Grundkonfiguration und Einschränkung von Standardfreigaben
+  - Schutz der Samba-Kommunikation durch Verschlüsselung
+  - Einschränkung der Berechtigungen für Benutzer und Dienste
+  - Regelmäßige Sicherung und Kontrolle der Samba-Registry
+
+*** APP.3.6 DNS-Server
+- *Relevanz*: Zentrale Komponente zur Namensauflösung in Netzwerken
+- *Anwendung*: Absicherung der DNS-Infrastruktur gegen Manipulation und Ausfälle
+- *Konkrete Maßnahmen*:
+  - Einsatz redundanter DNS-Server
+  - Schutz vor DNS-Cache-Poisoning und anderen Manipulationsversuchen
+  - Sichere Konfiguration von Zonentransfers und Anfragen
+  - Regelmäßige Überprüfung der DNS-Server-Protokolle auf Anomalien
+
+** APP.4 Business-Anwendungen
+*** APP.4.2 SAP-ERP-System
+- *Relevanz*: Automatisierung und Unterstützung interner sowie externer Geschäftsprozesse
+- *Anwendung*: Sicherer Betrieb und Konfiguration von SAP-ERP-Systemen
+- *Konkrete Maßnahmen*:
+  - Berücksichtigung der SAP-Sicherheitsleitfäden
+  - Regelmäßiges Einspielen von Patches und SAP-Sicherheitshinweisen
+  - Planung und Umsetzung eines SAP-Berechtigungskonzeptes
+  - Dokumentation und Notfallkonzepte für SAP-Systeme
+
+*** APP.4.3 Relationale Datenbanken
+- *Relevanz*: Verwaltung großer Datensammlungen mit hohen Sicherheitsanforderungen
+- *Anwendung*: Schutz der Datenbanken vor Manipulation und unbefugtem Zugriff
+- *Konkrete Maßnahmen*:
+  - Erstellung einer Sicherheitsrichtlinie für Datenbanken
+  - Restriktive Handhabung von Datenbank-Berechtigungen
+  - Verschlüsselung der Datenbankanbindung
+  - Schutz vor SQL-Injection und unsicheren Datenbank-Skripten
+
+*** APP.4.4 Kubernetes
+- *Relevanz*: Orchestrierung von Containern in modernen IT-Infrastrukturen
+- *Anwendung*: Schutz und Absicherung von Kubernetes-Clustern
+- *Konkrete Maßnahmen*:
+  - Mangelhafte Authentisierung und Autorisierung in der Control Plane verhindern
+  - Planung der Separierung von Anwendungen in Kubernetes-Namespaces
+  - Umsetzung von Netzwerk-Segmentierung für Kubernetes-Pods
+  - Nutzung sicherer Service-Accounts und Automatisierungsprozesse
+
+*** APP.4.6 SAP ABAP-Programmierung
+- *Relevanz*: Eigenentwicklungen in SAP-Systemen erfordern besondere Sicherheitsmaßnahmen
+- *Anwendung*: Sichere Entwicklung und Verwaltung von ABAP-Programmen
+- *Konkrete Maßnahmen*:
+  - Implementierung sicherer Programmierpraktiken in ABAP
+  - Schutz vor unbefugtem Code-Zugriff und Manipulation
+  - Integration von Berechtigungsprüfungen in ABAP-Anwendungen
+  - Regelmäßige Code-Audits und Sicherheitsüberprüfungen
+
+** APP.5 E-Mail/Groupware/Kommunikation
+*** APP.5.2 Microsoft Exchange und Outlook
+- *Relevanz*: Groupware-Lösung für mittlere bis große Institutionen
+- *Anwendung*: Sicherer Betrieb und Nutzung von Microsoft Exchange und Outlook
+- *Konkrete Maßnahmen*:
+  - Planung des Einsatzes von Exchange und Outlook
+  - Auswahl einer geeigneten Exchange-Infrastruktur
+  - Berechtigungsmanagement und Zugriffsrechte
+  - Sichere Konfiguration von Exchange-Servern und Outlook-Clients
+  - Absicherung der Kommunikation zwischen Exchange-Systemen
+  - Schutz vor unzulässigem Browserzugriff und unsachgemäßer Anbindung anderer Systeme
+
+*** APP.5.3 Allgemeiner E-Mail-Client und -Server
+- *Relevanz*: Grundlegende E-Mail-Kommunikation in Institutionen
+- *Anwendung*: Schutz der E-Mail-Infrastruktur und sichere Nutzung von E-Mail-Clients
+- *Konkrete Maßnahmen*:
+  - Sichere Konfiguration der E-Mail-Clients
+  - Sicherer Betrieb von E-Mail-Servern
+  - Datensicherung und Archivierung von E-Mails
+  - Spam- und Virenschutz auf dem E-Mail-Server
+  - Nutzung von SPF, DKIM und DMARC zur E-Mail-Authentifizierung
+  - Förderung einer Ende-zu-Ende-Verschlüsselung und Signatur
+
+*** APP.5.4 Unified Communications und Collaboration (UCC)
+- *Relevanz*: Integration moderner Kommunikationsdienste in IT-Umgebungen
+- *Anwendung*: Sicherer Betrieb und Nutzung von UCC-Diensten
+- *Konkrete Maßnahmen*:
+  - Planung und Netzwerkintegration von UCC-Diensten
+  - Regelmäßiges Testen der UCC-Komponenten
+  - Sichere Konfiguration und Berechtigungsmanagement für UCC
+  - Verschlüsselung der UCC-Kommunikation und Daten
+  - Absicherung von KI-Funktionen und Vermeidung von Identitätsmanipulation
+  - Einschränkung von Metadaten-Speicherung und Sichtbarkeit für Administratoren
+
+** APP.6 Allgemeine Software
+*** APP.6.1 Einführung in Allgemeine Software
+- *Relevanz*: Betrifft jegliche Software im Informationsverbund
+- *Anwendung*: Sicherheit über den gesamten Software-Lebenszyklus gewährleisten
+- *Konkrete Maßnahmen*:
+  - Planung, Beschaffung, Installation, Betrieb und Außerbetriebnahme sicher gestalten
+  - Sicherheitsanforderungen in den gesamten Software-Lebenszyklus integrieren
+  - Vermeidung fehlerhafter Konfigurationen und unsicherer Software-Quellen
+  - Regelmäßige Sicherheitsüberprüfungen und Updates einplanen
+
+*** APP.6.2 Sicherheitsanforderungen an Allgemeine Software
+- *Relevanz*: Erfüllt die grundlegenden Anforderungen an sichere Software-Nutzung
+- *Anwendung*: Sicherstellung der Software-Integrität und Schutz vor Manipulation
+- *Konkrete Maßnahmen*:
+  - Erstellung eines Anforderungskatalogs für Software
+  - Sichere Beschaffung von Software aus vertrauenswürdigen Quellen
+  - Regelung zur sicheren Installation und Konfiguration
+  - Sicherstellung regelmäßiger Software-Updates und Sicherheits-Patches
+  - Inventarisierung eingesetzter Software zur Sicherheitsüberwachung
+
+** APP.7 Entwicklung von Individualsoftware
+*** APP.7.1 Planung und Anforderungen für Individualsoftware
+- *Relevanz*: Betrifft Institutionen, die maßgeschneiderte Software entwickeln oder beauftragen
+- *Anwendung*: Berücksichtigung von Sicherheitsaspekten bereits in der Planungsphase
+- *Konkrete Maßnahmen*:
+  - Definition von Sicherheitsanforderungen für Individualsoftware
+  - Geeignete Steuerung des Entwicklungsprozesses sicherstellen
+  - Dokumentation der Sicherheitsfunktionen und Systemintegration
+  - Einbindung von Fachverantwortlichen in alle Entwicklungsphasen
+  - Berücksichtigung von gesetzlichen und regulatorischen Anforderungen
+
+*** APP.7.2 Sicherer Entwicklungsprozess und Betrieb
+- *Relevanz*: Betrifft sowohl intern als auch extern entwickelte Softwarelösungen
+- *Anwendung*: Schutz von Software-Entwicklungsprozessen vor Sicherheitsrisiken
+- *Konkrete Maßnahmen*:
+  - Vorgaben für sichere Software-Architektur und Codequalität definieren
+  - Durchführung sicherheitsorientierter Tests und Code-Reviews
+  - Berücksichtigung sicherer Entwicklungspraktiken (z. B. Secure Coding)
+  - Nutzung von sicheren Entwicklungsumgebungen mit Zugriffskontrolle
+  - Sicherstellung der Nachvollziehbarkeit und Dokumentation des Codes
+
+*** APP.7.3 Anforderungen an Individualsoftware mit erhöhtem Schutzbedarf
+- *Relevanz*: Notwendig für sicherheitskritische Anwendungen und Systeme
+- *Anwendung*: Gewährleistung hoher Sicherheitsstandards in besonders sensiblen Bereichen
+- *Konkrete Maßnahmen*:
+  - Beauftragung zertifizierter Software-Entwicklungsunternehmen
+  - Nutzung geprüfter Entwicklungsframeworks mit Sicherheitsgarantien
+  - Einrichtung eines Escrow-Mechanismus zur Quellcode-Hinterlegung
+  - Durchsetzung strengerer Sicherheitskontrollen für Zugriffsrechte und Berechtigungen
+  - Sicherstellung einer kontinuierlichen Sicherheitsüberwachung der Individualsoftware
+
 
 * SYS - IT-Systeme
 
