@@ -20,8 +20,6 @@
 #+SUBTITLE: IT-Sicherheit
 #+AUTHOR: ITT-Net-IS
 
-
-
 * Überblick
 :PROPERTIES:
 :Theorie:  2
@@ -34,15 +32,11 @@ Dieses Modul behandelt die gesetzlichen Rahmenbedingungen und Zuständigkeiten i
 
 In einem gut strukturierten Sicherheitsmanagement sind verschiedene Rollen und Verantwortlichkeiten klar definiert:
 
-
-
 #+ATTR_HTML: :width 50%
 #+ATTR_LATEX: :width .65\linewidth :placement [!htpb]
 #+ATTR_ORG: :width 700
 
 [[file:img/Verantwortliche.png]]
-
-
 
 ** Geschäftsführung
 #+ATTR_REVEAL: :frag (appear)
@@ -50,7 +44,6 @@ In einem gut strukturierten Sicherheitsmanagement sind verschiedene Rollen und V
 - Stellt notwendige Ressourcen bereit
 - Verabschiedet die IT-Sicherheitsleitlinie
 - Haftet persönlich für Verstöße gegen gesetzliche Vorschriften
-
 ** IT-Sicherheitsbeauftragter (CISO - Chief Information Security Officer)
 #+ATTR_REVEAL: :frag (appear)
 - Entwickelt und koordiniert das Sicherheitskonzept
@@ -94,6 +87,12 @@ Ein SOC ist eine zentrale Einheit, die für die kontinuierliche Überwachung und
 - Forensische Untersuchungen
 - Regelmäßige Sicherheitstests
 
+#+BEGIN_NOTES
+- *24/7-Überwachung:* Permanente Kontrolle von IT-Systemen, um Bedrohungen frühzeitig zu erkennen.
+- *Forensische Untersuchungen:* Analyse von Sicherheitsvorfällen zur Identifikation von Ursachen und Tätern.
+- *Sicherheitstests:* Regelmäßige Tests zur Identifikation und Behebung von Sicherheitslücken.
+#+END_NOTES
+
 ** Computer Emergency Response Team (CERT)
 Ein CERT oder CSIRT (Computer Security Incident Response Team) ist darauf spezialisiert, auf IT-Sicherheitsvorfälle zu reagieren:
 #+ATTR_REVEAL: :frag (appear)
@@ -101,6 +100,11 @@ Ein CERT oder CSIRT (Computer Security Incident Response Team) ist darauf spezia
 - Unterstützung bei der Wiederherstellung von Systemen
 - Analyse von Angriffsvektoren
 - Informationsaustausch mit anderen CERTs
+
+#+BEGIN_NOTES
+- *Angriffsvektoren:* Wege und Methoden, über die ein Angriff auf ein IT-System erfolgen kann.
+- *Informationsaustausch mit anderen CERTs:* Zusammenarbeit mit anderen Sicherheitsorganisationen zur schnelleren Bedrohungserkennung.
+#+END_NOTES
 
 * Gesetze und Standards zur Informationssicherheit
 
@@ -119,7 +123,7 @@ Unternehmen müssen nationale und internationale Vorschriften einhalten, die oft
 
 *** NIS2-Richtlinie (Netzwerk- und Informationssicherheit)
 #+ATTR_HTML: :width 70%
-#+ATTR_LATEX: :width .65\linewidth :placement [!htpb]
+#+ATTR_LATEX: :width .9\linewidth :placement [!htpb]
 #+ATTR_ORG: :width 700
 [[file:img/NIS2.png]]
 #+REVEAL: split
@@ -184,7 +188,6 @@ Eine Zertifizierung nach anerkannten Standards signalisiert nach außen, dass ei
 - Framework für IT-Service-Management
 - Enthält Best Practices für IT-Sicherheit im Kontext des Servicemanagements
 - Umfasst Prozesse wie Incident Management und Problem Management
-
 
 * Übungsaufgabe: IT-Sicherheit in einem mittelständischen Unternehmen :noexport:
 

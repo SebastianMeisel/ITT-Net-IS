@@ -41,6 +41,12 @@ Elementare Gefährdungen sind oft nicht gezielte, sondern durch Umwelteinflüsse
    - *Menschliche Faktoren:* Fehlbedienung, Fahrlässigkeit, Sabotage
    - *Externe Ereignisse:* Naturkatastrophen, Großereignisse, Terroranschläge
 
+#+BEGIN_NOTES
+- *Korrosion:* Allmähliche Zerstörung von Materialien durch chemische Reaktionen, z. B. Rostbildung bei Metallen.
+- *Netzausfall:* Unterbrechung der Stromversorgung oder Netzwerkverbindungen, die den Betrieb von IT-Systemen beeinträchtigen.
+- *Sabotage:* Gezielte Schädigung von Systemen oder Prozessen durch interne oder externe Personen.
+#+END_NOTES
+
 * *Liste der elementaren Gefährdungen*
 #+ATTR_REVEAL: :frag (appear)
    - G 0.1 Feuer
@@ -68,6 +74,11 @@ Elementare Gefährdungen sind oft nicht gezielte, sondern durch Umwelteinflüsse
    - G 0.17 Verlust von Geräten, Datenträgern oder Dokumenten
    - G 0.18 Fehlplanung oder fehlende Anpassung
    - G 0.19 Offenlegung schützenswerter Informationen
+#+BEGIN_NOTES
+- *Spionage:* Illegale oder unerlaubte Informationsbeschaffung durch unbefugte Dritte.
+- *Elektromagnetische Störstrahlung:* Unbeabsichtigte oder gezielte elektromagnetische Signale, die elektronische Geräte beeinflussen oder auslesen können.
+- *Versorgungsnetze:* Infrastrukturen für Wasser, Gas, Internet, Strom, die bei Ausfall wirtschaftliche oder gesellschaftliche Schäden verursachen können.
+#+END_NOTES
 #+REVEAL: split
 #+ATTR_REVEAL: :frag (appear)
    - G 0.20 Informationen oder Produkte aus unzuverlässiger Quelle
@@ -83,6 +94,11 @@ Elementare Gefährdungen sind oft nicht gezielte, sondern durch Umwelteinflüsse
    - G 0.28 Software-Schwachstellen oder -Fehler
    - G 0.29 Verstoß gegen Gesetze oder Regelungen
    - G 0.30 Unberechtigte Nutzung oder Administration von Geräten und Systemen
+#+BEGIN_NOTES
+- *Manipulation von Hard- oder Software:* Gezielte Veränderung von IT-Systemen, um Fehlfunktionen oder Sicherheitslücken zu erzeugen.
+- *Software-Schwachstellen:* Fehler in Programmen, die Angreifer für unerlaubte Zugriffe oder Manipulationen nutzen können.
+- *Ressourcenmangel:* Fehlende technische, personelle oder finanzielle Mittel für den sicheren IT-Betrieb.
+#+END_NOTES
 #+REVEAL: split
 #+ATTR_REVEAL: :frag (appear)
    - G 0.31 Fehlerhafte Nutzung oder Administration von Geräten und Systemen
@@ -97,6 +113,11 @@ Elementare Gefährdungen sind oft nicht gezielte, sondern durch Umwelteinflüsse
    - G 0.38 Missbrauch personenbezogener Daten
    - G 0.39 Schadprogramme
    - G 0.40 Verhinderung von Diensten (Denial of Service)
+#+BEGIN_NOTES
+- *Identitätsdiebstahl:* Unbefugte Nutzung persönlicher Daten zur Täuschung oder für Betrugszwecke.
+- *Denial of Service (DoS):* Überlastung von IT-Systemen durch gezielte Anfragen, um Dienste unbrauchbar zu machen.
+- *Schadprogramme:* Bösartige Software wie Viren, Trojaner oder Ransomware, die Daten stehlen oder Systeme lahmlegen.
+#+END_NOTES
 #+REVEAL: split
 #+ATTR_REVEAL: :frag (appear)
    - G 0.41 Sabotage
@@ -106,12 +127,18 @@ Elementare Gefährdungen sind oft nicht gezielte, sondern durch Umwelteinflüsse
    - G 0.45 Datenverlust
    - G 0.46 Integritätsverlust schützenswerter Informationen
    - G 0.47 Schädliche Seiteneffekte IT-gestützter Angriffe
+#+BEGIN_NOTES
+- *Social Engineering:* Psychologische Manipulation von Menschen, um vertrauliche Informationen zu erlangen.
+- *Datenverlust:* Unwiderrufliches Löschen oder Zerstören von Daten, z. B. durch Hardware-Defekte oder Angriffe.
+- *Integritätsverlust:* Veränderung von Daten, sodass deren ursprüngliche Bedeutung oder Verlässlichkeit verloren geht.
+#+END_NOTES
 
 * Schutzmaßnahmen und Risikomanagement
 Zur Minimierung elementarer Gefährdungen ist ein mehrstufiges Sicherheitskonzept notwendig:
+#+BEGIN_tolearn
 #+ATTR_REVEAL: :frag (appear)
-   - *Technische Maßnahmen:* Brandschutzsysteme, Notstromaggregate, redundante Netzwerke
-   - *Organisatorische Maßnahmen:* Notfallpläne, Mitarbeiterschulungen, Zutrittskontrollen
-   - *Prozessuale Maßnahmen:* Regelmäßige Backups, Wartungsarbeiten, Sicherheitsrichtlinien
-
-
+   - *TOM:* Technisch-organisatorische Maßnahmen.
+     - *Technische Maßnahmen:* Brandschutzsysteme, Notstromaggregate, redundante Netzwerke
+     - *Organisatorische Maßnahmen:* Notfallpläne, Mitarbeiterschulungen, Zutrittskontrollen
+     - *Prozessuale Maßnahmen:* Regelmäßige Backups, Wartungsarbeiten, Sicherheitsrichtlinien
+#+END_tolearn
