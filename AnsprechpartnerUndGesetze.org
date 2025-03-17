@@ -189,8 +189,7 @@ Eine Zertifizierung nach anerkannten Standards signalisiert nach außen, dass ei
 - Enthält Best Practices für IT-Sicherheit im Kontext des Servicemanagements
 - Umfasst Prozesse wie Incident Management und Problem Management
 
-* Übungsaufgabe: IT-Sicherheit in einem mittelständischen Unternehmen :noexport:
-
+* Übungsaufgabe: IT-Sicherheit in einem mittelständischen Unternehmen 
 In dieser Übung beschäftigen Sie sich mit typischen IT-Sicherheitsverantwortlichkeiten in Unternehmen. 
 Dazu analysieren Sie das folgende Szenario und erarbeiten Lösungen in Kleingruppen.
 
