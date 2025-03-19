@@ -142,3 +142,48 @@ Zur Minimierung elementarer Gefährdungen ist ein mehrstufiges Sicherheitskonzep
      - *Organisatorische Maßnahmen:* Notfallpläne, Mitarbeiterschulungen, Zutrittskontrollen
      - *Prozessuale Maßnahmen:* Regelmäßige Backups, Wartungsarbeiten, Sicherheitsrichtlinien
 #+END_tolearn
+* Übung: Schutzbedarfsanalyse für den eigenen Computerarbeitsplatz 
+
+** Aufgabenstellung
+
+Führen Sie eine Schutzbedarfsanalyse für Ihren Computerarbeitsplatz durch. Gehen Sie dabei wie folgt vor:
+
+  1) *Inventarisierung*:
+   - Listen Sie alle wichtigen Komponenten auf (Hardware, Software, Daten)
+   - Beschreiben Sie kurz ihre Funktion und Bedeutung
+   - Konzentrieren Sie sich bei der Software, auf Komponenten, die sie (wenigstens gelegentlich) benutzen.
+
+  2) *Schutzbedarfsfeststellung*:
+   - Bewerten Sie für jede Komponente den Schutzbedarf bezüglich Vertraulichkeit, Integrität und Verfügbarkeit
+   - Verwenden Sie die Kategorien NIEDRIG, MITTEL, HOCH
+   - Begründen Sie Ihre Einschätzung
+
+  3) *Bedrohungsanalyse*:
+   - Identifizieren Sie mindestens 5 relevante Bedrohungen
+   - Beschreiben Sie potenzielle Auswirkungen
+
+  4) *Maßnahmenplanung*:
+   - Leiten Sie konkrete Schutzmaßnahmen ab
+   - Priorisieren Sie diese nach Wichtigkeit und Aufwand
+
+  5) *Dokumentation*:
+   - Erstellen Sie ein kurzes Dokument (2-3 Seiten), das Ihre Ergebnisse zusammenfasst
+   - Fügen Sie einen Maßnahmenplan mit Zeitschiene bei
+
+** Hilfsmittel
+
+Nutzen Sie zur Orientierung folgende Bausteine aus dem IT-Grundschutz-Kompendium:
+  - SYS.2.1: Allgemeiner Client
+  - APP.1.1: Office-Produkte
+  - NET.2.2: WLAN-Nutzung
+  - ORP.1: Organisation
+  - CON.2: Datenschutz
+
+** Bewertungsgrundlage
+
+Die Schutzbedarfsanalyse wird anhand folgender Kriterien bewertet:
+  - Vollständigkeit der Inventarisierung
+  - Nachvollziehbarkeit der Schutzbedarfsbewertungen
+  - Relevanz der identifizierten Bedrohungen
+  - Angemessenheit der vorgeschlagenen Maßnahmen
+  - Qualität der Dokumentation
