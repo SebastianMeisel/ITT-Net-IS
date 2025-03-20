@@ -3,3 +3,5 @@
 *.bkp
 *.aux
 *.log
+*.fdb_latexmk
+*.fls

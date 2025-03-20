@@ -25,7 +25,7 @@
 Die IT-Grundschutzbausteine des Bundesamts für Sicherheit in der Informationstechnik (BSI) bilden einen umfassenden Katalog von Sicherheitsmaßnahmen für verschiedene IT-Umgebungen. In diesem Dokument werden die relevanten Bausteine für einen typischen Arbeitsplatz oder eine HomeOffice-Umgebung identifiziert und analysiert.
 
 #+ATTR_HTML: :width 50%
-#+ATTR_LATEX: :width .65\linewidth :placement [!htpb]
+#+ATTR_LATEX: :width .9\linewidth :placement [!htpb]
 #+ATTR_ORG: :width 700
 [[file:img/IT-Grundbausteine.png]]
 
@@ -38,6 +38,8 @@ Die IT-Grundschutzbausteine des Bundesamts für Sicherheit in der Informationste
   - *ORP:* Organisatorische und Personal
   - *CON:* Konzepte und Vorgehensweisen
   - *OPS:* Betrieb
+#+END_tolearn
+#+BEGIN_tolearn
 - Systembausteine
   #+ATTR_REVEAL: :frag (appear)
   - *APP:* Anwendungen und Dienste
@@ -74,7 +76,7 @@ Der *ORP-Baustein* legt organisatorische Maßnahmen zur Informationssicherheit f
 [[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=105][~IT_Grundschutzkompendium S. 105 ff~]]
 #+END_NOTES
 
-* ORP.1 Organisation
+** ORP.1 Organisation
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Strukturierung der Sicherheitsorganisation
 - *Anwendung*: Klare Zuständigkeiten und Verantwortlichkeiten
@@ -83,7 +85,7 @@ Der *ORP-Baustein* legt organisatorische Maßnahmen zur Informationssicherheit f
   - Benennung eines Sicherheitsbeauftragten
   - Festlegung von Meldewegen bei Sicherheitsvorfällen
 
-* ORP.2 Personal
+** ORP.2 Personal
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherheitsbewusstsein der Mitarbeiter
 - *Anwendung*: Schulung und Sensibilisierung
@@ -92,7 +94,7 @@ Der *ORP-Baustein* legt organisatorische Maßnahmen zur Informationssicherheit f
   - Regelmäßige Sicherheitsschulungen
   - Unterweisung in sicheres Verhalten im HomeOffice
 
-* ORP.3 Sensibilisierung und Schulung
+** ORP.3 Sensibilisierung und Schulung
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Kontinuierliche Weiterbildung
 - *Anwendung*: Aufbau von Sicherheitskompetenz
@@ -101,7 +103,7 @@ Der *ORP-Baustein* legt organisatorische Maßnahmen zur Informationssicherheit f
   - E-Learning-Module zu IT-Sicherheit
   - Regelmäßige Sicherheitstipps per E-Mail
 
-* ORP.4 Identitäts- und Berechtigungsmanagement
+** ORP.4 Identitäts- und Berechtigungsmanagement
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Zugriffsschutz für Informationen
 - *Anwendung*: Kontrolle der Zugriffsrechte
@@ -117,7 +119,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
 [[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=133][~IT_Grundschutzkompendium S. 133 ff~]]
 #+END_NOTES
 
-* CON.1 Kryptokonzept
+** CON.1 Kryptokonzept
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Schutz vertraulicher Daten
 - *Anwendung*: Verschlüsselung sensibler Informationen
@@ -129,7 +131,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
   - Einsatz sicherer kryptografischer Algorithmen
   - Regelmäßige Überprüfung der Kryptoverfahren
 
-* CON.2 Datenschutz
+** CON.2 Datenschutz
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Einhaltung datenschutzrechtlicher Vorgaben
 - *Anwendung*: Schutz personenbezogener Daten
@@ -160,7 +162,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
   - Unterstützt Risikoanalysen und Datenschutz-Folgenabschätzungen (DSFA).
 #+END_NOTES
 
-* CON.3 Datensicherungskonzept
+** CON.3 Datensicherungskonzept
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Schutz vor Datenverlust
 - *Anwendung*: Regelmäßige Sicherung wichtiger Daten
@@ -171,7 +173,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
   - Sichere Aufbewahrung der Backup-Medien
   - Verschlüsselung von Backups zum Schutz der Vertraulichkeit
 
-* CON.6 Löschen und Vernichten
+** CON.6 Löschen und Vernichten
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherstellung der vollständigen und irreversiblen Datenlöschung
 - *Anwendung*: DSGVO-konforme Löschung von personenbezogenen Daten und anderen sensiblen Informationen
@@ -182,7 +184,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
   - Dokumentation der Lösch- und Vernichtungsvorgänge
   - Regelmäßige Kontrolle der Löschprozesse zur Vermeidung von Datenlecks
 
-* CON.7 Informationssicherheit auf Auslandsreisen
+** CON.7 Informationssicherheit auf Auslandsreisen
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Schutz von Unternehmens- und persönlichen Daten bei Reisen
 - *Anwendung*: Maßnahmen zur Minimierung von Sicherheitsrisiken außerhalb der sicheren IT-Umgebung
@@ -193,7 +195,7 @@ Die *CON-Bausteine* definieren Konzepte und Vorgehensweisen zur Informationssich
   - Reduzierung mitgeführter sensibler Daten
   - Sicherstellung von sicheren Kommunikationskanälen
 
-* CON.8 Software-Entwicklung
+** CON.8 Software-Entwicklung
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Gewährleistung von Sicherheit bereits in der Entwicklungsphase
 - *Anwendung*: Integration sicherer Programmierpraktiken
@@ -225,7 +227,7 @@ Die OWASP Top 10 ist eine regelmäßig aktualisierte Liste der kritischsten Sich
   10) Server-Side Request Forgery (SSRF) – Angriffe, bei denen ein Server dazu gebracht wird, ungewollte externe oder interne Anfragen zu senden.
 #+END_NOTES
 
-* CON.10 Entwicklung von Webanwendungen
+** CON.10 Entwicklung von Webanwendungen
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Schutz vor Angriffen auf Webanwendungen
 - *Anwendung*: Entwicklung robuster Webanwendungen mit hohen Sicherheitsstandards
@@ -285,7 +287,7 @@ SELECT * FROM users WHERE username = '" + user_input + "' AND password = '" + pa
     - ~frame-ancestors 'none'~ – Schutz vor Clickjacking durch iFrames. 
 #+END_NOTES
 
-* CON.11.1 Geheimschutz
+** CON.11.1 Geheimschutz
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Schutz von Verschlusssachen und sensiblen Informationen
 - *Anwendung*: Einhaltung spezieller Geheimhaltungsanforderungen
@@ -306,11 +308,11 @@ Die *OPS-Bausteine* definieren Anforderungen an einen sicheren IT-Betrieb und di
 #+BEGIN_NOTES
 [[https://www.bsi.bund.de/SharedDocs/Downloads/DE/BSI/Grundschutz/IT-GS-Kompendium/IT_Grundschutz_Kompendium_Edition2023.pdf?__blob=publicationFile&v=4#download=1&page=200][~IT_Grundschutzkompendium S. 200 ff~]]
 #+END_NOTES
-* OPS 1 Eigener Betrieb
+** OPS 1 Eigener Betrieb
 
 Dieser Abschnitt behandelt die Identifikation potenzieller Gefährdungen sowie die erforderlichen Maßnahmen zur Absicherung des eigenen IT-Betriebs innerhalb des Unternehmens.
 
-** OPS.1.1 Allgemeiner IT-Betrieb
+*** OPS.1.1 Allgemeiner IT-Betrieb
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherstellung eines reibungslosen und sicheren IT-Betriebs
 - *Anwendung*: Standardisierte Prozesse für IT-Administration, Betrieb und Monitoring
@@ -331,7 +333,7 @@ Dieser Abschnitt behandelt die Identifikation potenzieller Gefährdungen sowie d
   - neue Funktionen hinzuzufügen.
 #+END_NOTES
 
-** OPS 1.2 Weiterführende Aufgaben
+*** OPS 1.2 Weiterführende Aufgaben
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Ergänzung des allgemeinen IT-Betriebs um spezifische organisatorische und technische Aufgaben zur Sicherstellung der IT-Sicherheit und Effizienz.
 - *Anwendung*: Festlegung und Umsetzung erweiterter Maßnahmen für Archivierung, Telearbeit, Fernwartung und Zeitsynchronisation.
@@ -344,11 +346,11 @@ Dieser Abschnitt behandelt die Identifikation potenzieller Gefährdungen sowie d
   - Fernwartung: verschlüsselte Verbindungen und kontrollierte Authentifizierung
   - NTP-Zeitsynchronisation: Präzise Zeitsteuerung innerhalb des Netzwerks
 
-* OPS 2 Betrieb von Dritten
+** OPS 2 Betrieb von Dritten
 
 Hier geht es um die Sicherstellung und Überwachung von IT-Dienstleistungen, die von externen Dienstleistern erbracht werden (Outsourcing).
 
-** OPS.2.2 Cloud-Nutzung
+*** OPS.2.2 Cloud-Nutzung
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherstellung der Informationssicherheit bei der Nutzung von Cloud-Diensten
 - *Anwendung*: Identifikation und Umsetzung von Sicherheitsmaßnahmen bei Cloud-Diensten
@@ -360,7 +362,7 @@ Hier geht es um die Sicherstellung und Überwachung von IT-Dienstleistungen, die
   - Integration von Sicherheitsmaßnahmen in Cloud-Verträge
   - Regelmäßige Überprüfung der Cloud-Sicherheitsmaßnahmen
 
-** OPS.2.3 Nutzung von Outsourcing
+*** OPS.2.3 Nutzung von Outsourcing
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherstellung der Informationssicherheit bei der Auslagerung von IT-Prozessen
 - *Anwendung*: Identifikation und Umsetzung von Sicherheitsmaßnahmen im Outsourcing
@@ -382,10 +384,10 @@ Hier geht es um die Sicherstellung und Überwachung von IT-Dienstleistungen, die
   - *Compliance-Audits*: Überprüfung der Einhaltung von Normen (z. B. ISO 27001, DSGVO).
 #+END_NOTES
 
-* OPS 3 Betrieb für Dritte
+** OPS 3 Betrieb für Dritte
 
 Dieser Abschnitt beschreibt, welche Aspekte zu beachten sind, wenn das eigene Unternehmen IT-Dienstleistungen für externe Kunden erbringt.
-** OPS.3.2 Anbieten von Outsourcing
+*** OPS.3.2 Anbieten von Outsourcing
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Sicherstellung der Informationssicherheit durch Anbieter von Outsourcing-Dienstleistungen
 - *Anwendung*: Implementierung und Einhaltung von Sicherheitsmaßnahmen im Outsourcing-Prozess
@@ -404,8 +406,8 @@ Dieser Abschnitt beschreibt, welche Aspekte zu beachten sind, wenn das eigene Un
 
 * APP - Anwendungen und Dienste
    IT-Anwendungen sind ein zentraler Bestandteil moderner IT-Infrastrukturen. Sie umfassen Office-Produkte, Webbrowser, mobile Anwendungen und viele weitere Softwarelösungen, die zur Verarbeitung und Verwaltung von Informationen verwendet werden. Aufgrund ihrer Verbreitung und Funktionalität stellen sie ein potenzielles Sicherheitsrisiko dar. Der IT-Grundschutz stellt Anforderungen an die sichere Nutzung und Konfiguration dieser Anwendungen, um Bedrohungen zu minimieren und Datenschutz sowie Informationssicherheit zu gewährleisten.
-* APP 1 Anwendungen
-** APP.1.1 Office-Produkte
+** APP 1 Anwendungen
+*** APP.1.1 Office-Produkte
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Standard-Software am Arbeitsplatz
 - *Anwendung*: Sichere Konfiguration der Office-Programme
@@ -421,7 +423,7 @@ Dieser Abschnitt beschreibt, welche Aspekte zu beachten sind, wenn das eigene Un
   Während Makros die Produktivität steigern können, stellen sie jedoch auch ein erhebliches Sicherheitsrisiko dar. Angreifer können schädliche Makros in Office-Dokumenten verstecken, die beim Öffnen automatisch ausgeführt werden und beispielsweise Schadsoftware nachladen oder Daten stehlen. Daher ist es eine bewährte Sicherheitsmaßnahme, Makros standardmäßig zu deaktivieren und nur signierte oder vertrauenswürdige Makros zuzulassen.
 #+END_NOTES
 
-** APP.1.2 Webbrowser
+*** APP.1.2 Webbrowser
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Hauptzugriffspunkt auf Internet-Ressourcen
 - *Anwendung*: Absicherung des Browsers
@@ -442,7 +444,7 @@ Dieser Abschnitt beschreibt, welche Aspekte zu beachten sind, wenn das eigene Un
 
 - *DNS-over-HTTPS (DoH)*: Eine Technik, bei der DNS-Anfragen über das HTTPS-Protokoll verschlüsselt übertragen werden, um zu verhindern, dass diese Anfragen von Dritten abgefangen oder manipuliert werden können.
 #+END_NOTES
-** APP.1.3 E-Mail-Clients
+*** APP.1.3 E-Mail-Clients
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Zentrales Kommunikationsmittel in Unternehmen
 - *Anwendung*: Schutz vor Phishing und Malware in E-Mails
@@ -467,7 +469,7 @@ Erklärungen unklarer Begriffe:
 - *Schulungen zur Erkennung von Phishing-Mails*: Maßnahmen zur Sensibilisierung von Mitarbeitenden, um verdächtige E-Mails anhand typischer Merkmale wie gefälschten Absenderadressen, ungewöhnlichen Anhängen oder dringlichen Handlungsaufforderungen zu erkennen.
 #+END_NOTES
 
-** APP.1.4 Mobile Anwendungen (Apps)
+*** APP.1.4 Mobile Anwendungen (Apps)
 #+ATTR_REVEAL: :frag (appear)
 - *Relevanz*: Nutzung von Smartphones und Tablets im Arbeitsumfeld
 - *Anwendung*: Sichere Verwaltung und Nutzung von Apps
@@ -486,8 +488,8 @@ Erklärungen unklarer Begriffe:
 
 - *VPN (Virtual Private Network)*: Eine Technologie zur sicheren, verschlüsselten Verbindung zwischen einem Gerät und einem privaten Netzwerk über das Internet. VPNs schützen vor Datenabgriff in unsicheren Netzwerken, indem sie den Datenverkehr verschlüsseln und die Identität des Nutzers verschleiern.
 #+END_NOTES
-* APP.2 Verzeichnisdienste
-** APP.2.1 Allgemeiner Verzeichnisdienst
+** APP.2 Verzeichnisdienste
+*** APP.2.1 Allgemeiner Verzeichnisdienst
 - *Relevanz*: Zentrale Verwaltung von Benutzer- und Ressourcendaten
 - *Anwendung*: Schutz der Verzeichnisdienstdaten und Absicherung der Authentifizierung
 - *Konkrete Maßnahmen*:
@@ -504,7 +506,7 @@ Erklärungen unklarer Begriffe:
 - *Einschränkung und Kontrolle der Zugriffsrechte*: Umsetzung des Prinzips der geringsten Berechtigungen (Least Privilege), sodass Benutzer:innen nur die für ihre Aufgaben notwendigen Rechte erhalten. Dies verhindert unautorisierte Zugriffe und reduziert potenzielle Sicherheitslücken.
 #+END_NOTES
 
-** APP.2.2 Active Directory Domain Services (AD DS)
+*** APP.2.2 Active Directory Domain Services (AD DS)
 - *Relevanz*: Verwaltung von Windows-basierten IT-Infrastrukturen
 - *Anwendung*: Absicherung der Authentifizierungs- und Berechtigungsverwaltung
 - *Konkrete Maßnahmen*:
@@ -521,7 +523,7 @@ Erklärungen unklarer Begriffe:
 - *Kerberos*: Ein sicheres Authentifizierungsprotokoll, das verschlüsselte Tickets verwendet, um Benutzer:innen innerhalb eines Netzwerks zu identifizieren. Die Nutzung von Kerberos erhöht die Sicherheit, da Passwörter nicht im Klartext übertragen werden.
 #+END_NOTES
 
-** APP.2.3 OpenLDAP
+*** APP.2.3 OpenLDAP
 - *Relevanz*: Open-Source-Alternative für Verzeichnisdienste
 - *Anwendung*: Sicherer Betrieb und Nutzung von OpenLDAP
 - *Konkrete Maßnahmen*:
@@ -538,8 +540,8 @@ Erklärungen unklarer Begriffe:
 - *Partitionierung des Verzeichnisses* ermöglicht eine Aufteilung der LDAP-Datenbank in mehrere logische Einheiten, um Lastverteilung und Sicherheit zu verbessern.
 #+END_NOTES
 
-* APP.3 Netzbasierte Dienste
-** APP.3.1 Webanwendungen und Webservices
+** APP.3 Netzbasierte Dienste
+*** APP.3.1 Webanwendungen und Webservices
 - *Relevanz*: Nutzung von Webanwendungen und Webservices im internen und externen Netzwerk
 - *Anwendung*: Schutz der Daten und Sicherstellung der Verfügbarkeit
 - *Konkrete Maßnahmen*:
@@ -549,7 +551,7 @@ Erklärungen unklarer Begriffe:
   - Sicherstellung der sicheren Speicherung von Zugangsdaten
   - Regelmäßige Sicherheitsüberprüfungen und Penetrationstests
 
-** APP.3.2 Webserver
+*** APP.3.2 Webserver
 - *Relevanz*: Basis für den Betrieb von Webanwendungen
 - *Anwendung*: Absicherung des Webservers gegen Angriffe und Missbrauch
 - *Konkrete Maßnahmen*:
@@ -562,7 +564,7 @@ Erklärungen unklarer Begriffe:
 - *Denial-of-Service-Angriffe*: versuchen, Webserver durch übermäßige Anfragen lahmzulegen.
 #+END_NOTES
 
-** APP.3.3 Fileserver
+*** APP.3.3 Fileserver
 - *Relevanz*: Zentrale Bereitstellung von Dateien im Netzwerk
 - *Anwendung*: Schutz von gespeicherten Daten vor Verlust und Manipulation
 - *Konkrete Maßnahmen*:
@@ -571,7 +573,7 @@ Erklärungen unklarer Begriffe:
   - Regelmäßige Überprüfung der Speicherintegrität
   - Sicherstellung einer zuverlässigen Datensicherung
 
-** APP.3.4 Samba
+*** APP.3.4 Samba
 - *Relevanz*: Bereitstellung von Datei- und Druckdiensten zwischen Windows- und Linux-Systemen
 - *Anwendung*: Absicherung von Samba-Diensten gegen unberechtigten Zugriff
 - *Konkrete Maßnahmen*:
@@ -580,7 +582,7 @@ Erklärungen unklarer Begriffe:
   - Einschränkung der Berechtigungen für Benutzer und Dienste
   - Regelmäßige Sicherung und Kontrolle der Samba-Registry
 
-** APP.3.6 DNS-Server
+*** APP.3.6 DNS-Server
 - *Relevanz*: Zentrale Komponente zur Namensauflösung in Netzwerken
 - *Anwendung*: Absicherung der DNS-Infrastruktur gegen Manipulation und Ausfälle
 - *Konkrete Maßnahmen*:
@@ -606,8 +608,8 @@ Erklärungen unklarer Begriffe:
 - *Verschlüsselung:*
   - DNS-Anfragen sollten über DNS-over-TLS (DoT) oder DNS-over-HTTPS (DoH) verschlüsselt werden, um Abhörversuche zu verhindern.
 #+END_NOTES
-* APP.4 Business-Anwendungen
-** APP.4.2 SAP-ERP-System
+** APP.4 Business-Anwendungen
+*** APP.4.2 SAP-ERP-System
 - *Relevanz*: Automatisierung und Unterstützung interner sowie externer Geschäftsprozesse
 - *Anwendung*: Sicherer Betrieb und Konfiguration von SAP-ERP-Systemen
 - *Konkrete Maßnahmen*:
@@ -623,7 +625,7 @@ Erklärungen unklarer Begriffe:
 #+END_NOTES
 
 
-** APP.4.3 Relationale Datenbanken
+*** APP.4.3 Relationale Datenbanken
 - *Relevanz*: Verwaltung großer Datensammlungen mit hohen Sicherheitsanforderungen
 - *Anwendung*: Schutz der Datenbanken vor Manipulation und unbefugtem Zugriff
 - *Konkrete Maßnahmen*:
@@ -641,7 +643,7 @@ Erklärungen unklarer Begriffe:
   - Unsichere Skripte, die SQL-Abfragen dynamisch generieren, sollten vermieden oder stark abgesichert werden.
 #+END_NOTES
 
-** APP.4.4 Kubernetes
+*** APP.4.4 Kubernetes
 - *Relevanz*: Orchestrierung von Containern in modernen IT-Infrastrukturen
 - *Anwendung*: Schutz und Absicherung von Kubernetes-Clustern
 - *Konkrete Maßnahmen*:
@@ -669,7 +671,7 @@ Erklärungen unklarer Begriffe:
   - Tools wie *Calico* oder *Cilium* helfen, granulare Netzwerkregeln umzusetzen.
 #+END_NOTES
 
-** APP.4.6 SAP ABAP-Programmierung
+*** APP.4.6 SAP ABAP-Programmierung
 - *Relevanz*: Eigenentwicklungen in SAP-Systemen erfordern besondere Sicherheitsmaßnahmen
 - *Anwendung*: Sichere Entwicklung und Verwaltung von ABAP-Programmen
 - *Konkrete Maßnahmen*:
@@ -678,8 +680,8 @@ Erklärungen unklarer Begriffe:
   - Integration von Berechtigungsprüfungen in ABAP-Anwendungen
   - Regelmäßige Code-Audits und Sicherheitsüberprüfungen
 
-* APP.5 E-Mail/Groupware/Kommunikation
-** APP.5.2 Microsoft Exchange und Outlook
+** APP.5 E-Mail/Groupware/Kommunikation
+*** APP.5.2 Microsoft Exchange und Outlook
 - *Relevanz*: Groupware-Lösung für mittlere bis große Institutionen
 - *Anwendung*: Sicherer Betrieb und Nutzung von Microsoft Exchange und Outlook
 - *Konkrete Maßnahmen*:
@@ -690,7 +692,7 @@ Erklärungen unklarer Begriffe:
   - Absicherung der Kommunikation zwischen Exchange-Systemen
   - Schutz vor unzulässigem Browserzugriff und unsachgemäßer Anbindung anderer Systeme
 
-** APP.5.3 Allgemeiner E-Mail-Client und -Server
+*** APP.5.3 Allgemeiner E-Mail-Client und -Server
 - *Relevanz*: Grundlegende E-Mail-Kommunikation in Institutionen
 - *Anwendung*: Schutz der E-Mail-Infrastruktur und sichere Nutzung von E-Mail-Clients
 - *Konkrete Maßnahmen*:
@@ -701,7 +703,7 @@ Erklärungen unklarer Begriffe:
   - Nutzung von SPF, DKIM und DMARC zur E-Mail-Authentifizierung
   - Förderung einer Ende-zu-Ende-Verschlüsselung und Signatur
 
-** APP.5.4 Unified Communications und Collaboration (UCC)
+*** APP.5.4 Unified Communications und Collaboration (UCC)
 - *Relevanz*: Integration moderner Kommunikationsdienste in IT-Umgebungen
 - *Anwendung*: Sicherer Betrieb und Nutzung von UCC-Diensten
 - *Konkrete Maßnahmen*:
@@ -712,8 +714,8 @@ Erklärungen unklarer Begriffe:
   - Absicherung von KI-Funktionen und Vermeidung von Identitätsmanipulation
   - Einschränkung von Metadaten-Speicherung und Sichtbarkeit für Administratoren
 
-* APP.6 Allgemeine Software
-** APP.6.1 Einführung in Allgemeine Software
+** APP.6 Allgemeine Software
+*** APP.6.1 Einführung in Allgemeine Software
 - *Relevanz*: Betrifft jegliche Software im Informationsverbund
 - *Anwendung*: Sicherheit über den gesamten Software-Lebenszyklus gewährleisten
 - *Konkrete Maßnahmen*:
@@ -722,7 +724,7 @@ Erklärungen unklarer Begriffe:
   - Vermeidung fehlerhafter Konfigurationen und unsicherer Software-Quellen
   - Regelmäßige Sicherheitsüberprüfungen und Updates einplanen
 
-** APP.6.2 Sicherheitsanforderungen an Allgemeine Software
+*** APP.6.2 Sicherheitsanforderungen an Allgemeine Software
 - *Relevanz*: Erfüllt die grundlegenden Anforderungen an sichere Software-Nutzung
 - *Anwendung*: Sicherstellung der Software-Integrität und Schutz vor Manipulation
 - *Konkrete Maßnahmen*:
@@ -732,8 +734,8 @@ Erklärungen unklarer Begriffe:
   - Sicherstellung regelmäßiger Software-Updates und Sicherheits-Patches
   - Inventarisierung eingesetzter Software zur Sicherheitsüberwachung
 
-* APP.7 Entwicklung von Individualsoftware
-** APP.7.1 Planung und Anforderungen für Individualsoftware
+** APP.7 Entwicklung von Individualsoftware
+*** APP.7.1 Planung und Anforderungen für Individualsoftware
 - *Relevanz*: Betrifft Institutionen, die maßgeschneiderte Software entwickeln oder beauftragen
 - *Anwendung*: Berücksichtigung von Sicherheitsaspekten bereits in der Planungsphase
 - *Konkrete Maßnahmen*:
@@ -743,7 +745,7 @@ Erklärungen unklarer Begriffe:
   - Einbindung von Fachverantwortlichen in alle Entwicklungsphasen
   - Berücksichtigung von gesetzlichen und regulatorischen Anforderungen
 
-** APP.7.2 Sicherer Entwicklungsprozess und Betrieb
+*** APP.7.2 Sicherer Entwicklungsprozess und Betrieb
 - *Relevanz*: Betrifft sowohl intern als auch extern entwickelte Softwarelösungen
 - *Anwendung*: Schutz von Software-Entwicklungsprozessen vor Sicherheitsrisiken
 - *Konkrete Maßnahmen*:
@@ -753,7 +755,7 @@ Erklärungen unklarer Begriffe:
   - Nutzung von sicheren Entwicklungsumgebungen mit Zugriffskontrolle
   - Sicherstellung der Nachvollziehbarkeit und Dokumentation des Codes
 
-** APP.7.3 Anforderungen an Individualsoftware mit erhöhtem Schutzbedarf
+*** APP.7.3 Anforderungen an Individualsoftware mit erhöhtem Schutzbedarf
 - *Relevanz*: Notwendig für sicherheitskritische Anwendungen und Systeme
 - *Anwendung*: Gewährleistung hoher Sicherheitsstandards in besonders sensiblen Bereichen
 - *Konkrete Maßnahmen*:
@@ -765,7 +767,7 @@ Erklärungen unklarer Begriffe:
 
 * SYS - IT-Systeme
 Der Baustein *SYS - IT-Systeme* behandelt die Sicherheit verschiedener IT-Komponenten, darunter Server, Desktop- und mobile Endgeräte sowie spezielle Systeme wie Drucker, IoT-Geräte und Wechseldatenträger. Er beschreibt typische Bedrohungen, wie unbefugten Zugriff, Datenverlust und Manipulation, sowie Maßnahmen zur Absicherung, darunter Zugriffskontrollen, Verschlüsselung und regelmäßige Updates. Besondere Schwerpunkte liegen auf der Härtung von Betriebssystemen, Netzwerksicherheit und sicheren Nutzungskonzepten für IT-Geräte. Ziel ist es, die Verfügbarkeit, Vertraulichkeit und Integrität der IT-Infrastruktur zu gewährleisten und Risiken durch organisatorische und technische Schutzmaßnahmen zu minimieren. 
-* SYS.1 Server
+** SYS.1 Server
 
 Folgende Serverlösungen werden behandelt:
 
@@ -779,7 +781,7 @@ Folgende Serverlösungen werden behandelt:
   8) Speicherlösungen
   9) Backup und Wiederherstellung
 
-** SYS.1.1 Allgemeiner Server
+*** SYS.1.1 Allgemeiner Server
 - *Relevanz*: Zentrale IT-Komponente zur Bereitstellung von Diensten
 - *Anwendung*: Schutz der auf Servern verarbeiteten Informationen und Dienste
 - *Konkrete Maßnahmen*:
@@ -791,7 +793,7 @@ Folgende Serverlösungen werden behandelt:
   - Deaktivierung nicht benötigter Dienste und Schnittstellen
   - Einbindung in Notfallmanagement und Sicherheitsrichtlinien
 
-** SYS.1.2 Windows-Server
+*** SYS.1.2 Windows-Server
 - *Relevanz*: Häufig genutztes Betriebssystem für Serverumgebungen
 - *Anwendung*: Sicherstellung einer robusten Konfiguration und Administration von Windows-Servern
 - *Konkrete Maßnahmen*:
@@ -802,7 +804,7 @@ Folgende Serverlösungen werden behandelt:
   - Minimierung von Telemetrie- und Diagnosedatenübertragungen
   - Regelmäßige Sicherheitsprüfungen und forensische Analysen
 
-** SYS.1.3 Linux- und Unix-Server
+*** SYS.1.3 Linux- und Unix-Server
 - *Relevanz*: Weit verbreitete Serverplattform für kritische IT-Dienste
 - *Anwendung*: Absicherung und Härtung von Unix- und Linux-Servern
 - *Konkrete Maßnahmen*:
@@ -814,7 +816,7 @@ Folgende Serverlösungen werden behandelt:
   - Einsatz von Paketmanagement aus vertrauenswürdigen Quellen
   - Regelmäßige Überprüfung der Systemintegrität (z. B. AIDE, Tripwire)
 
-** SYS.1.4 Hochverfügbarkeitslösungen
+*** SYS.1.4 Hochverfügbarkeitslösungen
 - *Relevanz*: Sicherstellung der kontinuierlichen Verfügbarkeit kritischer IT-Dienste
 - *Anwendung*: Absicherung und Redundanzkonzepte für hochverfügbare Systeme
 - *Konkrete Maßnahmen*:
@@ -823,7 +825,7 @@ Folgende Serverlösungen werden behandelt:
   - Regelmäßige Tests von Ausfallszenarien und Notfallwiederherstellung
   - Implementierung von Datenreplikationstechniken für Konsistenz und Verfügbarkeit
 
-** SYS.1.5 Virtualisierung
+*** SYS.1.5 Virtualisierung
 - *Relevanz*: Effiziente Ressourcennutzung und flexible Bereitstellung von IT-Diensten
 - *Anwendung*: Sicherstellung der Isolation und Sicherheit virtueller Umgebungen
 - *Konkrete Maßnahmen*:
@@ -833,7 +835,7 @@ Folgende Serverlösungen werden behandelt:
   - Verschlüsselung und sichere Speicherung von Zugangsdaten für virtuelle Maschinen
   - Einführung von Monitoring- und Audit-Mechanismen für Virtualisierungsplattformen
 
-** SYS.1.6 Containerisierung
+*** SYS.1.6 Containerisierung
 - *Relevanz*: Standardisierte Bereitstellung und Portabilität von Anwendungen
 - *Anwendung*: Absicherung und Härtung von Container-Umgebungen
 - *Konkrete Maßnahmen*:
@@ -843,7 +845,7 @@ Folgende Serverlösungen werden behandelt:
   - Trennung von Container-Netzwerken zur Minimierung von Angriffsflächen
   - Implementierung von Signaturen und Verifikationen für Container-Images
 
-** SYS.1.7 IBM Z (z/OS)
+*** SYS.1.7 IBM Z (z/OS)
 - *Relevanz*: Hochskalierbare Unternehmens-IT-Infrastruktur mit speziellen Sicherheitsanforderungen
 - *Anwendung*: Schutz und Härtung von z/OS-Systemen
 - *Konkrete Maßnahmen*:
@@ -853,7 +855,7 @@ Folgende Serverlösungen werden behandelt:
   - Nutzung interner Kanäle für Betriebssystemkommunikation (HiperSockets)
   - Sicherstellung der Systemintegrität durch regelmäßige Audits und Notfallvorsorge
 
-** SYS.1.8 Speicherlösungen
+*** SYS.1.8 Speicherlösungen
 - *Relevanz*: Sichere und effiziente Verwaltung von Unternehmensdaten
 - *Anwendung*: Schutz sensibler Daten in Speicherumgebungen
 - *Konkrete Maßnahmen*:
@@ -863,7 +865,7 @@ Folgende Serverlösungen werden behandelt:
   - Implementierung von Zugriffskontrollen und Mandantentrennung (LUN Masking, VSANs)
   - Zentrale Überwachung und Verwaltung von Speicherlösungen zur Erkennung von Anomalien
 
-** SYS.1.9 Backup und Wiederherstellung
+*** SYS.1.9 Backup und Wiederherstellung
 - *Relevanz*: Gewährleistung der Datenverfügbarkeit bei Systemausfällen
 - *Anwendung*: Entwicklung von Backup-Strategien und Notfallwiederherstellungsplänen
 - *Konkrete Maßnahmen*:
@@ -871,7 +873,7 @@ Folgende Serverlösungen werden behandelt:
   - Implementierung von Offsite- und Air-Gapped-Backups zum Schutz vor Ransomware
   - Regelmäßige Überprüfung der Backup-Integrität und Testen der Wiederherstel
 
-* SYS.2 Desktop-Systeme
+** SYS.2 Desktop-Systeme
 Hier werden Best-Practices für folgende Desktoplösungen beschrieben:
   1) Allgemeine Clients
   2) Windows-Clients
@@ -879,7 +881,7 @@ Hier werden Best-Practices für folgende Desktoplösungen beschrieben:
   4) macOS-Clients
   5) Client-Virtualisierung
   6) Virtual Desktop Infrastruktur
-** SYS.2.1 Allgemeiner Client
+*** SYS.2.1 Allgemeiner Client
 - *Relevanz*: Grundlegendes IT-System für den Endnutzer
 - *Anwendung*: Absicherung von Arbeitsplatzrechnern unabhängig vom Betriebssystem
 - *Konkrete Maßnahmen*:
@@ -890,7 +892,7 @@ Hier werden Best-Practices für folgende Desktoplösungen beschrieben:
   - Absicherung des Bootvorgangs gegen Manipulation
   - Minimierung von Cloud- und Online-Funktionen
 
-** SYS.2.2 Windows-Clients
+*** SYS.2.2 Windows-Clients
 - *Relevanz*: Weit verbreitetes Client-Betriebssystem in Unternehmen
 - *Anwendung*: Schutzmaßnahmen für Windows-Systeme, insbesondere Windows 10 und 11
 - *Konkrete Maßnahmen*:
@@ -902,7 +904,7 @@ Hier werden Best-Practices für folgende Desktoplösungen beschrieben:
   - Einschränkung von Microsoft-Store- und Online-Konto-Funktionen
   - Sichere Konfiguration von Remote-Zugriffen (z. B. RDP, Remote-Unterstützung)
 
-** SYS.2.3 Linux- und Unix-Clients
+*** SYS.2.3 Linux- und Unix-Clients
 - *Relevanz*: Alternative zu Windows mit hoher Sicherheit und Anpassbarkeit
 - *Anwendung*: Härtung von Linux- und Unix-Clients
 - *Konkrete Maßnahmen*:
@@ -913,7 +915,7 @@ Hier werden Best-Practices für folgende Desktoplösungen beschrieben:
   - Schutz von Systemdateien durch restriktive Mount-Optionen
   - Sicherer Umgang mit Skriptsprachen und gemeinsam genutzten Bibliotheken
 
-** SYS.2.4 macOS-Clients
+*** SYS.2.4 macOS-Clients
 - *Relevanz*: Betriebssystem für Apple-Geräte mit speziellen Sicherheitsanforderungen
 - *Anwendung*: Absicherung von macOS-Systemen in Unternehmen
 - *Konkrete Maßnahmen*:
@@ -923,7 +925,7 @@ Hier werden Best-Practices für folgende Desktoplösungen beschrieben:
   - Verwaltung und Härtung von macOS-Geräten durch MDM-Lösungen
   - Deaktivierung unnötiger Cloud- und Synchronisationsdienste
   - Strenge Kontrolle von Drittanbieter-Anwendungen und Berechtigungen
-** SYS.2.5 Client-Virtualisierung
+*** SYS.2.5 Client-Virtualisierung
 - *Relevanz*: Effiziente Nutzung von Hardware-Ressourcen durch zentrale Verwaltung virtueller Clients
 - *Anwendung*: Absicherung und Performance-Optimierung virtualisierter Clients
 - *Konkrete Maßnahmen*:
@@ -936,7 +938,7 @@ Hier werden Best-Practices für folgende Desktoplösungen beschrieben:
   - Erweiterte Protokollierung und Monitoring virtueller Clients zur Bedrohungserkennung
   - Hochverfügbare Bereitstellung und Redundanzstrategien für Virtualisierungsinfrastrukturen
 
-** SYS.2.6 Virtual Desktop Infrastructure (VDI)
+*** SYS.2.6 Virtual Desktop Infrastructure (VDI)
 - *Relevanz*: Zentralisierte Bereitstellung und Verwaltung standardisierter virtueller Desktops
 - *Anwendung*: Sichere und leistungsfähige Implementierung einer VDI-Lösung
 - *Konkrete Maßnahmen*:
@@ -948,12 +950,12 @@ Hier werden Best-Practices für folgende Desktoplösungen beschrieben:
   - Integration der VDI in ein Security Information and Event Management (SIEM)
   - Nutzung nicht-persistenter Clients zur Reduzierung von Sicherheitsrisiken
   - Strikte Zugriffskontrollen und Absicherung der VDI-Managementsysteme gegen Missbrauch
-* SYS.3 Mobile Devices
+** SYS.3 Mobile Devices
 Im mobile Bereich werden folgende Lösungen beschrieben:
   1) Laptops
   2) Tablets und Smartphones
   3) Mobiltelefone
-** SYS.3.1 Laptops
+*** SYS.3.1 Laptops
 - *Relevanz*: Weit verbreitete mobile Arbeitsgeräte mit erhöhtem Schutzbedarf
 - *Anwendung*: Schutzmaßnahmen für die Nutzung von Laptops in Institutionen
 - *Konkrete Maßnahmen*:
@@ -966,7 +968,7 @@ Im mobile Bereich werden folgende Lösungen beschrieben:
   - Integration in zentrale IT-Sicherheitsrichtlinien und Verwaltungssysteme
   - Regelmäßige Sicherung der gespeicherten Daten
 
-** SYS.3.2 Tablets und Smartphones
+*** SYS.3.2 Tablets und Smartphones
 - *Relevanz*: Zunehmend genutzte Alternative zu Laptops für mobile Arbeitsumgebungen
 - *Anwendung*: Sicherstellung eines sicheren Einsatzes von Tablets im Unternehmenskontext
 - *Konkrete Maßnahmen*:
@@ -978,7 +980,7 @@ Im mobile Bereich werden folgende Lösungen beschrieben:
   - Verwendung von Multi-Faktor-Authentifizierung für kritische Anwendungen
   - Regelmäßige Sicherheitsupdates und Überprüfung auf Schwachstellen
     
-** SYS.3.3 Mobiltelefone
+*** SYS.3.3 Mobiltelefone
 - *Relevanz*: Weit verbreitete mobile Kommunikationsgeräte mit sicherheitskritischen Aspekten
 - *Anwendung*: Absicherung von dienstlich genutzten Mobiltelefonen
 - *Konkrete Maßnahmen*:
@@ -993,13 +995,13 @@ Im mobile Bereich werden folgende Lösungen beschrieben:
   - Einrichtung eines Mobiltelefon-Pools für häufig wechselnde Benutzer
   - Maßnahmen zur Minimierung der Erstellung von Bewegungsprofilen durch Dritte
   - Sicherstellung der ordnungsgemäßen Entsorgung und Löschung von Geräten und Speicherkarten
-* SYS.4 Sonstige Systeme
+** SYS.4 Sonstige Systeme
 Hier werden Lösung für weitere wichtige IT-Komponente beschrieben:
   1) Drucker, Kopierer und Multifunktionsgeräte
   2) Eingebettete Systeme (Embedded Systems)
   3) IoT-Geräte
   4) Wechseldatenträger
-** SYS.4.1 Drucker, Kopierer und Multifunktionsgeräte
+*** SYS.4.1 Drucker, Kopierer und Multifunktionsgeräte
 - *Relevanz*: Verarbeitung vertraulicher Informationen und Anbindung an IT-Netzwerke erfordern besondere Sicherheitsmaßnahmen
 - *Anwendung*: Schutz von gedruckten, gescannten und gespeicherten Dokumenten sowie Netzwerksicherheit
 - *Konkrete Maßnahmen*:
@@ -1011,7 +1013,7 @@ Hier werden Lösung für weitere wichtige IT-Komponente beschrieben:
   - Netzsegmentierung zur Trennung von Druck- und Unternehmensnetzwerken
   - Logging und Monitoring von Druck- und Scanjobs zur Nachvollziehbarkeit
 
-** SYS.4.3 Eingebettete Systeme
+*** SYS.4.3 Eingebettete Systeme
 - *Relevanz*: Weit verbreitete spezialisierte IT-Systeme mit sicherheitskritischen Anwendungen
 - *Anwendung*: Schutz und Härtung von eingebetteten Systemen in Unternehmens- und Industrieumgebungen
 - *Konkrete Maßnahmen*:
@@ -1022,7 +1024,7 @@ Hier werden Lösung für weitere wichtige IT-Komponente beschrieben:
   - Minimierung von Netzwerkschnittstellen und Absicherung gegen unbefugten Fernzugriff
   - Nutzung von Hardware-Trust-Mechanismen wie TPM oder Secure Boot
 
-** SYS.4.4 Allgemeines IoT-Gerät
+*** SYS.4.4 Allgemeines IoT-Gerät
 - *Relevanz*: Zunehmende Verbreitung vernetzter Geräte erfordert spezielle Sicherheitsmaßnahmen
 - *Anwendung*: Absicherung von IoT-Geräten gegen Manipulation und unbefugten Datenzugriff
 - *Konkrete Maßnahmen*:
@@ -1032,7 +1034,7 @@ Hier werden Lösung für weitere wichtige IT-Komponente beschrieben:
   - Einschränkung von Cloud-Zugriffen und externen Steuerungsmöglichkeiten
   - Logging und Überwachung von Netzwerkaktivitäten
   - Nutzung von sicheren Authentifizierungsmechanismen für die Geräteverwaltung
-** SYS.4.5 Wechseldatenträger
+*** SYS.4.5 Wechseldatenträger
 - *Relevanz*: Häufig verwendete Datenträger für Transport, Speicherung und mobilen Zugriff
 - *Anwendung*: Absicherung und sichere Nutzung von Wechseldatenträgern
 - *Konkrete Maßnahmen*:
@@ -1192,52 +1194,321 @@ Der Baustein *IND - Industrielle IT* beschreibt Schutzmaßnahmen für industriel
   #+END_NOTES
 
 * NET - Netzwerke und Kommunikation
-* NET.2.2 WLAN-Nutzung
-- *Relevanz*: Drahtlose Vernetzung am Arbeitsplatz
-- *Anwendung*: Absicherung des WLAN-Zugangs
+Die *NET-Bausteine* behandeln die sichere Planung, Verwaltung und Nutzung von *Netzwerken*, *Funknetzen*, *Netzkomponenten* und *Telekommunikation*. Wichtige Maßnahmen umfassen Netzsegmentierung, Firewalls, Verschlüsselung und Authentifizierung für eine geschützte Kommunikation. Spezielle Sicherheitsanforderungen bestehen für *drahtlose Netze* (WLAN) und *VoIP-Telefonie*. Durch Überwachung, Protokollierung und regelmäßige Sicherheitsprüfungen wird die Integrität und Verfügbarkeit der Netzwerke gewährleistet.
+** NET.1 Netzarchitektur und -design
+*** NET.1.1 Netzarchitektur und -design
+- *Relevanz*: Grundlegende Struktur für sichere und effiziente Netzwerke
+- *Anwendung*: Planung und Umsetzung sicherer Netzstrukturen für Unternehmen und Institutionen
 - *Konkrete Maßnahmen*:
-  - Einsatz von WPA3-Verschlüsselung
-  - Separates Gäste-WLAN
+  - Trennung von Netzsegmenten für verschiedene Sicherheitsanforderungen
+  - Absicherung von Übergängen zwischen internen und externen Netzwerken durch Firewalls
+  - Einführung eines Sicherheitskonzepts für WAN, LAN und Funknetze
+  - Implementierung sicherer Authentifizierungs- und Verschlüsselungsmechanismen
+  - Dokumentation und regelmäßige Überprüfung der Netzstruktur
+  - Einsatz von Monitoring und Intrusion Detection Systemen zur Überwachung des Netzwerkverkehrs
+  - Regelmäßige Sicherheitsupdates und Schwachstellenanalysen zur Netzabsicherung
+  - Notfallplanung zur Wiederherstellung der Netzwerkverfügbarkeit
 
-* NET.3.3 VPN
-- *Relevanz*: Sichere Verbindung zum Unternehmensnetzwerk
-- *Anwendung*: Verschlüsselte Kommunikation
+*** NET.1.2 Netzmanagement
+- *Relevanz*: Notwendige Prozesse zur Überwachung und Steuerung der Netzwerkinfrastruktur
+- *Anwendung*: Sicherstellung der Stabilität und Sicherheit von Netzwerken
 - *Konkrete Maßnahmen*:
-  - Nutzung eines sicheren VPN-Clients
-  - Starke Authentifizierung beim VPN-Zugang
+  - Einführung eines zentralisierten Netzwerkmanagements mit definierten Rollen und Verantwortlichkeiten
+  - Protokollierung von Netzereignissen zur Fehleranalyse und Sicherheitsüberprüfung
+  - Absicherung von Netzmanagement-Schnittstellen gegen unbefugten Zugriff
+  - Regelmäßige Backups von Netzwerkkonfigurationen zur schnellen Wiederherstellung im Notfall
+  - Nutzung sicherer Netzwerkprotokolle für Managementzugriffe (z. B. SSH, SNMPv3)
+  - Implementierung eines Notfallkonzepts für den Betrieb des Netzwerks
+  - Schulungen für IT-Personal zur korrekten Handhabung und Verwaltung der Netzwerkinfrastruktur
+  - Integration des Netzmanagements in ein Security-Information-and-Event-Management (SIEM)
+
+** NET.2 Funknetze
+*** NET.2.1 WLAN-Betrieb
+- *Relevanz*: Drahtlose Netze bieten Flexibilität, erfordern aber besondere Sicherheitsmaßnahmen
+- *Anwendung*: Sicherer Betrieb von WLAN-Infrastrukturen in Unternehmen und Institutionen
+- *Konkrete Maßnahmen*:
+  - Nutzung moderner Verschlüsselungsstandards wie WPA2/WPA3 zur Sicherung des WLANs
+  - Regelmäßige Überprüfung und Aktualisierung der WLAN-Sicherheitsrichtlinien
+  - Segmentierung von WLAN-Netzen zur Trennung von Gäste- und Unternehmensnetzwerken
+  - Implementierung von Authentifizierungsmechanismen wie 802.1X (RADIUS-Server)
+  - Schutz vor Rogue Access Points und unautorisierten Verbindungen durch Monitoring
+  - Physische Absicherung von Access Points gegen Diebstahl und Manipulation
+  - Vermeidung unsicherer WLAN-Konfigurationen (z. B. deaktivierte Verschlüsselung)
+  - Nutzung sicherer Managementschnittstellen für WLAN-Controller und Access Points
+
+*** NET.2.2 WLAN-Nutzung
+- *Relevanz*: WLAN-Clients sind potenzielle Sicherheitsrisiken, wenn sie unsicher konfiguriert oder genutzt werden
+- *Anwendung*: Sichere Nutzung von WLAN durch Mitarbeitende und externe Nutzer
+- *Konkrete Maßnahmen*:
+  - Sensibilisierung der Benutzer für sicheres WLAN-Verhalten (z. B. Vermeidung offener Netze)
+  - Nutzung von VPNs bei Zugriff auf Unternehmensressourcen über öffentliche WLANs
+  - Deaktivierung der automatischen Verbindung zu ungesicherten Netzwerken
+  - Regelmäßige Überprüfung und Aktualisierung von WLAN-Zugangsberechtigungen
+  - Einschränkung der Nutzung mobiler Geräte in sensiblen Bereichen
+  - Logging und Überwachung der WLAN-Nutzung zur Identifikation verdächtiger Aktivitäten
+  - Implementierung von Netzsegmentierung zur Begrenzung der Reichweite sensibler Daten
+  - Nutzung sicherer Authentifizierungsverfahren zur Identitätsprüfung von Nutzern
+
+** NET.3 Netzkomponenten
+*** NET.3.1 Router und Switches
+- *Relevanz*: Router und Switches bilden das Rückgrat moderner Datennetze und müssen besonders abgesichert werden.
+- *Anwendung*: Sicherer Betrieb und Verwaltung von Routern und Switches in IT-Infrastrukturen
+- *Konkrete Maßnahmen*:
+  - Trennung von Netzsegmenten durch VLANs und Routing-Regeln
+  - Sichere Grundkonfiguration durch Deaktivierung nicht benötigter Dienste und Ports
+  - Regelmäßige Sicherheitsupdates und Firmware-Patches
+  - Einsatz von Zugriffskontrolllisten (ACLs) zur Filterung des Datenverkehrs
+  - Schutz der Administrationsschnittstellen durch IP-Whitelisting und Verschlüsselung (SSH, SNMPv3)
+  - Verwendung sicherer Authentifizierungsverfahren für Administratoren (z. B. RADIUS, TACACS+)
+  - Implementierung von Schutzmechanismen gegen DDoS-Angriffe und Spoofing
+  - Protokollierung und Überwachung von Netzwerkaktivitäten zur Erkennung von Anomalien
+
+*** NET.3.2 Firewall
+- *Relevanz*: Firewalls sind essenzielle Sicherheitskomponenten zur Kontrolle und Filterung des Netzverkehrs.
+- *Anwendung*: Schutz von Netzsegmenten durch gezielte Zugriffsbeschränkungen und Sicherheitsregeln
+- *Konkrete Maßnahmen*:
+  - Definition und Durchsetzung einer Firewall-Sicherheitsrichtlinie
+  - Einsatz von mehrstufigen Firewall-Architekturen (z. B. „Paketfilter – Application-Level-Gateway – Paketfilter“)
+  - Implementierung von Stateful-Inspection-Mechanismen zur Analyse des Datenverkehrs
+  - Deaktivierung nicht benötigter Netzwerkprotokolle und Dienste
+  - Protokollierung und Monitoring von Firewall-Logs zur Identifikation von Angriffen
+  - Sicherstellung der regelbasierten Filterung und Minimierung der Angriffsfläche durch restriktive Regeln
+  - Integration der Firewall in das zentrale Sicherheits- und Netzwerkmanagement (SIEM)
+  - Regelmäßige Sicherheitsüberprüfungen und Penetrationstests zur Identifikation von Schwachstellen
+
+*** NET.3.3 Virtual Private Networks (VPN)
+- Relevanz: VPNs ermöglichen eine sichere und verschlüsselte Kommunikation über unsichere Netzwerke.
+- Anwendung: Absicherung von Remote-Zugriffen und Vernetzung unterschiedlicher Standorte.
+- Konkrete Maßnahmen:
+  - Erstellung einer Sicherheitsrichtlinie zur VPN-Nutzung.
+  - Geeignete Auswahl von VPN-Produkten gemäß den Anforderungen der Institution.
+  - Sicherer Betrieb eines VPN unter Berücksichtigung von Qualitätsmanagement, Überwachung und Wartung.
+  - Sichere Anbindung externer Netze, um zu gewährleisten, dass VPN-Verbindungen nur zwischen vorgesehenen IT-Systemen aufgebaut werden.
+  - Zentralisierte Konten- und Zugriffsverwaltung für Fernzugriff-VPNs.
+  - Integration von VPN-Komponenten in die bestehende Firewall-Architektur
+** NET.4 Telekommunikation
+*** NET.4.1 TK-Anlagen
+- *Relevanz*: Telekommunikationsanlagen verbinden interne und externe Telefonsysteme und sind durch die Vernetzung mit IT-Systemen sicherheitskritisch.
+- *Anwendung*: Absicherung von TK-Anlagen und Schutz der übertragenen Informationen
+- *Konkrete Maßnahmen*:
+  - Sicherstellen der Verschlüsselung der übertragenen Daten und Gespräche
+  - Einschränkung von Leistungsmerkmalen, die unautorisiertes Abhören ermöglichen könnten
+  - Schutz vor Manipulation durch regelmäßige Überprüfung der Systemkonfiguration
+  - Einsatz sicherer Authentifizierungsmechanismen für administrative Zugriffe
+  - Sicherstellung der Protokollierung von Konfigurationsänderungen und sicherheitskritischen Ereignissen
+  - Implementierung von Sicherheitsrichtlinien für TK-Nutzer und Administratoren
+  - Regelmäßige Sicherheitsupdates und Patching der TK-Software
+  - Einrichtung redundanter Kommunikationswege für Notfälle
+
+*** NET.4.2 VoIP
+- *Relevanz*: Voice over IP (VoIP) ersetzt zunehmend traditionelle Telefonanlagen und benötigt spezielle Sicherheitsmaßnahmen.
+- *Anwendung*: Absicherung von VoIP-Kommunikation und Infrastruktur
+- *Konkrete Maßnahmen*:
+  - Nutzung verschlüsselter Kommunikationsprotokolle (z. B. SRTP für Sprachdaten)
+  - Implementierung sicherer Authentifizierungsverfahren für VoIP-Endgeräte
+  - Einschränkung und Filterung von VoIP-Traffic durch Firewalls und Session Border Controller (SBC)
+  - Regelmäßige Sicherheitsüberprüfungen und Testen der VoIP-Konfigurationen
+  - Schutz gegen Spoofing- und Phishing-Angriffe durch sichere Identitätsprüfung
+  - Trennung von VoIP- und Datennetzwerken zur Reduzierung von Sicherheitsrisiken
+  - Regelmäßige Überprüfung der Firmware und Software der VoIP-Systeme
+
+*** NET.4.3 Faxgeräte und Faxserver
+- *Relevanz*: Faxgeräte und Faxserver werden weiterhin für die Dokumentenübertragung genutzt, erfordern aber zusätzliche Sicherheitsvorkehrungen.
+- *Anwendung*: Sicherer Betrieb und Nutzung von Faxsystemen
+- *Konkrete Maßnahmen*:
+  - Sicherstellen der Vertraulichkeit von Faxübertragungen durch sichere Leitungen und Verschlüsselung
+  - Absicherung von Faxservern durch Zugriffskontrollen und Logging
+  - Einschränkung von Faxnummern auf autorisierte Empfänger
+  - Sensibilisierung der Mitarbeiter für Risiken von Faxkommunikation
+  - Regelmäßige Wartung und Überprüfung der Faxserver-Software
+  - Implementierung sicherer Löschmechanismen für alte Faxdokumente
+  - Schutz vor Manipulation von Faxinhalten durch digitale Signaturen oder Bestätigungsverfahren
 
 * INF - Infrastruktur
-* INF.8 Häuslicher Arbeitsplatz
-- *Relevanz*: Gestaltung des HomeOffice
-- *Anwendung*: Physische Sicherheit im Heimumfeld
+Die *INF-Bausteine* konzentrieren sich auf den Schutz von IT-relevanten physischen Strukturen wie *Rechenzentren*, *Verkabelung*, *Arbeitsplätzen* und *Gebäudeautomation*. Sicherheitsmaßnahmen umfassen Zutrittskontrollen, Brandschutz, Energieversorgung und sichere Entsorgung sensibler Daten. Spezielle Regelungen gelten für mobile und häusliche Arbeitsplätze sowie für IT-Systeme in Fahrzeugen. Eine sichere und effiziente Verwaltung der *technischen Gebäudesysteme (TGM und GA)* trägt zur Gesamtresilienz der IT-Infrastruktur bei.
+** INF.1 Allgemeines Gebäude
+- *Relevanz*: Basis für sichere IT-Infrastruktur
+- *Anwendung*: Schutz von Gebäuden und Einrichtungen
 - *Konkrete Maßnahmen*:
-  - Sicherer Aufbewahrungsort für sensible Unterlagen
-  - Bildschirmsperre bei Abwesenheit
-* INF.9 Mobiler Arbeitsplatz
-- *Relevanz*: Arbeit von unterwegs
-- *Anwendung*: Schutz mobiler Arbeitsmittel
+  - Sichere Türen und Fenster
+  - Zutrittskontrollen
+  - Einhaltung von Brandschutzvorschriften
+  - Gefahrenmeldeanlagen
+
+** INF.2 Rechenzentrum sowie Serverraum
+- *Relevanz*: Schutz geschäftskritischer IT-Systeme
+- *Anwendung*: Sicherheit und Verfügbarkeit von Servern
 - *Konkrete Maßnahmen*:
-  - Sichtschutzfilter für Bildschirme
-  - Physischer Schutz der Geräte
+  - Zutrittskontrolle und Überwachung
+  - Einsatz einer Brandmeldeanlage
+  - Schutz vor Stromausfällen durch USV und Netzersatzanlagen
+  - Einhaltung von Sicherheitszonen für IT-Infrastruktur
+
+** INF.5 Raum für technische Infrastruktur
+- *Relevanz*: Schutz der kritischen Infrastruktur
+- *Anwendung*: Sicherheitsmaßnahmen für Technikräume
+- *Konkrete Maßnahmen*:
+  - Schutz vor Brand, Rauch und Wasserschäden
+  - Redundante Stromversorgung
+  - Erweiterter Schutz vor Einbruch und Sabotage
+
+** INF.6 Archivierung von Datenträgern
+- *Relevanz*: Schutz und Verfügbarkeit archivierter Daten
+- *Anwendung*: Sicherstellung der Integrität von Archivsystemen
+- *Konkrete Maßnahmen*:
+  - Zugangskontrollen für Archive
+  - Temperatur- und Feuchtigkeitskontrolle
+  - Schutz vor Einbruch und Sabotage
+
+** INF.7 Büroarbeitsplatz
+- *Relevanz*: Schutz sensibler Informationen am Arbeitsplatz
+- *Anwendung*: Sichere Handhabung von Informationen
+- *Konkrete Maßnahmen*:
+  - Zutrittskontrolle zu Büros
+  - Sichere Aufbewahrung von Dokumenten
+  - Einsatz von Diebstahlsicherungen
+
+** INF.8 Häuslicher Arbeitsplatz
+- *Relevanz*: Telearbeitende benötigen eine sichere und ergonomische Arbeitsumgebung.
+- *Anwendung*: Schutz von sensiblen Informationen und IT-Systemen im Homeoffice.
+- *Konkrete Maßnahmen*:
+  - Trennung von privatem und beruflichem Arbeitsbereich
+  - Schutz vor unbefugtem Zutritt (z. B. abschließbare Räume)
+  - Sichere Entsorgung vertraulicher Informationen
+  - Regelungen für den Transport von Arbeitsmaterial
+  - Ergonomische Arbeitsplatzgestaltung zur Vermeidung von Beeinträchtigungen
+
+** INF.9 Mobiler Arbeitsplatz
+- *Relevanz*: Mobile Arbeitsplätze unterliegen zusätzlichen Risiken durch wechselnde Umgebungen.
+- *Anwendung*: Absicherung mobiler Arbeitsgeräte und Daten unterwegs.
+- *Konkrete Maßnahmen*:
+  - Nutzung verschlüsselter Datenträger und gesicherter VPN-Verbindungen
+  - Vermeidung ungesicherter öffentlicher WLANs
+  - Schutz vor Diebstahl und unbefugtem Zugriff
+  - Regelung für Transport und Entsorgung sensibler Dokumente
+  - Einführung einer Sicherheitsrichtlinie für mobiles Arbeiten
+
+** INF.10 Besprechungs-, Veranstaltungs- und Schulungsräume
+- *Relevanz*: Räume mit wechselnder Nutzung erfordern spezifische Sicherheitsvorkehrungen.
+- *Anwendung*: Sicherstellung von Datenschutz und Gerätesicherheit in geteilten Räumen.
+- *Konkrete Maßnahmen*:
+  - Zugangskontrollen für Besprechungsräume mit sensiblen Daten
+  - Schutz vor Diebstahl und Manipulation von Präsentationssystemen
+  - Regelungen für die Nutzung externer IT-Systeme in Schulungsräumen
+  - Dokumentation der Raumbelegung zur Nachverfolgbarkeit
+  - Sicherstellung der Kompatibilität von Präsentationstechnologien
+
+** INF.11 Allgemeines Fahrzeug
+- *Relevanz*: Fahrzeuge mit IT-Systemen und Daten speichern oft vertrauliche Informationen.
+- *Anwendung*: Absicherung der IT-Infrastruktur in dienstlich genutzten Fahrzeugen.
+- *Konkrete Maßnahmen*:
+  - Verschlüsselung von Daten in Fahrzeug-IT-Systemen
+  - Regelungen für die Nutzung von Kommunikationsschnittstellen (WLAN, Bluetooth)
+  - Schutz vor unbefugtem Zugriff und Diebstahl
+  - Erstellung von Sicherheitsrichtlinien für mobile IT-Arbeitsplätze in Fahrzeugen
+  - Vorgaben für sichere Wartung und Entsorgung von IT-Systemen in Fahrzeugen
+
+** INF.12 Verkabelung
+- *Relevanz*: Physische Netzwerkinfrastruktur bildet die Grundlage sicherer Kommunikation.
+- *Anwendung*: Schutz und ordnungsgemäße Verlegung von Kabeln in IT-Umgebungen.
+- *Konkrete Maßnahmen*:
+  - Strukturierte Verkabelung zur Reduktion von Störquellen
+  - Brandschutzmaßnahmen für Netzwerkkabelschächte
+  - Absicherung physischer Netzwerkzugänge gegen Manipulation
+  - Dokumentation und regelmäßige Überprüfung der Verkabelung
+
+** INF.13 Gebäudetechnik
+- *Relevanz*: Technische Infrastruktur muss auf IT-Sicherheitsanforderungen abgestimmt sein.
+- *Anwendung*: Schutz technischer Systeme in Gebäuden.
+- *Konkrete Maßnahmen*:
+  - Schutz vor Sabotage und Manipulation von Klimaanlagen und Stromversorgung
+  - Redundante Energieversorgung für kritische IT-Systeme
+  - Überwachung der Gebäudetechnik durch zentrale IT-Managementsysteme
+  - Integration von Sicherheitssystemen in IT-Notfallpläne
+
+** INF.14 Rechenzentrum-Infrastruktur
+- *Relevanz*: Schutz von Servern und Datenzentren ist essenziell für den sicheren IT-Betrieb.
+- *Anwendung*: Sicherstellung der physischen Sicherheit von Rechenzentren.
+- *Konkrete Maßnahmen*:
+  - Zutrittskontrollen und Sicherheitsüberwachung für Serverräume
+  - Klimakontrolle und Brandschutzmaßnahmen für Rechenzentren
+  - Regelmäßige Prüfung und Aktualisierung der Infrastruktur
+  - Einsatz redundanter Komponenten zur Sicherstellung der Ausfallsicherheit
 
 * DER - Detektion und Reaktion
-* DER.1 Detektion von sicherheitsrelevanten Ereignissen
-- *Relevanz*: Erkennung von Sicherheitsvorfällen
-- *Anwendung*: Monitoring-Mechanismen
+** DER.1 Detektion von sicherheitsrelevanten Ereignissen
+- *Relevanz*: Die frühzeitige Erkennung von sicherheitsrelevanten Ereignissen ist essenziell für den Schutz von IT-Systemen und Daten.
+- *Anwendung*: Planung und Umsetzung technischer, personeller und organisatorischer Maßnahmen zur Identifikation von Sicherheitsvorfällen.
 - *Konkrete Maßnahmen*:
-  - Einsatz von Endpoint Detection and Response (EDR)
-  - Protokollierung sicherheitsrelevanter Ereignisse
+  - Einführung eines Detektionskonzepts mit definierten Zuständigkeiten
+  - Einsatz von Intrusion Detection/Prevention Systemen (IDS/IPS)
+  - Schulung der Mitarbeitenden zur Erkennung und Meldung von Vorfällen
+  - Nutzung von zentralen Protokollierungs- und Monitoring-Lösungen
+  - Regelmäßige Audits und Tests zur Sicherstellung der Funktionsfähigkeit der Detektionssysteme
 
-* DER.2.1 Behandlung von Sicherheitsvorfällen
-- *Relevanz*: Strukturierte Reaktion auf Vorfälle
-- *Anwendung*: Incident-Response-Prozesse
+** DER.2 Security Incident Management
+*** DER.2.1 Behandlung von Sicherheitsvorfällen
+- *Relevanz*: Sicherheitsvorfälle müssen systematisch behandelt werden, um Schäden zu begrenzen.
+- *Anwendung*: Entwicklung von Prozessen zur strukturierten Bearbeitung von Sicherheitsvorfällen.
 - *Konkrete Maßnahmen*:
-  - Dokumentierte Vorgehensweise bei Vorfällen
-  - Klare Meldewege und Eskalationspfade
+  - Definition und Dokumentation von Sicherheitsvorfällen
+  - Erstellung einer Richtlinie zur Vorfallsbehandlung
+  - Etablierung klarer Meldewege und Verantwortlichkeiten
+  - Sicherstellung der Beweissicherung zur späteren Analyse
+
+*** DER.2.2 Vorsorge für die IT-Forensik
+- *Relevanz*: IT-Forensik ermöglicht die Untersuchung und Aufklärung von Sicherheitsvorfällen.
+- *Anwendung*: Etablierung von Prozessen zur rechtskonformen Spurensicherung.
+- *Konkrete Maßnahmen*:
+  - Prüfung der rechtlichen Rahmenbedingungen für forensische Analysen
+  - Auswahl und Implementierung geeigneter Forensik-Tools
+  - Schulung von Personal für Beweissicherung und Datenanalyse
+  - Dokumentation und sichere Lagerung von Beweismitteln
+
+*** DER.2.3 Bereinigung weitreichender Sicherheitsvorfälle
+- *Relevanz*: Advanced Persistent Threats (APT) und gezielte Angriffe erfordern eine umfangreiche Bereinigung.
+- *Anwendung*: Maßnahmen zur vollständigen Bereinigung kompromittierter IT-Systeme.
+- *Konkrete Maßnahmen*:
+  - Einrichtung eines Leitungsgremiums zur Koordination der Bereinigung
+  - Entscheidung über eine vollständige Neuinstallation oder gezielte Säuberung betroffener Systeme
+  - Isolation der betroffenen Netzsegmente zur Verhinderung weiterer Angriffe
+  - Sicherstellung der langfristigen Überwachung zur Identifikation möglicher Hintertüren
+** DER.3 Sicherheitsprüfungen
+*** DER.3.1 Audits und Revisionen
+- *Relevanz*: Audits und Revisionen sind essenziell, um die Informationssicherheit zu bewerten, Lücken aufzudecken und Maßnahmen zur Verbesserung abzuleiten.
+- *Anwendung*: Regelmäßige Audits und Revisionen zur Überprüfung der Sicherheitsmaßnahmen in einer Institution.
+- *Konkrete Maßnahmen*:
+  - **Definition von Verantwortlichkeiten**: Die Institutionsleitung muss eine verantwortliche Person für Audits und Revisionen benennen
+  - **Durchführung von Audits**: Das Auditteam muss überprüfen, ob Sicherheitsanforderungen gemäß Normen, Richtlinien und Standards eingehalten werden
+  - **Prüfung der Dokumentation**: Alle relevanten Sicherheitsdokumente sollten aktuell, vollständig und nachvollziehbar sein
+  - **Stichprobenprüfung**: Auswahl von Prüfobjekten anhand eines risikoorientierten Ansatzes
+  - **Erstellung eines Auditberichts**: Ergebnisse der Audits müssen nachvollziehbar dokumentiert und zeitnah kommuniziert werden
+  - **Nachbereitung von Audits**: Identifizierte Sicherheitsmängel müssen behoben und in das Sicherheitsmanagement zurückgeführt werden
+
+*** DER.3.2 Revisionen auf Basis des Leitfadens IS-Revision
+- *Relevanz*: Standardisierte IS-Revisionen dienen der kontinuierlichen Verbesserung der Informationssicherheit.
+- *Anwendung*: Umsetzung von IS-Revisionen unter Einhaltung definierter Leitfäden und Standards.
+- *Konkrete Maßnahmen*:
+  - **Benennung von Verantwortlichen**: Die Institutionsleitung muss eine Person für IS-Revisionen festlegen
+  - **Erstellung eines IS-Revisionshandbuchs**: Enthält Ziele, gesetzliche Vorgaben, Rahmenbedingungen und Archivierungsvorgaben
+  - **Definition der Prüfungsgrundlage**: Die BSI-Standards 200-1 bis 200-3 und das IT-Grundschutz-Kompendium müssen als Prüfungsgrundlagen verwendet werden
+  - **Sichtung und Prüfung der Dokumentation**: Relevante Dokumente müssen auf Aktualität und Vollständigkeit überprüft werden
+  - **Durchführung von Interviews**: Ergänzende Gespräche mit Verantwortlichen zur Klärung von Prüfungsfragen
+  - **Erstellung eines IS-Revisionsberichts**: Enthält Ergebnisse, Maßnahmenempfehlungen und Klassifizierung von Risiken
+  - **Nachbereitung der IS-Revision**: Dokumentierte Maßnahmenumsetzung mit Nachverfolgung der Korrekturmaßnahmen
+** DER.4 Notfallmanagement
+- *Relevanz*: Ein effektives Notfallmanagement sichert den Fortbestand von Geschäftsprozessen und die Informationssicherheit im Krisenfall.
+- *Anwendung*: Planung, Umsetzung und Überprüfung von Maßnahmen zur Vorbereitung, Reaktion und Wiederherstellung im Notfall.
+- *Konkrete Maßnahmen*:
+  - Erstellung eines Notfallhandbuchs mit definierten Rollen, Eskalationsstufen und Kommunikationsplänen
+  - Integration des Notfallmanagements in bestehende Organisationsstrukturen und IT-Sicherheitsprozesse
+  - Regelmäßige Notfallübungen zur Sicherstellung der Praxistauglichkeit der geplanten Maßnahmen
+  - Dokumentation und regelmäßige Überprüfung des Notfallmanagements durch die Institutionsleitung
+
 
 * Praktische Übung: Anwendung der IT-Grundschutzbausteine auf den eigenen Arbeitsplatz
 
-* Arbeitsauftrag:
+** Arbeitsauftrag:
 
   1. *Analyse des Ist-Zustands*:
      - Erstellen Sie eine Inventarliste aller IT-Komponenten an Ihrem Arbeitsplatz (Hardware, Software, Netzwerkkomponenten)
@@ -1259,13 +1530,13 @@ Der Baustein *IND - Industrielle IT* beschreibt Schutzmaßnahmen für industriel
      - Erstellen Sie eine strukturierte Dokumentation Ihrer Analyse und des Maßnahmenplans
      - Bereiten Sie eine kurze Präsentation (5-10 Minuten) Ihrer Ergebnisse vor
 
-* Hinweise zur Bearbeitung:
+** Hinweise zur Bearbeitung:
 - Konzentrieren Sie sich auf die für Ihren Arbeitsplatz relevantesten Bausteine
 - Berücksichtigen Sie bei HomeOffice-Arbeitsplätzen besonders die Bausteine OPS.1.2.4 (Telearbeit) und INF.8 (Häuslicher Arbeitsplatz)
 - Nutzen Sie die BSI-Website (www.bsi.bund.de) für detaillierte Informationen zu den einzelnen Bausteinen
 - Die Übung kann sowohl individuell als auch in Kleingruppen bearbeitet werden
 
-* Abgabeformat:
+** Abgabeformat:
 - Dokumentation als PDF (max. 10 Seiten)
 - Präsentationsfolien als PDF oder PowerPoint
 - Abgabefrist: 2 Wochen
