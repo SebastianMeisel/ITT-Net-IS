@@ -149,7 +149,7 @@ Zur Minimierung elementarer Gefährdungen ist ein mehrstufiges Sicherheitskonzep
 Führen Sie eine Schutzbedarfsanalyse für Ihren Computerarbeitsplatz durch. Gehen Sie dabei wie folgt vor:
 
   1) *Inventarisierung*:
-   - Listen Sie alle wichtigen Komponenten auf (Hardware, Software, Daten)
+   - Listen Sie alle *wichtigen* Komponenten auf (Hardware, Software, Daten)
    - Beschreiben Sie kurz ihre Funktion und Bedeutung
    - Konzentrieren Sie sich bei der Software, auf Komponenten, die sie (wenigstens gelegentlich) benutzen.
 
