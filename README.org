@@ -153,7 +153,6 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 *Anmerkungen:* Anwendung kryptografischer Maßnahmen, Verschlüsselungsverfahren, Zertifikate, Signaturen, Handshake-Protokoll mit https://
 
   - [[file:Verschlüsselung_Hashing.pdf][Verschlüsselung und Hashing (PDF)]]
-  - [[file:Beispiele/gpg-python-integration.py][Pythonskriptbeispiel für GPG Verschlüsselung]] (PYTHON)
 
 *** Modul 32: Sichere Passwörter und Authentifizierung
 :PROPERTIES:
