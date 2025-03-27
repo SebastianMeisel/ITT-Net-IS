@@ -1,0 +1,263 @@
+:LaTeX_PROPERTIES:
+#+LANGUAGE:              de
+#+OPTIONS:     		 d:nil todo:nil pri:nil tags:nil
+#+OPTIONS:	         H:4
+#+LaTeX_CLASS: 	         orgstandard
+#+LaTeX_CMD:             xelatex
+:END:
+:REVEAL_PROPERTIES:
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_THEME: league
+#+REVEAL_EXTRA_CSS: ./mystyle.css
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: timestamp:nil toc:nil num:nil
+:END:
+
+#+TITLE:  Hashing
+#+SUBTITLE: IT-Sicherheit
+#+AUTHOR: ITT-Net-IS
+
+
+* Was ist Hashing
+
+Hashing ist eine Technik, bei der große oder komplexe Daten in eine kürzere, einzigartige Darstellung umgewandelt werden. Diese kürzere Darstellung, auch bekannt als Hashwert, dient als "Fingerabdruck" für die ursprünglichen Daten und kann verwendet werden, um die Integrität dieser Daten zu überprüfen. Wenn sich auch nur ein kleiner Teil der ursprünglichen Daten ändert, ändert sich auch der Hashwert vollständig.
+
+Hashing findet in vielen Anwendungen Verwendung, einschließlich der Überprüfung der Datensicherheit, der Erstellung digitaler Signaturen und der Verwaltung von Passwörtern.
+
+** Welche Eigenschaften machen einen guten Hashing-Algorithmus aus?
+
+Ein guter Hashing-Algorithmus muss folgende Eigenschaften aufweisen:
+#+ATTR_REVEAL: :frag (appear)
+  * *Eindeutigkeit*: Jeder Eingabe sollte einen eindeutigen Hashwert erzeugen.
+  * *Kollisionsresistenz*: Es sollte sehr unwahrscheinlich sein, dass zwei unterschiedliche Eingaben denselben Hashwert erzeugen.
+  * *Unumkehrbarkeit*: Es sollte schwierig sein, aus einem Hashwert die ursprüngliche Eingabe zu berechnen.
+  * *Ausgeglichene Verteilung*: Die Hashwerte sollten gut verteilt sein, so dass keine bestimmten Werte häufiger vorkommen als andere.
+  * *Konstanter Zeitaufwand*: Der Zeitaufwand zur Berechnung des Hashwerts sollte unabhängig von der Größe oder dem Inhalt der Eingabe konstant sein.
+  *  *Robustheit*: Kleine Änderungen an der Eingabe sollten zu signifikanten Änderungen des Hashwerts führen.
+
+* Welche (gängigen, kryptographischen) Hashalgorithmen gibt es?
+
+  Für Hashing gibt es eine Vielzahl von Anwengungsmöglichkeiten, z. B. in der Programmierung und in Datenbankanwendungen. Hier geht es aber um *kryptographische* Hashingalgorithmen, die zur Verifizierung der *Integrität* von Daten verwendet werden, z. B. bei der Verschlüsselung mit TLS oder bei SSH- und VPN-Verbindungen.
+
+Hier spielen vor allem *MD5 (veraltet!)* und *SHA* eine Rolle.
+
+** Message-Digest Algorithm 5 (MD5)   
+
+*MD5* war lange Zeit der Standardalgorithmus für kryptographisches Hashing. Allerdings gilt er inzwischen als veraltet, da es möglich ist gezielt *Kollisionen* zu erzeugen. Das bedeutet, dass es möglich ist gezielt beliebige Daten so zu manipulieren, dass sie denselben Hashwert erzeugen, wie bestimmte andere Daten.
+
+So erzeugen die beiden folgenden Linux-Binaries denselben MD5 Hashwert:
+ * [[https://gitlab.com/ostseepinguin1/itt-net/-/blob/main/hello][hello]]
+ * [[https://gitlab.com/ostseepinguin1/itt-net/-/blob/main/erase][erase]]
+
+#+BEGIN_SRC  powershell
+Get-FileHash -Algorithm MD5 @('hello.exe','erase.exe') | Select-Object -Property Hash, Path
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+Hash                             Path
+----                             ----
+CDC47D670159EEF60916CA03A9D4A007 C:\Users\Captiva\git\itt-net\hello.exe
+CDC47D670159EEF60916CA03A9D4A007 C:\Users\Captiva\git\itt-net\erase.exe
+#+END_EXAMPLE
+
+* Secure Hash Algorithm (SHA)
+
+Hierbei handelt es sich eine *Gruppe* von *kryptographischen* Hashfunktionen, die aktiv weiterentwickelt werden. Während bereits die Möglichkeit von *Kollisionsangriffen* auf *SHA-0* und *SHA-1*, gilt *SHA-2* aktuell als sicherer 
+Standard.
+
+#+REVEAL: split
+
+Dabei gibt es verschiedene Varianten, die sich in der *Bitlänge* des Hashwertes unterscheiden:
+
+ * SHA-224
+ * SHA-256
+ * SHA-384
+ * SHA-512
+
+Dabei gilt, dass mit der Bitlänge sowohl die *Sicherheit*, als auch der *Rechaufwand* zum Erzeugen des Hashwertes steigt. 
+
+*** Nachfolger
+
+Als Nachfolger von SHA-2 wurde 2004 nach einem Wettbewerb der *SHA-3*-Algorithmus standardisiert. Ist ist deutlich zukunftssicherer als SHA-2, aber noch nicht sehr weit verbreitet. 
+
+Auch dieser Algorithmus ist in den vier Bitlängen 224, 256, 384 und 512 verfügbar.
+Daneben gibt es auch noch die Varianten SHAKE-128 und SHAKE-256
+
+* Weitere Algorithmen
+
+Es gibt eine Reihe weiterer Algorithmen, die jedoch nicht so verbreitet sind. Von diesen gelten folgende als sicher:
+
+ - BLAKE (2. Platz im Wettbewerb nach SHA-3).
+ - RIPEMD-160
+ - Whirlpool
+ - Tiger
+ - ShangMi 3 (SM3) - chinesischer Algorithmus.
+
+* Befehl zum erzeugen von Hash-Prüfsummen
+
+ - Windows - unterstützte Algorithmen sind MD5, SHA1, SHA256, SHA384, SHA512:
+#+BEGIN_SRC powershell
+ Get-FileHash -Algorithm SHA256 Datei
+#+END_SRC
+
+ - Linux: 
+#+BEGIN_SRC bash    
+ md5sum
+ sha1sum
+ sha224sum
+ …
+ sha256sum
+#+END_SRC
+ 
+#+REVEAL: split
+
+- Linux mit OpenSSL
+#+BEGIN_SRC bash    
+ openssl list -digest-algorithms
+#+END_SRC
+
+dann z. B.:
+
+#+BEGIN_SRC bash    
+openssl dgst -sha3-256 hello
+#+END_SRC
+
+#+BEGIN_EXAMPLE
+: SHA3-256(hello)= 0f5aa73890600ec25491c0f1707b370bb406c533622f508319c9f50c782a3f73
+#+END_EXAMPLE
+
+* Einführung in PGP und GPG
+
+** Was sind PGP und GPG?
+- *PGP* (Pretty Good Privacy): Ursprüngliche Verschlüsselungssoftware
+- *GPG* (GNU Privacy Guard): Freie, Open-Source-Implementierung von PGP
+
+** Grundlegende Konzepte
+- Asymmetrische Verschlüsselung
+- Digitale Signaturen
+- Web of Trust
+
+* Schlüsselverwaltung
+
+** Schlüsselpaar generieren
+#+BEGIN_SRC bash
+# GPG-Schlüsselpaar erstellen
+gpg --full-generate-key
+
+# Nicht-interaktive Variante
+gpg --batch --generate-key <<EOF
+%no-protection
+Key-Type: RSA
+Key-Length: 4096
+Name-Real: Max Mustermann
+Name-Email: max@beispiel.de
+Name-Comment: Beispielschlüssel
+Expire-Date: 0
+EOF
+#+END_SRC
+
+** Schlüssel auflisten
+#+BEGIN_SRC bash
+# Private Schlüssel anzeigen
+gpg --list-secret-keys
+
+# Öffentliche Schlüssel anzeigen
+gpg --list-keys
+#+END_SRC
+
+* Verschlüsselung
+
+** Datei verschlüsseln
+#+BEGIN_SRC bash
+# Für einen Empfänger verschlüsseln
+gpg --encrypt --recipient max@beispiel.de geheim.txt
+
+# Für mehrere Empfänger
+gpg --encrypt --recipient max@beispiel.de --recipient alice@beispiel.com geheim.txt
+#+END_SRC
+
+** Datei entschlüsseln
+#+BEGIN_SRC bash
+# Entschlüsselung
+gpg --decrypt geheim.txt.gpg > geheim.txt
+#+END_SRC
+
+* Digitale Signaturen
+
+** Datei signieren
+#+BEGIN_SRC bash
+# Klare Signatur (Signatur separat)
+gpg --detach-sign dokument.pdf
+
+# Signatur im Dokument
+gpg --clear-sign dokument.txt
+#+END_SRC
+
+** Signatur überprüfen
+#+BEGIN_SRC bash
+# Signatur verifizieren
+gpg --verify dokument.pdf.sig dokument.pdf
+#+END_SRC
+
+* Schlüsselaustausch und Vertrauen
+
+** Öffentlichen Schlüssel exportieren
+#+BEGIN_SRC bash
+# Schlüssel in Datei exportieren
+gpg --export -a "Max Mustermann" > max_schluessel.asc
+
+# Alle öffentlichen Schlüssel exportieren
+gpg --export -a > alle_oeffentlichen_schluessel.asc
+#+END_SRC
+
+** Schlüssel importieren
+#+BEGIN_SRC bash
+# Schlüssel importieren
+gpg --import max_schluessel.asc
+
+# Schlüssel aus Keyserver importieren
+gpg --keyserver hkps://keys.openpgp.org --recv-keys 0x1234ABCD
+#+END_SRC
+
+* Vertrauensmodell: Web of Trust
+
+** Schlüssel signieren
+#+BEGIN_SRC bash
+# Schlüssel mit lokalem Vertrauen signieren
+gpg --sign-key alice@beispiel.com
+
+# Öffentlich signieren
+gpg --lsign-key bob@beispiel.com
+#+END_SRC
+
+* Sicherheitsempfehlungen
+
+** Beste Praktiken
+- Verwenden Sie mindestens 4096-Bit-RSA-Schlüssel
+- Setzen Sie ein Ablaufdatum
+- Nutzen Sie Subkeys für tägliche Aktivitäten
+- Bewahren Sie den Hauptschlüssel sicher auf
+
+** Widerrufszertifikat erstellen
+#+BEGIN_SRC bash
+# Widerrufszertifikat generieren
+gpg --gen-revoke --output revoke.asc max@beispiel.de
+#+END_SRC
+
+* Fortgeschrittene Konfiguration
+
+** Konfigurationsdatei
+Pfad: =~/.gnupg/gpg.conf=
+
+#+BEGIN_SRC
+# Bevorzugte Algorithmen
+personal-digest-preferences SHA512
+personal-cipher-preferences AES256
+default-preference-list SHA512 AES256 ZLIB BZIP2 ZIP Uncompressed
+#+END_SRC
+
+* Fazit
+- PGP/GPG bietet robuste Verschlüsselung
+- Erfordert Verständnis und sorgfältige Handhabung
+- Kontinuierliche Weiterbildung ist wichtig
