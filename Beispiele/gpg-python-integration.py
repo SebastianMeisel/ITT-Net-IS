@@ -11,16 +11,34 @@ class GPGHandler:
         if gnupg_home is None:
             gnupg_home = os.path.expanduser('~/.gnupg')
         
-        self.gpg = gnupg.GPG(gnupghome=gnupg_home)
+        # Sicherstellen, dass das Verzeichnis existiert
+        os.makedirs(gnupg_home, exist_ok=True)
+        
+        # Kompatible Initialisierung
+        try:
+            # Versuch mit gnupghome
+            self.gpg = gnupg.GPG(gnupghome=gnupg_home)
+        except TypeError:
+            try:
+                # Fallback ohne gnupghome
+                self.gpg = gnupg.GPG()
+                # Manuell Homeverzeichnis setzen
+                os.environ['GNUPGHOME'] = gnupg_home
+            except Exception as e:
+                print(f"Fehler bei GPG-Initialisierung: {e}")
+                raise
+
         self.gpg.encoding = 'utf-8'
 
-    def generate_key(self, name, email, passphrase):
+    def generate_key(self, name, email, passphrase, key_length=4096, expire_date='2y'):
         """
         Generate a new GPG key pair
         
         :param name: Full name for the key
         :param email: Email address
         :param passphrase: Passphrase for the key
+        :param key_length: Key length (default 4096)
+        :param expire_date: Key expiration (default 2 years)
         :return: Generated key details
         """
         input_data = self.gpg.gen_key_input(
@@ -28,130 +46,142 @@ class GPGHandler:
             name_email=email,
             passphrase=passphrase,
             key_type='RSA',
-            key_length=4096,
-            expire_date='2y'
+            key_length=key_length,
+            expire_date=expire_date
         )
         return self.gpg.gen_key(input_data)
 
-    def encrypt_file(self, file_path, recipients, output_path=None):
+    def export_public_key(self, email, output_file=None):
         """
-        Encrypt a file for specified recipients
+        Export public key for a specific email
         
-        :param file_path: Path to the file to encrypt
-        :param recipients: List of recipient email addresses
-        :param output_path: Optional output file path
-        :return: Path to encrypted file
+        :param email: Email address of the key to export
+        :param output_file: Optional output file path
+        :return: Public key as string or exported file path
         """
-        with open(file_path, 'rb') as f:
-            status = self.gpg.encrypt_file(
-                f, 
-                recipients, 
-                output=output_path or f'{file_path}.gpg',
-                always_trust=True
-            )
+        keys = self.list_keys()
+        for key in keys:
+            for uid in key.get('uids', []):
+                if email in uid:
+                    if output_file:
+                        with open(output_file, 'wb') as f:
+                            f.write(self.gpg.export_keys(key['keyid']).encode('utf-8'))
+                        return output_file
+                    return self.gpg.export_keys(key['keyid'])
         
-        if not status.ok:
-            raise ValueError(f"Encryption failed: {status.status}")
-        
-        return status.output
+        raise ValueError(f"No key found for email {email}")
 
-    def decrypt_file(self, encrypted_file_path, passphrase, output_path=None):
+    def list_keys(self, secret=False):
         """
-        Decrypt an encrypted file
+        List available GPG keys
         
-        :param encrypted_file_path: Path to the encrypted file
+        :param secret: List secret keys if True, public keys if False
+        :return: List of keys
+        """
+        try:
+            if secret:
+                return self.gpg.list_keys(secret=True)
+            return self.gpg.list_keys()
+        except Exception as e:
+            print(f"Fehler beim Auflisten der Schlüssel: {e}")
+            return []
+
+    def encrypt_string(self, message, recipients):
+        """
+        Encrypt a string for specified recipients
+        
+        :param message: String to encrypt
+        :param recipients: List of recipient email addresses or key IDs
+        :return: Encrypted message
+        """
+        # Überprüfen und ggf. Schlüssel exportieren
+        try:
+            encrypted_data = self.gpg.encrypt(message, recipients, always_trust=True)
+            
+            if not encrypted_data.ok:
+                print(f"Encryption status details: {encrypted_data}")
+                raise ValueError(f"Encryption failed: {encrypted_data.status}")
+            
+            return str(encrypted_data)
+        except Exception as e:
+            print(f"Detaillierter Verschlüsselungsfehler: {e}")
+            raise
+
+    def decrypt_string(self, encrypted_message, passphrase):
+        """
+        Decrypt an encrypted message
+        
+        :param encrypted_message: Encrypted message to decrypt
         :param passphrase: Passphrase for the key
-        :param output_path: Optional output file path
-        :return: Decrypted file path
+        :return: Decrypted message
         """
-        with open(encrypted_file_path, 'rb') as f:
-            status = self.gpg.decrypt_file(
-                f, 
-                passphrase=passphrase,
-                output=output_path or encrypted_file_path.replace('.gpg', '')
-            )
+        decrypted_data = self.gpg.decrypt(encrypted_message, passphrase=passphrase)
         
-        if not status.ok:
-            raise ValueError(f"Decryption failed: {status.status}")
+        if not decrypted_data.ok:
+            raise ValueError(f"Decryption failed: {decrypted_data.status}")
         
-        return status.output
+        return str(decrypted_data)
 
-    def sign_file(self, file_path, keyid, passphrase, detach=True):
-        """
-        Sign a file
-        
-        :param file_path: Path to the file to sign
-        :param keyid: Key ID to use for signing
-        :param passphrase: Passphrase for the key
-        :param detach: Whether to create a detached signature
-        :return: Signature
-        """
-        with open(file_path, 'rb') as f:
-            status = self.gpg.sign_file(
-                f, 
-                keyid=keyid, 
-                passphrase=passphrase,
-                detach=detach
-            )
-        
-        if not status.ok:
-            raise ValueError(f"Signing failed: {status.status}")
-        
-        return status.data
-
-    def verify_signature(self, signature_path, original_file_path):
-        """
-        Verify a signature
-        
-        :param signature_path: Path to the signature file
-        :param original_file_path: Path to the original file
-        :return: Verification status
-        """
-        with open(signature_path, 'rb') as sig_file, \
-             open(original_file_path, 'rb') as orig_file:
-            verified = self.gpg.verify_file(sig_file, orig_file)
-        
-        return {
-            'valid': verified.valid,
-            'status': verified.status,
-            'key_id': verified.key_id,
-            'username': verified.username
-        }
-
-# Beispielnutzung
 def main():
     try:
         # GPG-Handler initialisieren
         gpg_handler = GPGHandler()
 
-        # Neuen Schlüssel generieren
-        key = gpg_handler.generate_key(
+        # Vorhandene Schlüssel auflisten
+        print("Vorhandene öffentliche Schlüssel:")
+        keys = gpg_handler.list_keys()
+        if keys:
+            for key in keys:
+                print(f"Fingerabdruck: {key.get('fingerprint', 'N/A')}")
+                print(f"Benutzer-IDs: {key.get('uids', 'N/A')}\n")
+        else:
+            print("Keine Schlüssel gefunden.")
+
+        # Schlüssel generieren
+        print("Generiere neuen Schlüssel...")
+        new_key = gpg_handler.generate_key(
             name='Max Mustermann', 
             email='max@beispiel.de', 
             passphrase='sicherespasswort123'
         )
-        print(f"Generated key: {key}")
+        print(f"Neuer Schlüssel generiert: {new_key}")
 
-        # Datei verschlüsseln
-        encrypted_file = gpg_handler.encrypt_file(
-            'geheim.txt', 
+        # Öffentlichen Schlüssel exportieren
+        public_key_file = 'max_public_key.asc'
+        gpg_handler.export_public_key('max@beispiel.de', public_key_file)
+        print(f"Öffentlicher Schlüssel exportiert nach: {public_key_file}")
+
+        # Nachricht verschlüsseln und entschlüsseln
+        original_message = "Geheime Nachricht für Max"
+        print("\nVerschlüsselung und Entschlüsselung:")
+        encrypted = gpg_handler.encrypt_string(
+            original_message, 
             recipients=['max@beispiel.de']
         )
-        print(f"Encrypted file: {encrypted_file}")
+        print(f"Verschlüsselte Nachricht: {encrypted}")
 
-        # Datei entschlüsseln
-        decrypted_file = gpg_handler.decrypt_file(
-            encrypted_file, 
+        decrypted = gpg_handler.decrypt_string(
+            encrypted, 
             passphrase='sicherespasswort123'
         )
-        print(f"Decrypted file: {decrypted_file}")
+        print(f"Entschlüsselte Nachricht: {decrypted}")
+
+        # Überprüfen, ob Entschlüsselung erfolgreich war
+        assert original_message == decrypted, "Entschlüsselung fehlgeschlagen!"
 
     except Exception as e:
         print(f"Ein Fehler ist aufgetreten: {e}")
+        import traceback
+        traceback.print_exc()
 
 if __name__ == '__main__':
     main()
 
-# Zusätzliche Hinweise zur Installation:
-# pip install python-gnupg
-# Benötigt GPG-Installation auf dem System
+# Installationshinweise:
+# 1. GPG installieren:
+#    - Ubuntu/Debian: sudo apt-get install gpg
+#    - MacOS: brew install gpg
+#    - Windows: https://www.gpg4win.org/
+#
+# 2. Python-Bibliothek installieren:
+#    pip install python-gnupg
