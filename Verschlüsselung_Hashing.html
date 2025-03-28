@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Hashing</title>
+<meta name="author" content="ITT-Net-IS"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="./mystyle.css"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Hashing</h1><p class="subtitle">IT-Sicherheit</p>
+<h2 class="author">ITT-Net-IS</h2>
+</section>
+<section>
+<section id="slide-org3511f4a">
+<h2 id="org3511f4a">Was ist Hashing</h2>
+<p>
+Hashing ist eine Technik, bei der große oder komplexe Daten in eine kürzere, einzigartige Darstellung umgewandelt werden. Diese kürzere Darstellung, auch bekannt als Hashwert, dient als "Fingerabdruck" für die ursprünglichen Daten und kann verwendet werden, um die Integrität dieser Daten zu überprüfen. Wenn sich auch nur ein kleiner Teil der ursprünglichen Daten ändert, ändert sich auch der Hashwert vollständig.
+</p>
+
+<p>
+Hashing findet in vielen Anwendungen Verwendung, einschließlich der Überprüfung der Datensicherheit, der Erstellung digitaler Signaturen und der Verwaltung von Passwörtern.
+</p>
+</section>
+<section id="slide-org77b1297">
+<h3 id="org77b1297">Welche Eigenschaften machen einen guten Hashing-Algorithmus aus?</h3>
+<p>
+Ein guter Hashing-Algorithmus muss folgende Eigenschaften aufweisen:
+</p>
+<ul>
+<li class="fragment appear"><b>Eindeutigkeit</b>: Jeder Eingabe sollte einen eindeutigen Hashwert erzeugen.</li>
+<li class="fragment appear"><b>Kollisionsresistenz</b>: Es sollte sehr unwahrscheinlich sein, dass zwei unterschiedliche Eingaben denselben Hashwert erzeugen.</li>
+<li class="fragment appear"><b>Unumkehrbarkeit</b>: Es sollte schwierig sein, aus einem Hashwert die ursprüngliche Eingabe zu berechnen.</li>
+<li class="fragment appear"><b>Ausgeglichene Verteilung</b>: Die Hashwerte sollten gut verteilt sein, so dass keine bestimmten Werte häufiger vorkommen als andere.</li>
+<li class="fragment appear"><b>Konstanter Zeitaufwand</b>: Der Zeitaufwand zur Berechnung des Hashwerts sollte unabhängig von der Größe oder dem Inhalt der Eingabe konstant sein.</li>
+<li class="fragment appear"><b>Robustheit</b>: Kleine Änderungen an der Eingabe sollten zu signifikanten Änderungen des Hashwerts führen.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org518f729">
+<h2 id="org518f729">Welche (gängigen, kryptographischen) Hashalgorithmen gibt es?</h2>
+<p>
+Für Hashing gibt es eine Vielzahl von Anwengungsmöglichkeiten, z. B. in der Programmierung und in Datenbankanwendungen. Hier geht es aber um <b>kryptographische</b> Hashingalgorithmen, die zur Verifizierung der <b>Integrität</b> von Daten verwendet werden, z. B. bei der Verschlüsselung mit TLS oder bei SSH- und VPN-Verbindungen.
+</p>
+
+<p>
+Hier spielen vor allem <b>MD5 (veraltet!)</b> und <b>SHA</b> eine Rolle.
+</p>
+</section>
+<section id="slide-orgdb50e15">
+<h3 id="orgdb50e15">Message-Digest Algorithm 5 (MD5)</h3>
+<p>
+<b>MD5</b> war lange Zeit der Standardalgorithmus für kryptographisches Hashing. Allerdings gilt er inzwischen als veraltet, da es möglich ist gezielt <b>Kollisionen</b> zu erzeugen. Das bedeutet, dass es möglich ist gezielt beliebige Daten so zu manipulieren, dass sie denselben Hashwert erzeugen, wie bestimmte andere Daten.
+</p>
+
+<p>
+So erzeugen die beiden folgenden Linux-Binaries denselben MD5 Hashwert:
+</p>
+<ul>
+<li><a href="https://gitlab.com/ostseepinguin1/itt-net/-/blob/main/hello">hello</a></li>
+<li><a href="https://gitlab.com/ostseepinguin1/itt-net/-/blob/main/erase">erase</a></li>
+
+</ul>
+
+<div class="org-src-container">
+
+<pre  class="src src-powershell"   ><code trim>Get-FileHash -Algorithm MD5 @('hello.exe','erase.exe') | Select-Object -Property Hash, Path
+</code></pre>
+</div>
+
+<pre class="example" id="org5641126">
+Hash                             Path
+----                             ----
+CDC47D670159EEF60916CA03A9D4A007 C:\Users\Captiva\git\itt-net\hello.exe
+CDC47D670159EEF60916CA03A9D4A007 C:\Users\Captiva\git\itt-net\erase.exe
+</pre>
+</section>
+</section>
+<section>
+<section id="slide-org331f4f9">
+<h2 id="org331f4f9">Secure Hash Algorithm (SHA)</h2>
+<p>
+Hierbei handelt es sich eine <b>Gruppe</b> von <b>kryptographischen</b> Hashfunktionen, die aktiv weiterentwickelt werden. Während bereits die Möglichkeit von <b>Kollisionsangriffen</b> auf <b>SHA-0</b> und <b>SHA-1</b>, gilt <b>SHA-2</b> aktuell als sicherer 
+Standard.
+</p>
+
+</section>
+<section id="slide-org331f4f9-split">
+
+<p>
+Dabei gibt es verschiedene Varianten, die sich in der <b>Bitlänge</b> des Hashwertes unterscheiden:
+</p>
+
+<ul>
+<li>SHA-224</li>
+<li>SHA-256</li>
+<li>SHA-384</li>
+<li>SHA-512</li>
+
+</ul>
+
+<p>
+Dabei gilt, dass mit der Bitlänge sowohl die <b>Sicherheit</b>, als auch der <b>Rechaufwand</b> zum Erzeugen des Hashwertes steigt. 
+</p>
+</section>
+<section id="slide-orgc0e9682">
+<h4 id="orgc0e9682">Nachfolger</h4>
+<p>
+Als Nachfolger von SHA-2 wurde 2004 nach einem Wettbewerb der <b>SHA-3</b>-Algorithmus standardisiert. Ist ist deutlich zukunftssicherer als SHA-2, aber noch nicht sehr weit verbreitet. 
+</p>
+
+<p>
+Auch dieser Algorithmus ist in den vier Bitlängen 224, 256, 384 und 512 verfügbar.
+Daneben gibt es auch noch die Varianten SHAKE-128 und SHAKE-256
+</p>
+</section>
+</section>
+<section>
+<section id="slide-org6b205e4">
+<h2 id="org6b205e4">Weitere Algorithmen</h2>
+<p>
+Es gibt eine Reihe weiterer Algorithmen, die jedoch nicht so verbreitet sind. Von diesen gelten folgende als sicher:
+</p>
+
+<ul>
+<li>BLAKE (2. Platz im Wettbewerb nach SHA-3).</li>
+<li>RIPEMD-160</li>
+<li>Whirlpool</li>
+<li>Tiger</li>
+<li>ShangMi 3 (SM3) - chinesischer Algorithmus.</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-org39944a4">
+<h2 id="org39944a4">Befehl zum erzeugen von Hash-Prüfsummen</h2>
+<ul>
+<li>Windows - unterstützte Algorithmen sind MD5, SHA1, SHA256, SHA384, SHA512:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-powershell"   ><code trim> Get-FileHash -Algorithm SHA256 Datei
+</code></pre>
+</div>
+
+<ul>
+<li>Linux:</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim> md5sum
+ sha1sum
+ sha224sum
+ &#8230;
+ sha256sum
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org39944a4-split">
+
+<ul>
+<li>Linux mit OpenSSL</li>
+
+</ul>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim> openssl list -digest-algorithms
+</code></pre>
+</div>
+
+<p>
+dann z. B.:
+</p>
+
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim>openssl dgst -sha3-256 hello
+</code></pre>
+</div>
+
+<pre class="example" id="org21115ae">
+: SHA3-256(hello)= 0f5aa73890600ec25491c0f1707b370bb406c533622f508319c9f50c782a3f73
+</pre>
+</section>
+</section>
+<section>
+<section id="slide-org7f5a5a2">
+<h2 id="org7f5a5a2">Einführung in PGP und GPG</h2>
+<div class="outline-text-2" id="text-org7f5a5a2">
+</div>
+</section>
+<section id="slide-orgbcbc4db">
+<h3 id="orgbcbc4db">Was sind PGP und GPG?</h3>
+<ul>
+<li><b>PGP</b> (Pretty Good Privacy): Ursprüngliche Verschlüsselungssoftware</li>
+<li><b>GPG</b> (GNU Privacy Guard): Freie, Open-Source-Implementierung von PGP</li>
+
+</ul>
+</section>
+<section id="slide-orge7237c9">
+<h3 id="orge7237c9">Grundlegende Konzepte</h3>
+<ul>
+<li>Asymmetrische Verschlüsselung</li>
+<li>Digitale Signaturen</li>
+<li>Web of Trust</li>
+
+</ul>
+</section>
+</section>
+<section>
+<section id="slide-orgde19424">
+<h2 id="orgde19424">Schlüsselverwaltung</h2>
+<div class="outline-text-2" id="text-orgde19424">
+</div>
+</section>
+<section id="slide-org7bb7a5b">
+<h3 id="org7bb7a5b">Schlüsselpaar generieren</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim><span style="color: #989898;"># </span><span style="color: #989898;">GPG-Schl&#252;sselpaar erstellen</span>
+gpg --full-generate-key
+
+<span style="color: #989898;"># </span><span style="color: #989898;">Nicht-interaktive Variante</span>
+gpg --batch --generate-key &lt;&lt;EOF
+<span style="color: #79a8ff;">%no-protection</span>
+<span style="color: #79a8ff;">Key-Type: RSA</span>
+<span style="color: #79a8ff;">Key-Length: 4096</span>
+<span style="color: #79a8ff;">Name-Real: Max Mustermann</span>
+<span style="color: #79a8ff;">Name-Email: max@beispiel.de</span>
+<span style="color: #79a8ff;">Name-Comment: Beispielschl&#252;ssel</span>
+<span style="color: #79a8ff;">Expire-Date: 0</span>
+<span style="color: #79a8ff;">EOF</span>
+</code></pre>
+</div>
+</section>
+<section id="slide-org4aeaacf">
+<h3 id="org4aeaacf">Schlüssel auflisten</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim><span style="color: #989898;"># </span><span style="color: #989898;">Private Schl&#252;ssel anzeigen</span>
+gpg --list-secret-keys
+
+<span style="color: #989898;"># </span><span style="color: #989898;">&#214;ffentliche Schl&#252;ssel anzeigen</span>
+gpg --list-keys
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgdf28e84">
+<h2 id="orgdf28e84">Verschlüsselung</h2>
+<div class="outline-text-2" id="text-orgdf28e84">
+</div>
+</section>
+<section id="slide-orgb21b8ec">
+<h3 id="orgb21b8ec">Datei verschlüsseln</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim><span style="color: #989898;"># </span><span style="color: #989898;">F&#252;r einen Empf&#228;nger verschl&#252;sseln</span>
+gpg --encrypt --recipient max@beispiel.de geheim.txt
+
+<span style="color: #989898;"># </span><span style="color: #989898;">F&#252;r mehrere Empf&#228;nger</span>
+gpg --encrypt --recipient max@beispiel.de --recipient alice@beispiel.com geheim.txt
+</code></pre>
+</div>
+</section>
+<section id="slide-org2f14a1e">
+<h3 id="org2f14a1e">Datei entschlüsseln</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim><span style="color: #989898;"># </span><span style="color: #989898;">Entschl&#252;sselung</span>
+gpg --decrypt geheim.txt.gpg &gt; geheim.txt
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org5931dce">
+<h2 id="org5931dce">Digitale Signaturen</h2>
+<div class="outline-text-2" id="text-org5931dce">
+</div>
+</section>
+<section id="slide-orgc51a96a">
+<h3 id="orgc51a96a">Datei signieren</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim><span style="color: #989898;"># </span><span style="color: #989898;">Klare Signatur (Signatur separat)</span>
+gpg --detach-sign dokument.pdf
+
+<span style="color: #989898;"># </span><span style="color: #989898;">Signatur im Dokument</span>
+gpg --clear-sign dokument.txt
+</code></pre>
+</div>
+</section>
+<section id="slide-org0ee9a91">
+<h3 id="org0ee9a91">Signatur überprüfen</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim><span style="color: #989898;"># </span><span style="color: #989898;">Signatur verifizieren</span>
+gpg --verify dokument.pdf.sig dokument.pdf
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org39497d7">
+<h2 id="org39497d7">Schlüsselaustausch und Vertrauen</h2>
+<div class="outline-text-2" id="text-org39497d7">
+</div>
+</section>
+<section id="slide-orgb42064e">
+<h3 id="orgb42064e">Öffentlichen Schlüssel exportieren</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim><span style="color: #989898;"># </span><span style="color: #989898;">Schl&#252;ssel in Datei exportieren</span>
+gpg --export -a <span style="color: #79a8ff;">"Max Mustermann"</span> &gt; max_schluessel.asc
+
+<span style="color: #989898;"># </span><span style="color: #989898;">Alle &#246;ffentlichen Schl&#252;ssel exportieren</span>
+gpg --export -a &gt; alle_oeffentlichen_schluessel.asc
+</code></pre>
+</div>
+</section>
+<section id="slide-orgb2107f7">
+<h3 id="orgb2107f7">Schlüssel importieren</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim><span style="color: #989898;"># </span><span style="color: #989898;">Schl&#252;ssel importieren</span>
+gpg --import max_schluessel.asc
+
+<span style="color: #989898;"># </span><span style="color: #989898;">Schl&#252;ssel aus Keyserver importieren</span>
+gpg --keyserver hkps://keys.openpgp.org --recv-keys 0x1234ABCD
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-orgddaae8c">
+<h2 id="orgddaae8c">Vertrauensmodell: Web of Trust</h2>
+<div class="outline-text-2" id="text-orgddaae8c">
+</div>
+</section>
+<section id="slide-org046ff11">
+<h3 id="org046ff11">Schlüssel signieren</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim><span style="color: #989898;"># </span><span style="color: #989898;">Schl&#252;ssel mit lokalem Vertrauen signieren</span>
+gpg --sign-key alice@beispiel.com
+
+<span style="color: #989898;"># </span><span style="color: #989898;">&#214;ffentlich signieren</span>
+gpg --lsign-key bob@beispiel.com
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org1bbddec">
+<h2 id="org1bbddec">Sicherheitsempfehlungen</h2>
+<div class="outline-text-2" id="text-org1bbddec">
+</div>
+</section>
+<section id="slide-org3ff225a">
+<h3 id="org3ff225a">Beste Praktiken</h3>
+<ul>
+<li>Verwenden Sie mindestens 4096-Bit-RSA-Schlüssel</li>
+<li>Setzen Sie ein Ablaufdatum</li>
+<li>Nutzen Sie Subkeys für tägliche Aktivitäten</li>
+<li>Bewahren Sie den Hauptschlüssel sicher auf</li>
+
+</ul>
+</section>
+<section id="slide-orgf007b2d">
+<h3 id="orgf007b2d">Widerrufszertifikat erstellen</h3>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim><span style="color: #989898;"># </span><span style="color: #989898;">Widerrufszertifikat generieren</span>
+gpg --gen-revoke --output revoke.asc max@beispiel.de
+</code></pre>
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org189aa08">
+<h2 id="org189aa08">Fortgeschrittene Konfiguration</h2>
+<div class="outline-text-2" id="text-org189aa08">
+</div>
+</section>
+<section id="slide-orgae1c14b">
+<h3 id="orgae1c14b">Konfigurationsdatei</h3>
+<p>
+Pfad: <code>~/.gnupg/gpg.conf</code>
+</p>
+
+<pre  class="example" >
+# Bevorzugte Algorithmen
+personal-digest-preferences SHA512
+personal-cipher-preferences AES256
+default-preference-list SHA512 AES256 ZLIB BZIP2 ZIP Uncompressed
+</pre>
+</section>
+</section>
+<section>
+<section id="slide-orgb56be2a">
+<h2 id="orgb56be2a">Fazit</h2>
+<ul>
+<li>PGP/GPG bietet robuste Verschlüsselung</li>
+<li>Erfordert Verständnis und sorgfältige Handhabung</li>
+<li>Kontinuierliche Weiterbildung ist wichtig</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown, RevealZoom, RevealNotes]
+});
+
+</script>
+</body>
+</html>
