@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Hypertext Transfer Protocol | Transportlayer Security | Quic</title>
+<meta name="author" content="Sebastian Meisel"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="./mystyle.css"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Hypertext Transfer Protocol | Transportlayer Security | Quic</h1><p class="subtitle">IT-Technik - Netzwerkgrundlagen</p>
+<h2 class="author">Sebastian Meisel</h2>
+</section>
+
+<section>
+<section id="slide-org0b93e36">
+<h2 id="org0b93e36">Hypertext Protocol (HTTP1/ HTTP2)</h2>
+<p>
+<b>HTTP</b> dient zum Abruf von Webseiten. Das Protokoll arbeitet auf dem <i>Presentation Layer (7)</i>. Es ist ein <b>zustandsloses</b> Protokoll, d. h. es gibt zunächst keine Möglichkeit Daten zu speichern. Dies kann durch <b>Cookies</b> umgangen werden, die im <i>HTML-Header</i> übertragen und vom Client gespeichert werden.
+</p>
+
+<aside class="notes">
+<p>
+Neben dem Missbrauch von <i>Cookies</i> für Tracking, gibt es auch viele sinnvolle Nutzungsszenarien, z. B. für die Benutzerauthenfizierung.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org3ec56b4">
+<h2 id="org3ec56b4">Transport Layer Security (TLS) = Secure Socket Layer (SSL)</h2>
+<p>
+Die <b>HTTP</b>-Versionen 1 und 2 übertragen alle Information unverschlüsselt, sodass sie auf jedem Router, den sie passieren mitgelesen werden können.
+</p>
+
+<p>
+Zur Verschlüsselung kann aber <b>TLS</b> verwendet werden.
+</p>
+
+<p>
+Dabei identifizieren sich Server und Client zunächst im <b>TLS Handshake</b> mit Hilfe von <b>Zertifikaten</b>. Zugleich werden <b>Crypto-Schlüssel</b> ausgetauscht.
+</p>
+
+<p>
+Dann werden im <b>TSL Record</b> sämtliche übertragenen Daten mit diesen <b>Schlüsseln</b> verschlüsselt.
+</p>
+
+<aside class="notes">
+<p>
+Die Verschlüsselung des <b>Handshakes</b> ist <b>asymetrisch</b>, d. h. für der <b>Ver</b>​schlüsselung wird ein anderer <b>Schlüssel</b> (öffentlicher Schlüssel / <i>public key</i>) als für die <b>Ent</b>​schlüsselung (privater Schlüssel / <i>private key</i>).
+</p>
+
+<p>
+Die Verschlüsselung des <b>Records</b> wiederum ist <b>symetrisch</b>. Zum Ver- und Entschlüsseln wird als von Client und Server jeweils <b>derselbe</b> Schlüssel verwendet.
+</p>
+
+</aside>
+
+<p>
+So wird verhindert, dass Daten <i>beim Transport</i> <b>mitgelesen</b> (Vertraulichkeit) oder <b>manipuliert</b> (Integrität). 
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org40e061e">
+<h3 id="org40e061e">Zertifikate</h3>
+<p>
+<b>Server Zertifikate</b> werden von einer <b>Certificate Authority</b> (CA) ausgegeben und signiert. Jeder Browser führt eine Liste vertrauenswürdiger <b>CAs</b>. 
+</p>
+
+<p>
+Das <b>Zertifikat</b> enthält Informationen über die <b>Organisation</b> für die es ausgestellt wurde. Außerdem den <b>öffentlichen Schlüssel</b> der für die Verschlüsselung verwendet werden soll und eine <b>Signatur</b>, die die Echtheit des Zertifikats bestätigt.
+</p>
+
+<aside class="notes">
+<p>
+Außerdem enthält es den Zeitraum der <b>Gültikeit</b> des Zertifikats.
+</p>
+
+</aside>
+
+<p>
+Das <b>Clientzertifikat</b> wird vom Browser zur Verfügung gestellt.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf899061">
+<h3 id="orgf899061">TLS Handshake</h3>
+
+<div id="org7fa5464" class="figure">
+<p><img src="Bilder/TLS-Handshake.png" alt="TLS-Handshake.png" width="40%" />
+</p>
+<p><span class="figure-number">Abbildung 1: </span>TLS Handshake</p>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb2c921a">
+<h2 id="orgb2c921a">QUIC</h2>
+<p>
+QUIC (Quick UDP Internet Connection) ist ein Protokoll, das entwickelt wurde, um herkömmliche <i>TCP</i> (Transmission Control Protocol) und <i>TLS</i> (Transport Layer Security) zu ersetzen, um eine schnellere und sicherere Kommunikation über das Internet zu ermöglichen. Im Gegensatz zu TCP, das auf einer Reihe von Hin- und Rücknachrichten zur Herstellung einer Verbindung beruht, arbeitet QUIC über UDP (User Datagram Protocol), was zu geringerer Latenz und verbesserte Leistung führt.
+</p>
+
+
+<div id="org0b7b591" class="figure">
+<p><img src="Bilder/TCP_TLS_Handshake.png" alt="TCP_TLS_Handshake.png" align="right" width=45%/>
+</p>
+</div>
+
+<div id="orgfe192a5" class="figure">
+<p><img src="Bilder/QUIC_Handshake.png" alt="QUIC_Handshake.png"  align="left" width=30%/>
+</p>
+</div>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown, RevealZoom, RevealNotes]
+});
+
+</script>
+</body>
+</html>

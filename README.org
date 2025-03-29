@@ -153,6 +153,7 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 *Anmerkungen:* Anwendung kryptografischer Maßnahmen, Verschlüsselungsverfahren, Zertifikate, Signaturen, Handshake-Protokoll mit https://
 
   - [[file:Verschlüsselung_Hashing.pdf][Verschlüsselung und Hashing (PDF)]]
+  - [[file:HTTPS_vs_QUIC.pdf][TLS und Zertifakte in HTTPS und QUIC (PDF)]]
 
 *** Modul 32: Sichere Passwörter und Authentifizierung
 :PROPERTIES:
