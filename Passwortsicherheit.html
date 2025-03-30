@@ -1,0 +1,580 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Passwortsicherheit und Authentication</title>
+<meta name="author" content="ITT-Net-IS"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="./mystyle.css"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Passwortsicherheit und Authentication</h1><p class="subtitle">IT-Sicherheit</p>
+<h2 class="author">ITT-Net-IS</h2>
+</section>
+
+<section>
+<section id="slide-orgf3837b5">
+<h2 id="orgf3837b5">Einführung</h2>
+<p>
+Passwörter sind nach wie vor die verbreitetste Methode zur Authentifizierung in digitalen Systemen.
+Trotz neuerer Technologien wie biometrischer Authentifizierung oder Zwei-Faktor-Authentifizierung
+bilden sie das Rückgrat der meisten Sicherheitssysteme. Daher ist ein fundiertes Verständnis von
+Passwortsicherheit sowohl für Endnutzer als auch für Entwickler unerlässlich.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf586857">
+<h3 id="orgf586857">Grundlegende Anforderungen an sichere Passwörter</h3>
+<p>
+Ein sicheres Passwort sollte folgende Eigenschaften aufweisen:
+</p>
+<ul>
+<li class="fragment appear"><b>Komplexität</b>: Kombination aus Groß- und Kleinbuchstaben, Zahlen und Sonderzeichen</li>
+<li class="fragment appear"><b>Länge</b>: Mindestens 12 Zeichen, besser noch länger</li>
+<li class="fragment appear"><b>Einzigartigkeit</b>: Keine Wiederverwendung desselben Passworts für verschiedene Dienste</li>
+<li class="fragment appear"><b>Zufälligkeit</b>: Keine leicht zu erratenden Muster oder persönlichen Informationen</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgef8e686">
+<h3 id="orgef8e686">Häufige Angriffsmethoden</h3>
+<p>
+Passwörter können auf verschiedene Arten kompromittiert werden:
+</p>
+
+<ul>
+<li class="fragment appear"><b>Brute-Force-Angriffe</b>: Systematisches Durchprobieren aller möglichen Kombinationen</li>
+<li class="fragment appear"><b>Wörterbuch-Angriffe</b>: Verwendung von Listen häufig genutzter Passwörter</li>
+<li class="fragment appear"><b>Phishing</b>: Täuschung des Nutzers zur Preisgabe seiner Anmeldedaten</li>
+<li class="fragment appear"><b>Keylogger</b>: Überwachung der Tastatureingaben</li>
+<li class="fragment appear"><b>Credential Stuffing</b>: Nutzung gestohlener Anmeldedaten für andere Dienste</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orge46ec7c">
+<h3 id="orge46ec7c">Passwort-Manager</h3>
+<p>
+Passwort-Manager sind eine effektive Möglichkeit, komplexe und einzigartige Passwörter 
+zu verwalten, ohne sie sich merken zu müssen:
+</p>
+
+<ul>
+<li class="fragment appear">Generieren zufälliger, starker Passwörter</li>
+<li class="fragment appear">Verschlüsselte Speicherung aller Passwörter</li>
+<li class="fragment appear">Zugriff über ein einziges Master-Passwort</li>
+<li class="fragment appear">Oft mit Browser-Integration und Mobilanwendungen</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org88143dd">
+<h2 id="org88143dd">Sicheres Speichern von Passwörtern in Systemen</h2>
+<p>
+Für Entwickler und Systemadministratoren ist die sichere Speicherung von Benutzerpasswörtern 
+eine kritische Aufgabe. Passwörter sollten niemals im Klartext gespeichert werden.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc58e061">
+<h3 id="orgc58e061">Hashfunktionen</h3>
+<p>
+Hashfunktionen wandeln Eingaben beliebiger Länge in Ausgaben fester Länge um. Sie sind 
+Einwegfunktionen, was bedeutet, dass es praktisch unmöglich ist, vom Hash auf das ursprüngliche
+Passwort zu schließen.
+</p>
+
+<p>
+Beispiele für moderne, sichere Hashfunktionen:
+</p>
+<ul>
+<li class="fragment appear">bcrypt</li>
+<li class="fragment appear">Argon2</li>
+<li class="fragment appear">PBKDF2</li>
+<li class="fragment appear">scrypt</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Detaillierte Erläuterungen zu den Hashfunktionen:
+</p>
+
+<ul>
+<li><b>bcrypt</b>: Eine adaptive Hashfunktion, die auf dem Blowfish-Cipher basiert. Der große Vorteil ist der
+integrierte Salt und der Kostenfaktor, der die Rechenintensität bestimmt und mit wachsender
+Rechenleistung erhöht werden kann. Wird seit 1999 verwendet und gilt nach wie vor als sicher.</li>
+
+<li><b>Argon2</b>: Gewinner des Password Hashing Competition (PHC) im Jahr 2015. Argon2 bietet Schutz gegen
+verschiedene Angriffsarten, einschließlich Tradeoff-Attacken, brute-force und Seitenkanalangriffe.
+Es gibt drei Varianten: Argon2d (schneller, aber anfälliger für Seitenkanalangriffe), Argon2i
+(langsamer, aber resistenter gegen Seitenkanalangriffe) und Argon2id (Kombination beider Ansätze).</li>
+
+<li><b>PBKDF2</b> (Password-Based Key Derivation Function 2): Eine einfache aber effektive Methode, die
+auf wiederholten Anwendungen einer kryptografischen Hash-Funktion basiert. Der Hauptnachteil
+besteht darin, dass sie nicht speicherintensiv ist und daher anfälliger für
+Hardware-beschleunigte Angriffe sein kann.</li>
+
+<li><b>scrypt</b>: Wurde entwickelt, um speziell gegen Hardware-Angriffe resistent zu sein. Die Funktion
+ist sowohl rechen- als auch speicherintensiv, was Angriffe mit spezialisierter Hardware
+(wie ASICs oder FPGAs) erheblich erschwert.</li>
+
+</ul>
+
+<p>
+Vergleich der Eigenschaften:
+</p>
+<table border="2" cellspacing="0" cellpadding="6" rules="groups" frame="hsides">
+
+
+<colgroup>
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+
+<col  class="org-left" />
+</colgroup>
+<thead>
+<tr>
+<th scope="col" class="org-left">Hashfunktion</th>
+<th scope="col" class="org-left">Rechenintensiv</th>
+<th scope="col" class="org-left">Speicherintensiv</th>
+<th scope="col" class="org-left">Parallelisierungsresistent</th>
+<th scope="col" class="org-left">Salt integriert</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="org-left">bcrypt</td>
+<td class="org-left">Ja</td>
+<td class="org-left">Nein</td>
+<td class="org-left">Teilweise</td>
+<td class="org-left">Ja</td>
+</tr>
+
+<tr>
+<td class="org-left">Argon2</td>
+<td class="org-left">Ja</td>
+<td class="org-left">Ja</td>
+<td class="org-left">Ja</td>
+<td class="org-left">Ja</td>
+</tr>
+
+<tr>
+<td class="org-left">PBKDF2</td>
+<td class="org-left">Ja</td>
+<td class="org-left">Nein</td>
+<td class="org-left">Nein</td>
+<td class="org-left">Nein</td>
+</tr>
+
+<tr>
+<td class="org-left">scrypt</td>
+<td class="org-left">Ja</td>
+<td class="org-left">Ja</td>
+<td class="org-left">Teilweise</td>
+<td class="org-left">Nein</td>
+</tr>
+</tbody>
+</table>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orgce434dc">
+<h3 id="orgce434dc">Rainbow-Table-Angriffe</h3>
+<p>
+Rainbow-Tables sind eine spezielle Form von vorberechneten Tabellen, die zur Beschleunigung von
+Passwort-Cracking-Angriffen verwendet werden. Sie stellen einen Kompromiss zwischen Rechenzeit
+und Speicherplatz dar.
+</p>
+
+</section>
+<section id="slide-orge6d56c4">
+<h4 id="orge6d56c4">Funktionsweise von Rainbow-Table-Angriffen</h4>
+<p>
+Bei einem Rainbow-Table-Angriff hat der Angreifer bereits vorab eine große Anzahl von möglichen
+Passwörtern und deren Hashes berechnet und in Tabellen organisiert. Statt bei einem Angriff
+jedes mögliche Passwort neu zu hashen und zu vergleichen, kann der Angreifer einfach in der
+Tabelle nachschlagen, welches Klartext-Passwort zu einem bestimmten Hash gehört.
+</p>
+</section>
+<section id="slide-orge6d56c4-split">
+<pre  class="example" >
+      // Vereinfachte Darstellung einer Rainbow-Table
+      Hash                                     | Passwort
+      -----------------------------------------+----------
+      5f4dcc3b5aa765d61d8327deb882cf99        | password
+      e10adc3949ba59abbe56e057f20f883e        | 123456
+      25d55ad283aa400af464c76d713c07ad        | 12345678
+      ... (Millionen weiterer Einträge)       | ...
+</pre>
+
+</section>
+<section id="slide-org678d894">
+<h4 id="org678d894">Effektivität von Rainbow-Tables</h4>
+<p>
+Rainbow-Tables sind besonders effektiv gegen ungesalzene Hashes, da der gleiche Hash immer zum 
+gleichen Passwort gehört. Ein einfacher Hash wie MD5 oder SHA-1 kann mit modernen Rainbow-Tables
+in Sekunden bis Minuten geknackt werden, wenn das Passwort in der Tabelle enthalten ist.
+</p>
+
+<p>
+Rainbow-Tables können mehrere Terabyte groß sein, decken aber oft gängige Passwortmuster bis zu
+einer bestimmten Länge ab. Spezialisierte Versionen existieren für bestimmte Zeichensätze oder
+Passwortmuster.
+</p>
+
+</section>
+<section id="slide-org9632963">
+<h4 id="org9632963">Schutz vor Rainbow-Table-Angriffen</h4>
+<p>
+Die primäre Verteidigung gegen Rainbow-Table-Angriffe ist das Salting, da es sicherstellt, dass
+selbst identische Passwörter unterschiedliche Hashes erzeugen. Ein individueller, zufälliger Salt
+für jedes Passwort macht vorberechnete Rainbow-Tables praktisch nutzlos, da der Angreifer für
+jeden einzelnen Salt eine neue Rainbow-Table erstellen müsste.
+</p>
+
+<p>
+Zusätzlich erhöhen moderne, langsame Hashfunktionen (bcrypt, Argon2) die Kosten für die Erstellung
+von Rainbow-Tables so drastisch, dass sie für diese Algorithmen praktisch nicht mehr realisierbar sind.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org4272c23">
+<h3 id="org4272c23">Salting</h3>
+<p>
+<b>Salting</b> ist eine Technik, bei der jedem Passwort vor dem Hashen ein zufälliger Wert (der "Salt") 
+hinzugefügt wird. Dies schützt vor verschiedenen Angriffsarten:
+</p>
+
+<pre  class="example" >
+   hashedPassword = hash(password + salt)
+</pre>
+
+</section>
+<section id="slide-org0ac4455">
+<h4 id="org0ac4455">Vorteile von Salting:</h4>
+<ul>
+<li class="fragment appear">Verhindert, dass identische Passwörter denselben Hash erzeugen</li>
+<li class="fragment appear">Schützt vor Rainbow-Table-Angriffen (vorberechnete Hash-Tabellen)</li>
+<li class="fragment appear">Macht Wörterbuch-Angriffe aufwändiger</li>
+
+</ul>
+
+</section>
+<section id="slide-org4327ae1">
+<h4 id="org4327ae1">Best Practices für Salting:</h4>
+<ul>
+<li class="fragment appear">Individueller Salt für jedes Passwort</li>
+<li class="fragment appear">Ausreichend langer Salt (mindestens 16 Bytes)</li>
+<li class="fragment appear">Zufällig generierter Salt</li>
+<li class="fragment appear">Salt sollte zusammen mit dem Hash gespeichert werden</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org92d3e38">
+<h3 id="org92d3e38">Peppering</h3>
+<p>
+<b>Peppering</b> erweitert das Konzept des Saltings um eine zusätzliche Sicherheitsebene. Dabei wird 
+ein geheimer Wert (der "Pepper") zum Passwort hinzugefügt, bevor es mit dem Salt gehasht wird:
+</p>
+
+<pre  class="example" >
+   hashedPassword = hash(password + pepper + salt)
+</pre>
+
+</section>
+<section id="slide-orgd7c313d">
+<h4 id="orgd7c313d">Wichtige Unterschiede zum Salt:</h4>
+<ul>
+<li class="fragment appear">Der Pepper ist für alle Passwörter <b>gleich</b></li>
+<li class="fragment appear">Der Pepper wird <b>nicht</b> in der Datenbank gespeichert</li>
+<li class="fragment appear">Der Pepper wird stattdessen in der Anwendungskonfiguration oder besser in einem Hardware-Sicherheitsmodul (HSM) gespeichert</li>
+
+</ul>
+
+</section>
+<section id="slide-org7b5b2e2">
+<h4 id="org7b5b2e2">Vorteile des Pepperings:</h4>
+<ul>
+<li class="fragment appear">Selbst bei einem Datenbankzugriff können die Passwörter ohne Kenntnis des Peppers nicht geknackt werden</li>
+<li class="fragment appear">Fügt eine zusätzliche Sicherheitsebene hinzu, die unabhängig von der Datenbank ist</li>
+<li class="fragment appear">Erhöht die Entropie der Passwörter zusätzlich</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org147912b">
+<h3 id="org147912b">Implementierungsbeispiel in Pseudocode</h3>
+<pre  class="example" >
+   // Registrierung eines neuen Benutzers
+   function registerUser(username, password):
+       // Generiere einen zufälligen Salt
+       salt = generateRandomBytes(16)
+       
+       // Hole den Pepper aus einer sicheren Quelle (nicht in der DB)
+       pepper = getSecretPepperFromConfig()
+       
+       // Berechne den Hash mit Salt und Pepper
+       hashedPassword = hash(password + pepper + salt)
+       
+       // Speichere Benutzername, Salt und Hash in der Datenbank
+       storeInDatabase(username, salt, hashedPassword)
+   
+   
+   // Überprüfung beim Login
+   function verifyLogin(username, password):
+       // Hole Salt und Hash aus der Datenbank
+       (salt, storedHash) = getUserDataFromDatabase(username)
+       
+       // Hole den Pepper aus einer sicheren Quelle
+       pepper = getSecretPepperFromConfig()
+       
+       // Berechne den Hash mit dem eingegebenen Passwort
+       computedHash = hash(password + pepper + salt)
+       
+       // Vergleiche den berechneten Hash mit dem gespeicherten Hash
+       return (computedHash == storedHash)
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-org81f3ef3">
+<h2 id="org81f3ef3">Weitere Sicherheitsmaßnahmen</h2>
+<p>
+Neben der sicheren Speicherung von Passwörtern gibt es weitere wichtige Sicherheitsmaßnahmen:
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org50ce78a">
+<h3 id="org50ce78a">Passwort-Richtlinien</h3>
+<ul>
+<li class="fragment appear">Durchsetzung von Mindestanforderungen an Passwörter</li>
+<li class="fragment appear">Regelmäßige Passwortänderungen (kontrovers, da dies oft zu schwächeren Passwörtern führt)</li>
+<li class="fragment appear">Blockieren häufig verwendeter Passwörter</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org72ca81d">
+<h3 id="org72ca81d">Rate-Limiting</h3>
+<ul>
+<li class="fragment appear">Begrenzung der Anzahl von Anmeldeversuchen</li>
+<li class="fragment appear">Temporäre Kontosperrung nach mehreren fehlgeschlagenen Versuchen</li>
+<li class="fragment appear">Verzögerung bei fehlgeschlagenen Anmeldeversuchen</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc9532c5">
+<h3 id="orgc9532c5">Zwei-Faktor-Authentifizierung (2FA)</h3>
+<ul>
+<li class="fragment appear">Zusätzliche Sicherheitsebene neben dem Passwort</li>
+<li class="fragment appear">"Etwas, das man weiß" (Passwort) + "etwas, das man hat" (z.B. Smartphone)</li>
+<li class="fragment appear">Implementierungsmöglichkeiten: SMS, Authenticator-Apps, Sicherheitsschlüssel</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org3fbc555">
+<h2 id="org3fbc555">OAuth-Verfahren</h2>
+<p>
+OAuth (Open Authorization) ist ein offenes Protokoll für die sichere Autorisierung auf 
+eine standardisierte und einfache Methode. Es bietet eine Alternative zur direkten Verwendung 
+von Passwörtern.
+</p>
+
+</section>
+<section id="slide-orgb23e6a7">
+<h4 id="orgb23e6a7">Grundprinzipien von OAuth</h4>
+<p>
+OAuth ermöglicht Benutzern, Anwendungen (Clients) einen eingeschränkten Zugriff auf ihre 
+Ressourcen zu gewähren, ohne ihre Anmeldedaten direkt weiterzugeben. Stattdessen werden Tokens 
+verwendet, die eingeschränkte Zugriffsrechte haben.
+</p>
+
+<p>
+Die Hauptkomponenten eines OAuth-Systems sind:
+</p>
+<ul>
+<li class="fragment appear"><b>Resource Owner</b>: Der Benutzer, der den Zugriff auf seine Daten genehmigt</li>
+<li class="fragment appear"><b>Client</b>: Die Anwendung, die Zugriff auf die Daten des Benutzers anfordert</li>
+<li class="fragment appear"><b>Authorization Server</b>: Der Server, der die Zugriffstoken ausstellt</li>
+<li class="fragment appear"><b>Resource Server</b>: Der Server, der die geschützten Ressourcen hostet</li>
+
+</ul>
+
+</section>
+<section id="slide-orge08895c">
+<h4 id="orge08895c">OAuth 2.0 Ablauf</h4>
+<p>
+Der typische OAuth 2.0 Ablauf besteht aus folgenden Schritten:
+</p>
+
+<pre  class="example" >
+       +--------+                               +---------------+
+       |        |--(1)- Authorization Request -&gt;|   Resource    |
+       |        |                               |     Owner     |
+       |        |&lt;-(2)-- Authorization Grant ---|               |
+       |        |                               +---------------+
+       |        |
+       |        |                               +---------------+
+       |        |--(3)-- Authorization Grant --&gt;| Authorization |
+       | Client |                               |     Server    |
+       |        |&lt;-(4)----- Access Token -------|               |
+       |        |                               +---------------+
+       |        |
+       |        |                               +---------------+
+       |        |--(5)----- Access Token ------&gt;|    Resource   |
+       |        |                               |     Server    |
+       |        |&lt;-(6)--- Protected Resource ---|               |
+       +--------+                               +---------------+
+</pre>
+
+<aside class="notes">
+<ol>
+<li>Der Client fordert eine Autorisierung vom Resource Owner an</li>
+<li>Der Resource Owner erteilt die Autorisierung (z.B. durch Anmeldung und Zustimmung)</li>
+<li>Der Client tauscht die Autorisierung gegen ein Access Token</li>
+<li>Der Authorization Server stellt ein Access Token aus</li>
+<li>Der Client nutzt das Access Token, um auf geschützte Ressourcen zuzugreifen</li>
+<li>Der Resource Server liefert die geschützten Ressourcen aus</li>
+
+</ol>
+
+</aside>
+
+</section>
+<section id="slide-org9d5ddb4">
+<h4 id="org9d5ddb4">Vorteile von OAuth</h4>
+<ul>
+<li class="fragment appear"><b>Keine Passweitweitergabe</b>: Benutzer müssen ihre Passwörter nicht an Drittanbieter-Apps weitergeben</li>
+<li class="fragment appear"><b>Granulare Zugriffsrechte</b>: Zugriff kann auf bestimmte Aktionen oder Daten beschränkt werden</li>
+<li class="fragment appear"><b>Widerrufbarkeit</b>: Zugriffsberechtigungen können jederzeit widerrufen werden, ohne das Passwort ändern zu müssen</li>
+<li class="fragment appear"><b>Zeitliche Begrenzung</b>: Tokens können automatisch nach einer bestimmten Zeit ablaufen</li>
+<li class="fragment appear"><b>Delegierte Autorisierung</b>: Ermöglicht serverseitige Anwendungen, im Namen eines Benutzers zu handeln</li>
+
+</ul>
+
+</section>
+<section id="slide-org7e7a0dd">
+<h4 id="org7e7a0dd">OAuth vs. OpenID Connect</h4>
+<p>
+Während OAuth 2.0 ein Autorisierungsframework ist (regelt den Zugriff auf Ressourcen), ist 
+OpenID Connect eine Identitätsschicht auf OAuth 2.0, die Authentifizierung ermöglicht:
+</p>
+<ul>
+<li class="fragment appear"><b>OAuth 2.0</b>: "Was darfst du tun?" (Autorisierung)</li>
+<li class="fragment appear"><b>OpenID Connect</b>: "Wer bist du?" (Authentifizierung)</li>
+
+</ul>
+
+<p>
+OpenID Connect erweitert OAuth um einen standardisierten Mechanismus zur Übermittlung von 
+Benutzerinformationen über einen ID Token im JWT-Format (JSON Web Token).
+</p>
+
+</section>
+<section id="slide-org6d051f9">
+<h4 id="org6d051f9">Sicherheitsaspekte bei OAuth-Implementierungen</h4>
+<p>
+Bei der Implementierung von OAuth sollten folgende Sicherheitsaspekte beachtet werden:
+</p>
+<ul>
+<li class="fragment appear">Verwendung von TLS/SSL für alle OAuth-Kommunikation</li>
+<li class="fragment appear">Implementierung von CSRF-Schutz durch State-Parameter</li>
+<li class="fragment appear">Validierung aller Redirect URIs</li>
+<li class="fragment appear">Sichere Speicherung von Client Secrets</li>
+<li class="fragment appear">Verwendung kurzer Lebensdauern für Access Tokens (mit Refresh Tokens für längeren Zugriff)</li>
+<li class="fragment appear">Implementierung von PKCE (Proof Key for Code Exchange) für öffentliche Clients</li>
+<li class="fragment appear">Regelmäßige Audits und Überprüfung aller erteilten Zugriffsberechtigungen</li>
+
+</ul>
+
+
+</section>
+</section>
+<section>
+<section id="slide-org78f1f9d">
+<h2 id="org78f1f9d">Fazit</h2>
+<p>
+Die Sicherheit von Passwörtern bleibt ein zentrales Element der Cybersicherheit. Durch die 
+Kombination von benutzerfreundlichen Praktiken, wie die Verwendung von Passwort-Managern, 
+und technischen Sicherheitsmaßnahmen wie Salting und Peppering können sowohl Benutzer als 
+auch Entwickler dazu beitragen, Systeme besser zu schützen.
+</p>
+
+<p>
+Die wichtigsten Punkte im Überblick:
+</p>
+<ul>
+<li class="fragment appear">Für Benutzer: Starke, einzigartige Passwörter verwenden und Passwort-Manager nutzen</li>
+<li class="fragment appear">Für Entwickler: Niemals Klartext-Passwörter speichern, moderne Hashing-Algorithmen mit Salt und Pepper einsetzen</li>
+<li class="fragment appear">Für alle Systeme: Zusätzliche Schutzmaßnahmen wie 2FA implementieren</li>
+<li class="fragment appear">Als Alternative zu passwortbasierten Authentifizierungsmethoden: OAuth und OpenID Connect in Betracht ziehen</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown, RevealZoom, RevealNotes]
+});
+
+</script>
+</body>
+</html>
