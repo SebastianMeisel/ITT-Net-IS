@@ -124,7 +124,7 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 
 *Anmerkungen:* Gefahren durch Viren, Würmer und Trojaner, Schutzmaßnahmen gegen Schadsoftware
 
-
+  - [[file:Malware.pdf][Malware (PDF)]]
 
 *** Modul 30: Hackerangriffe und Schutzmaßnahmen
 :PROPERTIES:
