@@ -167,7 +167,7 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 
 *Anmerkungen:* Passwörter, Passwortresor, Mehr-Faktor-Authentifizierung, Biometrie
 
-
+ - [[file:Passwortsicherheit.pdf][Passwortsicherheit und Authentifizierungsmethoden (PDF)]]
 
 *** Modul 33: WLAN-Sicherheit
 :PROPERTIES:
