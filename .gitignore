@@ -8,3 +8,4 @@
 *.docm#
 latex.d/**
 *.asc
+\.#*

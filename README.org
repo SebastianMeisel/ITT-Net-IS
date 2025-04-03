@@ -138,7 +138,7 @@ Der Fachverlaufsplan ist gültig für FIAE, FDP und IT Kfm ab Sommer 2024.
 
 *Anmerkungen:* Gefahren durch Social Engineering und Angriffsszenarien, Schutzmaßnahmen gegen Hackerangriffe
 
-
+  - [[file:Hackerangriffe.org][Hackerangriffe und Schutzmaßnahmen (PDF)]]
 
 *** Modul 31: Grundlagen Kryptografie
 :PROPERTIES:
