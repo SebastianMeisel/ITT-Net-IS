@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="utf-8"/>
+<title>WLAN-Sicherheit</title>
+<meta name="author" content="ITT-Net-IS"/>
+<meta name="description" content=""/>
+<meta name="keywords" content=""/>
+<style type="text/css">
+.underline { text-decoration: underline; }
+</style>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.css"/>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js/dist/theme/league.css" id="theme"/>
+
+<link rel="stylesheet" href="./mystyle.css"/>
+</head>
+<body>
+<div class="reveal">
+<div class="slides">
+<section id="sec-title-slide"><h1 class="title">WLAN-Sicherheit</h1><p class="subtitle"></p>
+<h2 class="author">ITT-Net-IS</h2>
+</section>
+
+<section>
+<section id="slide-org1bfd974">
+<h2 id="org1bfd974">Einleitung</h2>
+<p>
+WLANs bieten eine komfortable Möglichkeit zur Netzwerkverbindung, bringen aber auch besondere Sicherheitsrisiken mit sich. Funkbasierte Kommunikation ist per se leichter abzufangen als kabelgebundene. Daher ist der Einsatz geeigneter Verschlüsselungs- und Authentifizierungsverfahren essenziell.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-org30d5223">
+<h2 id="org30d5223">Grundlagen der WLAN-Verschlüsselung</h2>
+<div class="outline-text-2" id="text-org30d5223">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org04e26a5">
+<h3 id="org04e26a5">WEP – Wired Equivalent Privacy</h3>
+<p>
+WEP war der erste Verschlüsselungsstandard für WLANs, wurde aber bereits kurz nach seiner Einführung als unsicher erkannt. Er verwendet RC4 als Verschlüsselungsalgorithmus mit einem 40- oder 104-Bit-Schlüssel.
+</p>
+
+<aside class="notes">
+<p>
+RC4 ist ein symmetrischer Stromverschlüsselungsalgorithmus. Bei WEP ist das Problem, dass Initialisierungsvektoren (IV) nur 24 Bit lang sind, sich schnell wiederholen und somit Angriffe wie das sogenannte „IV-Kollisionen“ ermöglichen.
+</p>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb0284ea">
+<h3 id="orgb0284ea">WPA – Wi-Fi Protected Access</h3>
+<p>
+WPA wurde als Übergangslösung eingeführt und verbessert einige Schwächen von WEP. Es nutzt TKIP (Temporal Key Integrity Protocol), das dynamisch Schlüssel erzeugt und so die Angreifbarkeit reduziert.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orge4ad86a">
+<h3 id="orge4ad86a">WPA2</h3>
+<p>
+WPA2 löst WPA ab und basiert auf dem robusteren AES-Standard (Advanced Encryption Standard) in Verbindung mit CCMP (Counter Mode CBC-MAC Protocol). WPA2 ist über viele Jahre der Sicherheitsstandard in WLANs gewesen.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgc081c82">
+<h3 id="orgc081c82">WPA3</h3>
+<p>
+WPA3 ist der aktuelle Sicherheitsstandard. Er verbessert den Schutz gegen Wörterbuchangriffe und bietet auch im öffentlichen WLAN („Open Wi-Fi“) eine gewisse Verschlüsselung durch Opportunistic Wireless Encryption (OWE).
+</p>
+
+<aside class="notes">
+<ul>
+<li><b>TKIP</b>: Ein Protokoll, das dynamische Schlüsselvergabe ermöglicht, jedoch noch auf RC4 basiert.</li>
+<li><b>CCMP</b>: Basiert auf AES und bietet Authentizität, Integrität und Vertraulichkeit.</li>
+<li><b>OWE</b>: Verschlüsselt Datenverkehr ohne vorherige Authentifizierung – nützlich in offenen WLANs.</li>
+
+</ul>
+
+</aside>
+
+</section>
+<section id="slide-orgc081c82-split">
+
+<ul>
+<li>Seit <b>Januar 2021</b> ist WPA3 für alle neuen Wi-Fi-zertifizierten Geräte <b>obligatorisch</b>.</li>
+<li>Für Geräte, die im <b>6-GHz-Band</b> („Wi-Fi 6E“) betrieben werden, ist <b>WPA3 zwingend vorgeschrieben</b>. WPA2 ist in diesem Frequenzbereich nicht mehr zulässig.</li>
+
+</ul>
+
+<aside class="notes">
+<ul>
+<li><b>Wi-Fi 6E</b> erweitert Wi-Fi 6 um das 6-GHz-Band und ermöglicht höhere Bandbreiten und geringere Latenzen.</li>
+<li>Die Wi-Fi Alliance schreibt WPA3 vor, um die Sicherheit bei neuen Geräten und Frequenzbereichen zu garantieren.</li>
+<li>Auch bei <b>Wi-Fi 7</b> ist WPA3 im 6-GHz-Band und zusätzlich für neue Funktionen  wie Multi-Link-Operation (MLO), das für stabilere Verbindungen sorgt vorgeschrieben.</li>
+
+</ul>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-orgbba121c">
+<h2 id="orgbba121c">Sicherheitsmodi: Personal vs. Enterprise</h2>
+<div class="outline-text-2" id="text-orgbba121c">
+</div>
+</section>
+</section>
+<section>
+<section id="slide-org6f235f7">
+<h3 id="org6f235f7">WPA2/WPA3 Personal</h3>
+<p>
+Verwendet ein gemeinsames Passwort (Pre-Shared Key, PSK). Einfach zu implementieren, aber nicht für größere Netzwerke geeignet.
+</p>
+
+</section>
+</section>
+<section>
+<section id="slide-orgb4c4d5d">
+<h3 id="orgb4c4d5d">WPA2/WPA3 Enterprise</h3>
+<p>
+Setzt auf eine zentrale Authentifizierungsinstanz, meist über RADIUS, und individuelle Zugangsdaten für Nutzer. Damit lassen sich Nutzer gezielt sperren und Sicherheitsrichtlinien besser durchsetzen.
+</p>
+
+<aside class="notes">
+<ul>
+<li><b>RADIUS</b> (Remote Authentication Dial-In User Service): Protokoll zur Authentifizierung und Autorisierung in Netzwerken.</li>
+<li><b>AAA</b>: Authentication, Authorization, Accounting – drei Säulen der Netzwerksicherheit.</li>
+
+</ul>
+
+</aside>
+
+</section>
+</section>
+<section>
+<section id="slide-org711be49">
+<h2 id="org711be49">Allgemeine Sicherheitsherausforderungen bei WLAN</h2>
+<ul>
+<li><b>Abhören</b>: Funkübertragung kann mit einfachen Mitteln abgehört werden.</li>
+<li><b>Rogue Access Points</b>: Unautorisierte Geräte im Netz können als legitime Access Points erscheinen.</li>
+<li><b>Evil Twin Angriffe</b>: Ein gefälschter Access Point mit identischem SSID verleitet Clients zur Verbindung.</li>
+<li><b>Man-in-the-Middle</b>: Datenverkehr kann abgefangen und manipuliert werden.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org2365b9f">
+<h2 id="org2365b9f">Empfehlungen zur WLAN-Sicherheit</h2>
+<ul>
+<li>Verwenden Sie WPA3, wo verfügbar, sonst mindestens WPA2.</li>
+<li>Nutzen Sie Enterprise-Modus mit RADIUS für größere Netzwerke.</li>
+<li>Deaktivieren Sie WPS (Wi-Fi Protected Setup).</li>
+<li>Nutzen Sie starke, individuelle Passwörter.</li>
+<li>Verfolgen Sie regelmäßig Firmware-Updates für Router und Access Points.</li>
+
+</ul>
+
+</section>
+</section>
+<section>
+<section id="slide-org58c05cf">
+<h2 id="org58c05cf">Beispiel: Konfiguration eines Cisco-Routers für WPA2 Enterprise</h2>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim>conf t
+<span style="color: #d0bc00;">!</span>
+interface Dot11Radio0
+ ssid WLAN_Enterprise
+   authentication open 
+   authentication key-management wpa version 2
+   dot1x authentication-server 192.168.1.10
+   dot1x radius-server 192.168.1.10 auth-port 1812 acct-port 1813 key geheim
+   mbssid guest-mode
+<span style="color: #d0bc00;">!</span>
+interface Dot11Radio0.1
+ encapsulation dot1Q 1 native
+ bridge-group 1
+<span style="color: #d0bc00;">!</span>
+interface BVI1
+ ip address 192.168.1.1 255.255.255.0
+<span style="color: #d0bc00;">!</span>
+radius-server host 192.168.1.10 auth-port 1812 acct-port 1813 key geheim
+<span style="color: #d0bc00;">!</span>
+end
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org229961a">
+<h2 id="org229961a">Beispiel: Konfiguration eines Cisco-Routers für WPA2 PSK</h2>
+<div class="org-src-container">
+
+<pre  class="src src-bash"   ><code trim>conf t
+<span style="color: #d0bc00;">!</span>
+interface Dot11Radio0
+ ssid WLAN_PSK
+   authentication open 
+   authentication key-management wpa version 2
+   wpa-psk ascii MeineSicherePassphrase
+<span style="color: #d0bc00;">!</span>
+interface Dot11Radio0.1
+ encapsulation dot1Q 1 native
+ bridge-group 1
+<span style="color: #d0bc00;">!</span>
+interface BVI1
+ ip address 192.168.1.1 255.255.255.0
+<span style="color: #d0bc00;">!</span>
+end
+</code></pre>
+</div>
+
+</section>
+</section>
+<section>
+<section id="slide-org49b5282">
+<h2 id="org49b5282">Fazit</h2>
+<p>
+WLAN-Sicherheit ist ein vielschichtiges Thema, das mehr als nur ein starkes Passwort erfordert. Besonders in professionellen Netzwerken ist die Nutzung von WPA2/WPA3-Enterprise mit RADIUS und durchdachter Netzwerksegmentierung essenziell. Auch in privaten Netzen sollte mindestens WPA2 mit starker Passphrase und regelmäßigen Firmware-Updates Standard sein.
+</p>
+
+<aside class="notes">
+<p>
+Der Umstieg auf WPA3 ist technisch sinnvoll, aber noch nicht flächendeckend möglich. Viele ältere Geräte unterstützen diesen Standard nicht.
+</p>
+
+</aside>
+</section>
+</section>
+</div>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/dist/reveal.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/markdown/markdown.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js/plugin/notes/notes.js"></script>
+
+
+<script>
+// Full list of configuration options available here:
+// https://github.com/hakimel/reveal.js#configuration
+Reveal.initialize({
+plugins: [RevealMarkdown, RevealZoom, RevealNotes]
+});
+
+</script>
+</body>
+</html>

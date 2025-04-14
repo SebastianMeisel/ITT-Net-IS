@@ -206,7 +206,7 @@ Eine "Firewall" ist ein Sicherheitssystem, das den Netzwerkverkehr basierend auf
 
 
 *** Zugriffskontrollen und Berechtigungsverwaltung
-EXAMPLE
+#+ATTR_REVEAL: :frag (appear)
 - Prinzip der geringsten Berechtigung
 - Regelmäßige Überprüfung von Zugriffsrechten
 - Prozesse für Onboarding und Offboarding von Mitarbeitern
@@ -218,7 +218,7 @@ Das "Prinzip der geringsten Berechtigung" (Principle of Least Privilege) besagt,
 
 ** Überwachung und Reaktion
 *** Sicherheitsüberwachung
-EXAMPLE
+#+ATTR_REVEAL: :frag (appear)
 - Intrusion Detection/Prevention Systeme (IDS/IPS)
 - Security Information and Event Management (SIEM)
 - Anomalieerkennung
