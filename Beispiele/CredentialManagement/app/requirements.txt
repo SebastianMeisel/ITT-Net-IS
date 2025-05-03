@@ -3,7 +3,3 @@ mysql-connector-python==8.0.32
 mysql-connector-python==8.0.32
 hvac==1.1.0
 python-dotenv==1.0.0
-
-VAULT_ADDR=http://vault:8200
-VAULT_ROLE_ID=<admin_role_id>
-VAULT_SECRET_ID=<admin_secret_id>
