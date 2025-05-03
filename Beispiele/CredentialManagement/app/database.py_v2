@@ -1,12 +1,16 @@
 import mysql.connector
+from config import DB_HOST, DB_NAME, DB_USER, DB_PASSWORD, validate_config
 
 def connect_to_database():
-    # PROBLEM: Hartcodierte Credentials im Code
+    # Überprüfen Sie, ob alle erforderlichen Konfigurationsparameter vorhanden sind
+    validate_config()
+    
+    # Verwenden Sie Umgebungsvariablen statt hartcodierter Werte
     connection = mysql.connector.connect(
-        host="mysql",
-        database="inventory",
-        user="admin_user",
-        password="admin_password"  # Sensible Information im Klartext!
+        host=DB_HOST,
+        database=DB_NAME,
+        user=DB_USER,
+        password=DB_PASSWORD
     )
     return connection
 

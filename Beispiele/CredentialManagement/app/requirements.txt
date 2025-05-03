@@ -1,5 +1,1 @@
 mysql-connector-python==8.0.32
-
-mysql-connector-python==8.0.32
-hvac==1.1.0
-python-dotenv==1.0.0
