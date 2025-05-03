@@ -25,7 +25,7 @@ vault secrets enable database
 # MySQL-Verbindung konfigurieren
 vault write database/config/mysql \
     plugin_name=mysql-database-plugin \
-    connection_url="{{username}}:{{password}}@tcp(mysql:3306)/" \
+    connection_url="{{username}}:{{password}}@tcp(mysql-db:3306)/" \
     allowed_roles="readonly,admin" \
     username="root" \
     password="rootpassword"
